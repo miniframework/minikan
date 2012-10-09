@@ -9,6 +9,7 @@ class doubanspiderService
 	{
 		$curl = new mini_tool_curl($params);
 		$this->curl = $curl;
+		$this->nowtime = time();
 	}
 	public function getData($url, $keyword)
 	{
@@ -29,6 +30,9 @@ class doubanspiderService
 	}
 	public function searchLikeApi($params)
 	{
+		//如果大于1分钟，睡眠10秒钟
+	
+		
 		$data = $this->search($params);
 		if(empty($data) || empty($data['title'])) return array();
 		$rdata = array();
