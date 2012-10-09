@@ -77,9 +77,9 @@ for($page = 1; $page<=30 ;$page++)
 	$targeturl = strtr($qq_url, $pagetr);
 
 	$row['title'] = "QQ电影分页".$page;
-	$row['siteid'] = 1;
+	$row['siteid'] = 9;
 	$row['spidercall'] = 1;
-	$row['vtype'] = 9;
+	$row['vtype'] = 1;
 	$row['targeturl'] = $targeturl;
 	echo $targeturl."...over\r\n";
 	$model = mini_db_model::model('vspiders');
