@@ -1,5 +1,5 @@
 .*
-/kan/logs/*.*
-/kan/data/*.*
+kan/logs/*.*
+kan/data/*.*
 !.gitignore
 !.htaccess
