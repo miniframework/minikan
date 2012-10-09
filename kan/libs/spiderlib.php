@@ -2140,6 +2140,7 @@ function coverMovieQq($url)
 	$star = $director = $area = $cate = $year = array();
 	//pic segment
 	$coverinfo = $coverRoot->find(".mod_info", 0)->find(".mod_cont",0);
+	if(empty($coverinfo)) return array();
 	$vrow['playlink'] = $url;
 	$vrow['title'] = $coverinfo->find('#em_cover_title',0)->plaintext;
 	
@@ -2185,9 +2186,13 @@ function coverMovieQq($url)
 	$yearDom = $coverTxt->children(3)->find("a",0);
 	if(!empty($yearDom))
 	$year = $yearDom->plaintext;
-	
-	$summaryDoms = $coverinfo->find('#mod_desc',0)->find("p.mod_cont", 0);
-	$summary = $summaryDoms->plaintext;
+	$summary = '';
+	$desc = $coverinfo->find('#mod_desc',0);
+	if(!empty($desc))
+	{
+		$summaryDoms = $desc->find("p.mod_cont", 0);
+		$summary = $summaryDoms->plaintext;
+	}
 	$vrow['star'] = $star;
 	$vrow['director'] = $director;
 	$vrow['area'] = $area[0];
