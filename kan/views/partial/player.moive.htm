@@ -1,0 +1,57 @@
+<div class="ptitle clearfix">
+  <h1><?php echo $vgroup->getShowTitle(); ?></h1>
+</div>
+<div class="vinfo clearfix">
+  <p class="starring"><i class="gray">主演：</i><?php foreach($vgroup->getStars(0) as $k => $star){?>
+								<a href="<?php echo $this->createUrl("site","kan","movie",array("page"=>1),array("star"=>$star));?>">
+								<?php echo $star;?>
+								</a>
+							  <?php }?></p>
+  <p class="info"><i class="gray">导演：</i><a href="<?php echo $this->createUrl("site","kan","movie",array("page"=>1),array("star"=>$vgroup->director));?>"><?php echo $vgroup->director;?></a></p>
+  <p class="date"><i class="gray">年代：</i><?php echo $vgroup->year;?></p>
+  <p class="type"><i class="gray">类型：</i><?php foreach($vgroup->getCate2Arr() as $c=>$name){?>
+        			<a href="<?php echo $this->createUrl("site","kan","movie",array("page"=>1),array("cate"=>$vgroup->getCateKey(1,$name)));?>"><?php echo $name;?></a>
+					<?php }	?></p>
+  <p class="intro"> <i class="gray">简介：</i> <span class="text" id="part-intro"> <?php echo $vgroup->summary;?>
+    <!--  <a class="unfold-more">展开更多 &gt;&gt;</a>--></span> 
+    <span class="text" id="full-intro" style="display:none"><?php echo $vgroup->summary;?> <a class="fold-more">&lt;&lt; 收起</a> </span> </p>
+	<?php $vgroupSeries = $vgroup->getSeriesGroup();if(!empty($vgroupSeries)) {?>
+	<p style="line-height:33px;"><i class="gray">系列：</i>
+		<div class="series">
+          	<?php foreach($vgroupSeries as $k => $vgroupserie)
+	            	{	if($vgroup->id == $vgroupserie->id) continue; ?>
+	            <a class="series_one" target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$vgroupserie->id));?>">
+	            	<?php echo  $vgroupserie->title;?>
+	            </a>
+	        <?php }?>
+		</div>
+	</p>
+	<?php }?>
+
+</div>
+<script>
+var player = <?php echo json_encode($vgroup->getPlayer());?>;
+</script>
+<script>
+ $(document).ready(function() {
+				 $("#move_play_now").click(function(){
+					 	$.showFlash(this);
+				 });
+				 $(".site_play").each(function(i){
+					 $(this).click(function(){
+						 $.showFlash($(this));
+					 })
+					 
+				 });
+});
+</script>
+<div class="play_m">
+	<?php $videoids = $vgroup->getVideoids() ;?>
+	<a <?php if($vgroup->isExistsPlayer($vgroup->getDefaultSiteid())) echo  'id="move_play_now" href="javascript:void(0);"'; else echo ' target="_blank" href="'.$vgroup->getDefaultPlaylink().'"';?>  class="v_play" siteid="<?php echo $vgroup->getDefaultSiteid();?>" ep="0" ></a>
+	<div class="play_web">
+	<ul>
+	<?php  foreach($videoids as $siteid => $videoid) {?>
+	<li> <a <?php if($vgroup->isExistsPlayer($siteid)) echo  'class="site_play" href="javascript:void(0);"'; else echo ' target="_blank" href="'.$videoid['playlink'].'"';?>  siteid="<?php echo $siteid;?>" ep="0"> <i> <img src="/styles/kan/images/icon/<?php echo $video->getIcon($siteid);?>" /></i><?php echo $video->getSiteZh($siteid);?> </a> </li>
+	<?php }?>
+	</div>
+</div>

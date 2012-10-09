@@ -1,0 +1,221 @@
+/*bg*/
+body {color: rgb(42, 42, 42);background-color: rgb(242, 242, 242);background-image: url(/styles/kan/images/bg-v3.png); _background-attachment: fixed;}
+/*导航*/
+.navi_list .split,#info_bar .logo { background: url("/styles/kan/images/logo.png") no-repeat scroll 0 0 transparent; }
+#info_bar { overflow: hidden; zoom: 1; height: 60px; padding-top:10px; padding-bottom:10px; }
+#info_bar .logo {  display: block; float: left; height: 60px; text-indent: -9999px; width: 140px; }
+#navigation { height: 40px; line-height: 37px; margin-bottom: 0; }
+.navi_list { width: 100%; background: rgb(143, 198, 59); height: 40px; }
+.navi_list a { color: #FFFFFF; font-size: 14px; font-weight: bold; line-height: 40px; margin: 0 2px; }
+.navi_list li { float: left; padding: 0 20px; height: 40px; }
+.navi_list .split { background-position: -299px -450px; padding: 0 20px; }
+.navi_list .c { background: none repeat scroll 0 0 #00461A; margin-right: -1px; position: relative; }
+
+/*搜索*/
+.search-bd { display: inline; float: left; position: relative; margin-left: 22px; width: 480px; }
+.search-bd .btn-search { float: left; width: 82px; height: 32px; border: 0 none; background: rgb(0, 70, 26); color: white; font-size: 14px; cursor: pointer; }
+.search-bd .hot { position: static; overflow: hidden; width: 380px; height: 18px; padding-top: 10px; background: 0; }
+.search-bd .hot a { padding-right: 10px; color: rgb(102, 102, 102); }
+.search-bd .ipt-search { overflow: hidden; width: 376px; height: 16px; padding: 7px 0 6px 5px; border: 0 none; outline: 0; background: 0; font: 14px/1.1 arial, simsun; }
+.search-bd .ipt-search-area { float: left; overflow: hidden; position: relative; width: 380px; height: 30px; margin-right: 5px; border: 1px solid rgb(184, 184, 184); box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2); background: white; }
+.search-bd .ipt-search-area .shadowtop, .search-bd .ipt-search-area .shadowleft { position:absolute; left:0 }
+.search-bd .ipt-search-area .shadowtop { overflow:hidden; top:0; width:100%; height:0; border-top:1px solid #ddd; border-bottom:1px solid #f3f3f3 }
+.search-bd .ipt-search-area .shadowleft { top:1px; height:100%; border-left:1px solid #ddd; border-right:1px solid #f3f3f3 }
+
+/*筛选*/
+#searching { background: none repeat scroll 0 0 #F8F8F8; }
+#searching .searching-bd { padding: 8px; overflow: hidden; }
+#searching .searching-bd ul { font-size: 12px; overflow: hidden; position: relative; }
+#searching .searching-bd li { float: left; margin: 5px 0; padding-right: 13px; }
+#searching .searching-ft { position: relative; padding: 8px; }
+#searching .searching-ft .tab { font-size: 14px; line-height: 18px;  float:left;width:200px; }
+#searching .searching-ft .tab .on { color: #FFFFFF; padding: 2px 5px; }
+#searching .searching-ft .tab a { vertical-align: middle; }
+#searching a { height: 16px; overflow: hidden; padding: 2px; }
+#searching a.on { background: none repeat scroll 0 0 #8FC63B; color: #FFFFFF; }
+#searching .searching-ft .tab a.on {background: none repeat scroll 0 0 #8FC63B; color: #FFFFFF;}
+/*首页 -电影－电视剧-动漫区块*/
+.left { width:710px; float:left; }
+.right { width:240px; float:right; background: rgb(253, 253, 253); }
+.gvideo { padding: 9px 13px; background: rgb(253, 253, 253); margin-bottom:20px; }
+.gvideo-hd { height: 25px; border-bottom: 2px solid rgb(0, 153, 215); color: rgb(6, 110, 161); }
+.gvideo-bd { height:412px; }
+.gvideo-hd, .gvideo-bd, .gvideo-ft { zoom: 1; overflow: hidden; }
+.gimglist { zoom: 1; overflow: hidden; margin: 0 -30px 0 -18px; }
+.gimglist li { display: inline; float: left; width: 106px; margin: 20px 20px 0 18px; }
+.gimglist .avatar { display: block; zoom: 1; overflow: hidden; position: relative; width: 106px; height: 142px; }
+.gimglist .name { margin-top: 5px; font-size: 14px; text-align: center; height: 21px; overflow: hidden; word-wrap: break-word; }
+.gimglist .info { margin: 0 -2px; overflow: hidden; color: rgb(102, 102, 102); text-align: center; height: 18px; word-wrap: break-word; }
+.gvideo-hd .act { float: right; font-size: 14px; line-height: 26px; }
+.gvideo-hd .act h3 { display: inline; float: left; overflow: hidden; height: 25px; margin: 0 2px; padding: 0 7px; font-weight: normal; cursor: pointer; }
+.gvideo-hd .act .on, .gvideo-hd .act .on:hover { background: rgb(0, 153, 215); color: white; font-weight: bold; }
+.gvideo-hd .act .more { display: inline; float: left; margin-left: 6px; }
+.gvideo-hd .tit { float: left; width: 180px; height: 25px; background: url(/styles/kan/images/bgreco.png) no-repeat; font-size: 22px; line-height: 1.1; text-indent: -599px; }
+.mv-hd .tit { background-position: 0 -78px; }
+.co-hd .tit { background-position: 0 -156px; }
+.gimglist .avatar img { width: 100%; height: 100%; }
+
+/*区块热点*/
+.movie-ft ,.comic-ft{ padding-top: 8px; }
+.grecomlist { zoom: 1; overflow: hidden; padding-bottom: 7px; }
+.grecomlist li { display: inline; float: left; overflow: hidden; width: 20%; height: 23px; margin: 1px 10px 0 0; padding-left: 10px; background: url(/styles/kan/images/vicon.png) no-repeat 0 -82px; word-wrap: break-word; color: rgb(153, 153, 153); line-height: 23px; font-family: simsun, arial; }
+.grecomlist li { width: 114px; }
+
+/*top10列表*/
+.mod_a .th_a { background: url(/styles/kan/images/bglist.png) 0 -72px repeat-x; height: 30px; line-height: 30px; }
+.mod_a .th_mark { padding-left: 10px; display: inline; font-size: 14px; font-weight: 700; }
+.mod_a .list { padding-left: 10px; padding-right: 10px; }
+.mod_a .list li { zoom: 1; overflow: hidden; padding: 2px 0 3px; vertical-align: middle; }
+.mod_a .list .index, .mod_a .list .videoname, .mod_a .list .info { float: left; overflow: hidden; }
+.mod_a .list a { padding-left: 10px; width: 140px; height: 22px; line-height: 22px; color: rgb(34, 34, 34); display:block; }
+.mod_a .list .info { width: 60px; height: 22px; line-height: 22px; text-align: right; color: rgb(153, 153, 153); float:right; }
+.mod_a .list .index { width: 15px; height: 15px; margin-top: 3px; background-color: rgb(204, 204, 204); line-height: 15px; text-align: center; color: white; }
+.mod_a .list .videoname { width: 140px; }
+.mod_a .list .top { background-color: rgb(246, 135, 44); }
+
+/*首页分类*/
+.subtit { color: rgb(153, 153, 153); padding: 8px 0 0 12px; font-weight: normal; }
+.mod_a .dlist { zoom: 1; overflow: hidden; margin-right: -20px; }
+.mod_a .dlist li { display: inline; float: left; overflow: hidden; height: 23px; width: 45px; margin-left: 12px; line-height: 23px; }
+
+/*电影列表*/
+.video-list { margin-top: 10px; padding-bottom: 10px; background-color: #ffffff; }
+.video-list li { border-top: 1px dotted #C3C3C3; float: left; height: 160px; margin-top: 15px; overflow: hidden; padding-top: 11px; width: 470px; padding-left: 10px; }
+.video-list .film_name i { color: #FF5400; }
+.video-list dd a { color: #00461A; }
+.video-list dt, .video-list dd { float: left; }
+.video-list .film_name span { color: #909090; float: right; margin-top: 2px; }
+.video-list .film_name a { font-size: 14px; font-weight: bold; line-height: 21px; margin-right: 16px; }
+.video-list dl { height: 160px; overflow: hidden; width: 470px; }
+.video-list dt { height: 160px; margin-right: 10px; width: 120px; }
+.video-list dd { color: #999999; line-height: 22px; width: 310px; }
+.video-list dt a { color: #FFFFFF; display: block; height: 160px; position: relative; width: 120px; }
+.video-list .film_name { color: #909090; font-size: 12px; height: 21px; line-height: 18px; overflow: hidden; }
+.video-list .intro { height: 46px; overflow: hidden; }
+.video-list .actor { height: 23px; overflow: hidden; }
+.video-list .play em, .video-list .play span { float: left; }
+.video-list .play img { float: left; height: 16px; padding: 3px 2px 0 0; width: 16px; }
+.video-list .play a { display: inline; float: left; font-size: 12px; height: 22px; margin-right: 3px; white-space: nowrap; }
+.video-list dt a .tip {zoom: 1;overflow: hidden;position: absolute;z-index: 4;left: 0;bottom: 0;width: 100%;height: 19px;background: rgba(0, 0, 0, .5);
+						color: white;
+						font-weight: bold;
+						line-height: 19px;
+						text-align: center;
+						cursor: pointer;
+						}
+						
+						
+.series{ margin-top:10px;}
+.series .series_one {height: 22px;line-height: 22px;padding: 5px 10px;border-radius: 3px;cursor:pointer ;background: rgb(255, 102, 0);color: white; margin-left:10px;}
+
+
+/*电视剧 动漫*/
+.video-list .play em, .video-list .play span { float: left; }
+.video-list .play span { width:250px; height:46px; }
+.video-list .player { display: block; }
+.video-list .player a { margin: 0 6px 0 0; zoom: 1; position: relative; }
+.video-list .partli a.allpart { position: relative; right: 0px; z-index: 10; width: 49px; height: 24px; line-height: 24px;  display: block; float: right; color: 
+rgb(102, 102, 102); padding-left: 6px; }
+
+/*播放页面*/
+.flv_player { margin-top:15px;}
+.detail { margin-top:10px; background-color: #ffffff; padding:10px; width:940px; }
+.detail .left_detail { width:255px; float:left; }
+.detail .right_detail { width:685px; float:left; }
+
+/*电影详细*/
+.ptitle h1 { padding-right: 30px; font-size: 26px; float: left; }
+.vinfo { padding: 5px 0 10px; }
+.vinfo p, .vinfo span { line-height: 22px; vertical-align: middle; }
+.vinfo .gray { float: left; color: rgb(153, 153, 153); font-style: normal; }
+.vinfo.starring, .vinfo .info, .vinfo .date, .vinfo .type { height: 22px; overflow: hidden; }
+.vinfo .gray { float: left; color: rgb(153, 153, 153); font-style: normal; }
+.vinfo .text { display: block; overflow: hidden; }
+.play_m { padding: 10px 0 15px; height: 43px; border-top: 1px dotted rgb(221, 221, 221); }
+.play_m a.v_play { width: 160px; height: 48px; display: block; float: left; background: url(/styles/kan/images/playbtn.png) no-repeat 0px 0px; }
+.play_m a:hover.v_play { background: url(/styles/kan/images/playbtn.png) no-repeat 0px -48px; }
+.play_web { padding: 5px; width: 280px; height: 28px; border: 1px solid white; overflow: hidden; }
+.play_web ul { width: 260px; float: left; }
+.play_web li { width: 63px; margin-right: 2px; padding-bottom: 4px; display: inline; height: 28px; line-height: 28px; font-size: 13px; float: left; }
+.play_web li a { width: 63px; height: 28px; display: block; }
+.play_web li a:hover { background: rgb(210, 237, 251); text-decoration: none; color: rgb(31, 108, 170); }
+.play_web li i { width: 16px; height: 16px; display: inline; float: left; margin: 5px 2px 0 2px; background: none; }
+
+/*电视剧详细*/
+.play_site { height: 28px; padding-top: 8px; border-bottom: 1px solid rgb(221, 221, 221); clear: both; }
+.play_site li { display: inline; float: left; margin-left: 2px; word-wrap: normal; }
+.play_site li a { height: 27px; line-height: 27px; border: 1px solid white; border-bottom: 0; display: inline-block; padding: 0 10px; }
+.play_site li img { float: left; margin: 4px 4px 0 0px; vertical-align: middle; }
+.play_site li a.curr { background: url("/styles/kan/images/tvbg.png") repeat-x scroll 0 1px #FFFFFF; border-color: #DDDDDD #DDDDDD #FFFFFF; border-style: solid; border-width: 1px; display: inline-block; height: 27px; line-height: 27px; margin-bottom: -1px; position: relative; }
+.last_update { padding: 8px 0 3px; border-bottom:1px dashed rgb(228, 228, 228); width:310px;}
+.episode_list { padding: 8px 0 3px; }
+.episode_list a, .episode_list i,.last_update a, .last_update i { margin: 0 4px 4px 0; width: 40px; height: 22px; line-height: 22px; display: inline-block; border: 1px solid rgb(228, 228, 228); text-align: center; }
+.episode_list a:hover, .episode_list a.curr,.last_update a:hover, .last_update a.curr { background: none repeat scroll 0 0 #398AC1; border: 1px solid #398AC1; color: #FFFFFF; text-decoration: none; }
+.episode_list a:visited,.last_update a:visited  { border: 1px solid #398AC1;  color:#398AC1}
+.newpart {position: absolute;background: url(/styles/kan/images/bgimg.gif) -274px 0 no-repeat;width: 26px;height: 14px;bottom: 13px;right: 0;}
+
+#play_info{background-color:#000;}
+#play_info .web_play{ float:left; width:300px; height:30px; color:rgb(174, 196, 10); margin-left:15px; line-height:30px; }
+#play_info .web_play a{ color: rgb(174, 196, 10);}
+#play_info .web_play a img{ top: 3px;position: relative;}
+
+/*相关视频*/
+.v-related { width: 685px; overflow: hidden; }
+.text-list-struct .tab, .v-related .tab { position: relative; padding: 0 8px; margin: 20px 0 20px 0; outline: 0; display: inline-block; line-height: 24px; }
+.text-list-struct .selected, .text-list-struct .selected:hover, .v-related .selected, .v-related .selected:hover { background: url('/styles/kan/images/tab.png') no-repeat; cursor: default; }
+#tab_content { height:215px; }
+.v-related .list .item { position: relative; padding-right: 33px; padding-bottom: 20px; float: left; display: block; width: 111px; overflow: hidden; }
+.v-related .list .poster-link { display: block; font-size: 0; }
+.v-related .list .title { height: 24px; line-height: 24px; white-space: nowrap; overflow: hidden; color: rgb(5, 110, 161); text-align: center; font-size: 14px; }
+.v-related .list .text { height: 24px; line-height: 24px; overflow: hidden; color: rgb(153, 153, 153); text-align: center; font-size: 12px; }
+.v-related .list .poster-img { width: 107px; height: 146px; }
+.v-related .list .hide-text { overflow: hidden; text-align: center; }
+.v-related .list .hide-bg { background: none repeat scroll 0 0 #000000; opacity: 0.5; }
+.v-related .list .hide-text, .v-related .list .hide-bg { height: 19px; left: 0; line-height: 19px; position: absolute; top: 128px; width: 107px; }
+.v-related .list .hide-text .trait { color: #FFFFFF; float: left; font-family: '宋体'; padding-left: 5px; font: 12px/1.5 Arial; }
+.v-related .list .hide-text .grade { color: #FFFFFF; float: right; padding-right: 5px; }
+.v-related .list .hide-text .grade em { color: orange; font-size: 12px; }
+
+/*评论*/
+.reviews .list .item { padding-bottom: 30px; }
+.reviews .list .title-bg { margin-bottom: 10px; display: block; height: 26px; overflow: hidden; padding:2px; background: rgb(237, 237, 237); }
+.reviews .list .title { display: inline-block; font-size: 14px; line-height:26px; font-weight: normal; }
+.reviews .list .text { padding-bottom: 15px; clear: both; color: rgb(51, 51, 51); line-height: 22px; }
+.reviews .list .date { padding: 0 15px; color: rgb(153, 153, 153); line-height: 22px; }
+.reviews .list .more-link { padding-left: 10px; }
+.reviews a { color: rgb(5, 110, 161); text-decoration: none; font-family: "宋体b8b\4f53"; }
+
+/*搜索页面*/
+.search_list { margin-top:10px; background-color: #ffffff; padding:10px; width:940px; }
+.search_left { width: 685px; float: left; }
+.search_right { width: 255px; float: left; }
+.search_left .list { border-bottom: 1px dotted rgb(225, 225, 225); overflow: hidden; width: 680px; padding-bottom:15px; padding-top:15px; float: left; }
+.search_left .list .content h2 .title { color: rgb(9, 130, 233); font-weight: 700; font-size: 14px; }
+.search_left .list a.pic { width: 120px; padding: 2px; height: 160px; border: 1px solid rgb(229, 229, 229); display: block; float: left; position: relative; }
+.search_left .list a.pic:hover { border: 1px solid #FA5915; background-color: #FA5915; }
+.search_left .list a.pic img { width: 120px; height: 160px; display: block; }
+.search_left .list a.pic span { background: black; bottom: 2px; color: white; filter: alpha(opacity=80); left: 2px; opacity: 0.8; position: absolute; text-align: center; width: 120px; }
+.search_left .list .content { width: 530px; float: right; position: relative; padding-top: 4px; }
+.search_left .list .detail_list { padding: 3px 0; overflow: hidden; }
+.search_left .list .detail_list span { display: inline-block; color: rgb(145, 144, 144); }
+.search_left .list .detail_list em { display: inline-block; padding: 0 20px 0 2px; }
+.search_left .list .detail_list span.more { float: left; }
+.search_left .list .detail_list em.more { padding: 0 0 4px 2px; float: left; width: 480px; }
+
+/*删除筛选*/
+.title_order_box span { background: url(/styles/kan/images/repeat.png) repeat-x; }
+.title_order_box a { background:url(/styles/kan/images/sicon.png) no-repeat; }
+.title_order_box { overflow: hidden; height: 18px; line-height: 18px; float: right; }
+.title_order_box li { float: left; }
+.title_order_box span { display: block; float: left; height: 18px; width: auto; background-position: 0 -328px; padding: 0 18px 0 5px; color: white; font-weight: 700; position: relative; margin-right: 4px; }
+.ct { text-indent: -999px; text-align: left; overflow: hidden; font-size: 0; line-height: 0; }
+.title_order_box a { width: 9px; height: 8px; background-position: -34px -426px; position: absolute; right: 4px; top: 5px; }
+
+
+/*分页*/
+.page_list { background: none repeat scroll 0 0 #FFFFFF; display: block; text-align: center; }
+.page_list a:hover, .page_list a.page_current { background: none repeat scroll 0 0 #0982E9; border: 1px solid #0982E9; color: #FFFFFF; text-decoration: none; }
+.page_list a { background: none repeat scroll 0 0 #F5F5F5; border: 1px solid #E6E6E6; display: inline-block; line-height: 20px; margin-right: 4px; padding: 2px 9px; }
+.page_list { margin-top:10px; background: none; }
+
+#footer {clear: both;height: 52px;line-height: 52px;margin: 0 auto;position: relative;text-align: center;width: 960px;}

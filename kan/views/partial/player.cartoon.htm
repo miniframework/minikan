@@ -1,0 +1,108 @@
+<div class="ptitle clearfix">
+  <h1><?php echo $vgroup->getShowTitle();?></h1>
+</div>
+<div class="vinfo clearfix">
+  <p class="date"><i class="gray">年代：</i><?php echo $vgroup->year;?></p>
+  <p class="type"><i class="gray">类型：</i><?php echo $vgroup->cate;?></p>
+  <p class="intro"> <i class="gray">简介：</i> <span class="text" id="part-intro"> <?php echo $vgroup->summary;?> <!-- <a class="unfold-more">展开更多>></a>  --></span> 
+  <span class="text" id="full-intro" style="display:none"><?php echo $vgroup->summary;?> <a class="fold-more">&lt;&lt; 收起</a> </span> </p>
+	<?php $vgroupSeries = $vgroup->getSeriesGroup();if(!empty($vgroupSeries)) {?>
+	<p style="line-height:33px;"><i class="gray">系列：</i>
+		<div class="series">
+          	<?php foreach($vgroupSeries as $k => $vgroupserie)
+	            	{	if($vgroup->id == $vgroupserie->id) continue; ?>
+	            <a class="series_one" target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$vgroupserie->id));?>">
+	            	<?php echo  $vgroupserie->title;?>
+	            </a>
+	        <?php }?>
+		</div>
+	</p>
+	<?php }?>
+</div>
+<script>
+var player = <?php echo json_encode($vgroup->getPlayer());?>;
+</script>
+<script>
+ $(document).ready(function() {
+				 $("#move_play_now").click(function(){
+					 	$.showFlash(this);
+				 });
+				 $(".play_list").each(function(i){
+					 $(this).click(function(){
+						 $(this).addClass("curr");
+						 $.showFlash($(this));
+					});
+ 					$(this).mouseover(function(e){
+						 
+						 $.showImage($(this));
+						 var height = $("#pimglink").height();
+						 var width = $("#pimglink").width();
+						 $("#pimglink").css({ 
+							 "top" :( $(this).offset().top-height-10) + "px", 
+							 "left" :($(this).offset().left) + "px",
+							 }); 
+					 });
+					$(this).mouseout(function(e){
+						 
+						 $("#pimglink").hide();
+					 });
+				 });
+});
+</script>
+<script>
+$(document).ready(function() {
+	 $(".js_site").each(function(i){
+		 
+		 $(this).click(function(){
+			 var data = $(this).attr('data');
+			 $(".js_episode").each(function(i){
+				 $(this).hide();
+			 });
+			
+			 $("#episode_"+data).show();
+		 });
+	 });
+});
+
+</script>
+
+<div class="play_box">
+  <?php  $episodeslist = $vgroup->getEpisodes(); ?>
+  <?php foreach($episodeslist as $k => $list){
+		$siteid = $list['siteid'];
+		if($vgroup->isExistsPlayer($siteid)) 
+					$existPlayer = true;
+				else 
+					$existPlayer = false;
+  ?>
+  <div class="js_episode" id="episode_<?php echo $siteid;?>" <?php if($k!=0) echo 'style="display: none; "';?>>
+    <div class="play_site">
+      <ul>
+        <?php foreach($episodeslist as $kk => $slist){ 
+				$ssiteid = $slist['siteid'];
+		 ?>
+       	 <li><a class="js_site <?php if($kk==$k) echo 'curr';?>"  data="<?php echo $ssiteid;?>" href="javascript:void(0);" rel="nofollow"><img src="/styles/kan/images/icon/<?php echo $video->getIcon($ssiteid);?>" /><?php echo $video->getSiteZh($ssiteid);?></a></li>
+      	<?php }?>
+      </ul>
+    </div>
+    <div class="play_site_episode" >
+        <?php $episodes_count = count($list['episodes']);
+				if($episodes_count >100){ ?>
+		     <div class="last_update">
+		     <span style="color:red;">最近更新：</span>
+		        <?php for($e = $episodes_count-1; $e>=$episodes_count-5; $e--){
+				
+			 	$episode = $list['episodes'][$e]; ?>
+		        <a <?php if($episode->isExistPlayer()) echo 'class="play_list" href="javascript:void(0);"'; else echo 'target="_blank" href="'.$episode->playlink.'"';?> siteid="<?php echo  $siteid;?>"  ep="<?php echo ($e+1);?>" ><?php echo ($e+1);?>集</a>
+		        <?php }?>
+		      </div>
+      	<?php }?>
+      <div class="episode_list">
+        <?php foreach($list['episodes'] as $e => $episode){ ?>
+        <a <?php if($episode->isExistPlayer()) echo 'class="play_list" href="javascript:void(0);"'; else echo 'target="_blank" href="'.$episode->playlink.'"';?> siteid="<?php echo  $siteid;?>"  ep="<?php echo ($e+1);?>" ><?php echo ($e+1);?>集</a>
+        <?php }?>
+      </div>
+    </div>
+  </div>
+  <?php }?>
+</div>
