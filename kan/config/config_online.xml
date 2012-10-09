@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mini>
+<!-- config db -->
+	<db>
+		<driver>mysqli</driver>
+		<master name="master">
+			<host>127.0.0.1</host>
+			<user>root</user>
+			<pass></pass>
+			<port>3306</port>
+			<dbname>ailezi_cn</dbname>
+			<charset>utf8</charset>
+		</master>
+		<slave name="slave1">
+			<host>127.0.0.1</host>
+			<user>root</user>
+			<pass></pass>
+			<port>3306</port>
+			<dbname>ailezi_cn</dbname>
+			<charset>utf8</charset>
+			<percent>100</percent>
+		</slave>
+	</db>
+	<!-- 
+	<loader>
+		<dirs></dirs>
+	</loader>
+	 -->
+	<router>
+		<rules>
+			<app>site</app>
+			<class>mini_web_urlregex</class>			
+		</rules>
+	</router>
+	 
+	<event>
+		<e>adminlogin</e>
+	</event>
+	
+	 <!-- 
+	<default>
+		<app>site</app>
+		<controller>index</controller>
+		<action>index</action>
+	</default>
+	<error>
+		<app>error</app>
+		<controller>index</controller>
+		<action>404</action>
+	</error>
+	-->
+	
+	<logger>
+		<logs name="minilog">
+			<class>mini_log_file</class>
+			<levels>info,warning,error</levels>
+			<categories>exception.*,php</categories>
+			<file>minilog.log</file>
+		</logs>
+		<logs name="kanapplog">
+			<class>mini_log_file</class>
+			<levels>trace</levels>
+			<categories>kanapp</categories>
+			<file>kanapp.log</file>
+		</logs>
+		<logs name="spiderlog">
+			<class>mini_log_file</class>
+			<levels>info</levels>
+			<categories>spider.*</categories>
+			<file>spider.log</file>
+		</logs>
+		
+	</logger>
+	
+</mini>
