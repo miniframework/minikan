@@ -282,6 +282,7 @@ class spiderService implements mini_db_unbuffer
 			$this->db->query($updatesql);
 			echo $row['id']."link error..\r\n";
 		}
+		echo $updateFunction."\r\n";
 	}
 	
 	
