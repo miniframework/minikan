@@ -2,5 +2,6 @@
 *.txt
 kan/logs/*.*
 kan/config/config.xml
+kan/config/config_online.xml
 !.gitignore
 !.htaccess
