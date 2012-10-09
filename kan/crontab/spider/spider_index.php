@@ -53,4 +53,4 @@ for($page = 1; $page<=1 ;$page++)
 	$model = mini_db_model::model('vspiders');
 	$model->create($row);
 }
-
+mini_db_unitofwork::getHandle()->commit();
