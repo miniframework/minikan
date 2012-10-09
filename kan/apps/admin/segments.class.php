@@ -14,6 +14,10 @@ class SegmentsController extends mini_web_controller
     	if($id == 'hot_search')
     	{
     		$hot_search_file = mini_base_application::app()->getRunPath()."/data/editor/hot_search.data";
+    		if(!file_exists($hot_search_file))
+    		{
+    			file_put_contents($hot_search_file,'');
+    		}
     		$data_content = file_get_contents($hot_search_file);
     		if(empty($data_content)) $data_content = '';
     		$this->view->data_content = $data_content;
