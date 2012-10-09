@@ -5,6 +5,8 @@ class groupService implements mini_db_unbuffer
 	public $id = 0;
 	public $db = null;
 	public $isgroup = true;
+	
+	public $nowtime = 0;
 	public function __construct($params = array())
 	{
 		foreach($params as $key => $value)
@@ -181,6 +183,15 @@ class groupService implements mini_db_unbuffer
 			//$grow['imdb'] = isset($data['imdb']) ? $data['imdb']:0;
 			
 		} else {
+			
+			
+			if(time() - $this->nowtime > 30)
+			{
+				$this->nowtime = time();
+				echo "sleep start 10/m ...\r\n";
+				sleep(10);
+				echo "sleep end 10/m ...\r\n";
+			}
 			
 			//豆瓣搜索蜘蛛接口
 			$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
@@ -369,6 +380,7 @@ class groupService implements mini_db_unbuffer
 					$reviews = mini_db_model::model("reviews");
 					$crow['title'] = $vv['title'];
 					$crow['groupid'] = $vgroup->id;
+					if(!isset($vv['comment'])) continue;
 					$crow['summary'] = $vv['comment'];
 					$crow['doubanid'] = $row['doubanid'];
 					if(preg_match('/review\/(\d+)\//', $vv['href'], $match))
