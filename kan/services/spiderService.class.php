@@ -224,12 +224,13 @@ class spiderService implements mini_db_unbuffer
 				
 				$updatesql = "update videos set status={$status} where id ='{$row['id']}'";
 				$this->db->query($updatesql);
+				echo $row['id']."revers..\r\n";
 			}
 			if($row['vtype'] == 2 || $row['vtype'] == 3)
 			{
 				//更新剧集
 				$nowepisodes_num = count($data['episodes']);
-				if(isset($data['episodes']) )//&&  $nowepisodes_num > $row['nowepisodes']
+				if(isset($data['episodes']) &&  $nowepisodes_num > $row['nowepisodes'])
 				{
 						$videoid = $row['id'];
 						$delete_episodes_sql = "delete from episodes  where videoid={$videoid}";
@@ -264,10 +265,14 @@ class spiderService implements mini_db_unbuffer
 							epsign='{$data['epsign']}' ,
 									nowepisodes = '{$data['nowepisodes']}',
 									allepisodes='{$data['allepisodes']}',mtime='{$time}' where id={$row['vgroupid']}";
-							echo $update_vgroup_sql."\r\n";			
 									$this->db->query($update_vgroup_sql);
 						}
+						
+					echo $row['id']."update ep..\r\n";
+				} else {
+					echo $row['id']."no update ep..\r\n";
 				}
+				
 			}
 			
 		}
@@ -275,8 +280,8 @@ class spiderService implements mini_db_unbuffer
 		{
 			$updatesql = "update videos set status=2 where id ='{$row['id']}'";
 			$this->db->query($updatesql);
+			echo $row['id']."link error..\r\n";
 		}
-		echo $updateFunction."\r\n";
 	}
 	
 	

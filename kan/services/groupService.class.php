@@ -380,6 +380,8 @@ class groupService implements mini_db_unbuffer
 			}
 			mini_db_unitofwork::getHandle()->commit();
 			echo $vgroup->id." hit..\r\n";
+		} else {
+			echo $vgroup->id." no hit..\r\n";
 		}
 	}
 	public function replaceTitle($title)

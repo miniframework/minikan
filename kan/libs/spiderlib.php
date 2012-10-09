@@ -1267,9 +1267,9 @@ function coverMovieLetv($url)
 	{
 		$year = $yearDom->plaintext;
 	}
-	$scoreDom = $coverRoot->find(".number",0)->find("em",0);
-	if(!empty($scoreDom)) 
-		$vrow['score'] = $scoreDom->plaintext;
+// 	$scoreDom = $coverRoot->find(".number",0)->find("em",0);
+// 	if(!empty($scoreDom)) 
+// 		$vrow['score'] = $scoreDom->plaintext;
 	
 	
 	$summaryDoms = $coverTxt->find("#j-descript",0);
@@ -1317,7 +1317,7 @@ function coverTeleplayLetv($url)
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	$coverRoot = domByCurl($url);
-
+	if(empty($coverRoot)) return array();
 	
 	//eplisode
 	$allepisodes = $nowepisodes = 0;
@@ -1480,8 +1480,7 @@ function coverCartoonLetv($url)
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	$coverRoot = domByCurl($url);
-
-
+	if(empty($coverRoot)) return array();
 	//eplisode
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".info", 0)->find(".i-t",0);
