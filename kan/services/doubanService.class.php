@@ -101,7 +101,7 @@ class doubanService
 	public function Auth()
 	{
 		$authurl = "https://www.douban.com/service/auth2/token";
-		$access_token_url =	"client_id=056ea9e1004bb1a5104bfda300e314ef&client_secret=93c50a826de4b9a2&redirect_uri=https://www.example.com/&grant_type=password&username=kaiwang@sogou-inc.com&password=sogoudh123";
+		$access_token_url =	"no..";
 		$curl = new mini_tool_curl();
 		$douban_data = $curl->post($authurl, $access_token_url);
 		$douban_json_data = json_decode($douban_data, true);
