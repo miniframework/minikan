@@ -227,6 +227,10 @@ function spiderMovieYouku($url)
 	if(!empty($rows))
 		foreach($rows as $k => $row)
 		{
+			//不要付费
+			$p_ischarge = $row->find('.p_ischarge',0);
+					
+			if(!empty($p_ischarge)) continue;
 			$coverlink = $row->find('.p_link',0)->find('a',0)->href;
 			$cover = coverMovieYouku($coverlink);
 			if(!empty($cover))
