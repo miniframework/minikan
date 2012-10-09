@@ -16,7 +16,7 @@
 	<span class="foot_logo ct">logo</span> <a target="_blank" href="#">关于我们</a>|
 	<a target="_blank" href="#">意见反馈</a>| <a target="_blank" href="#">免责声明</a>
 	<span>Copyright &copy; 2012 .com. All Rights Reserved. </span> 
-	<em><a href="#" target="_blank">京ICP证123456号</a></em>
+	<em><a href="#" target="_blank">京ICP备11002035号</a></em>
 </div>
 </body>
 </html>
