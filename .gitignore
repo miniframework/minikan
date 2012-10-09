@@ -1,5 +1,5 @@
 .*
-kan/crontab/spider/*.txt
+*.txt
 kan/logs/*.*
 kan/data/*.*
 kan/config/config_online.xml
