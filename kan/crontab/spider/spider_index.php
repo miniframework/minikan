@@ -26,7 +26,9 @@ for($page = 1; $page<=30 ;$page++)
 	$targeturl = strtr($youku_url, $pagetr);
 
 	$row['title'] = "优酷电影分页".$page;
-	$row['spiderid'] = 2;
+	$row['siteid'] = 2;
+	$row['spidercall'] = 1;
+	
 	$row['vtype'] = 1;
 	$row['targeturl'] = $targeturl;
 	echo $targeturl."...over\r\n";
@@ -43,11 +45,12 @@ for($page = 1; $page<=1 ;$page++)
 	$targeturl = strtr($tudou_url, $pagetr);
 	
 	$row['title'] = "土豆电影分页".$page;
-	$row['spiderid'] = 1;
+	$row['siteid'] = 1;
+	$row['spidercall'] = 1;
 	$row['vtype'] = 1;
 	$row['targeturl'] = $targeturl;
 	echo $targeturl."...over\r\n";
-	$model = mini_db_model::model('vspider');
+	$model = mini_db_model::model('vspiders');
 	$model->create($row);
 }
 
