@@ -122,20 +122,36 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	}
 // 	mini_db_unitofwork::getHandle()->commit();
 
-	$url="http://tv.tudou.com/albumtop/c30t-1v-1z-1a-1y-1h-1s1p{page}.html";
-	for($page = 1; $page<=30 ;$page++)
-		{
-			$pagetr = array("{page}"=>$page);
-			$targeturl = strtr($url, $pagetr);
+// 	$url="http://tv.tudou.com/albumtop/c30t-1v-1z-1a-1y-1h-1s1p{page}.html";
+// 	for($page = 1; $page<=30 ;$page++)
+// 		{
+// 			$pagetr = array("{page}"=>$page);
+// 			$targeturl = strtr($url, $pagetr);
 
-			$row['title'] = "tudou电视剧分页".$page;
-			$row['siteid'] = 1;
-			$row['spidercall'] = 2;
-			$row['vtype'] = 2;
-			$row['targeturl'] = $targeturl;
-			echo $targeturl."...over\r\n";
-			$model = mini_db_model::model('vspiders');
-			$model->create($row);
-		}
-		mini_db_unitofwork::getHandle()->commit();
+// 			$row['title'] = "tudou电视剧分页".$page;
+// 			$row['siteid'] = 1;
+// 			$row['spidercall'] = 2;
+// 			$row['vtype'] = 2;
+// 			$row['targeturl'] = $targeturl;
+// 			echo $targeturl."...over\r\n";
+// 			$model = mini_db_model::model('vspiders');
+// 			$model->create($row);
+// 		}
+// 		mini_db_unitofwork::getHandle()->commit();
+	$url="http://www.youku.com/v_olist/c_97_a__s__g__r__lg__im__st__mt__tg__d_1_et_0_fv_0_fl__fc__fe__o_7_p_{page}.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+	$pagetr = array("{page}"=>$page);
+	$targeturl = strtr($url, $pagetr);
+	
+		$row['title'] = "youku电视剧分页".$page;
+		$row['siteid'] = 2;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+				echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 //$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq');
