@@ -194,6 +194,11 @@ class videos extends mini_db_model
     	$row['ctime'] = $row['mtime']= time();
     	
     	if(empty($row['title']) || empty($row['playlink']) || empty($row['imagelink'])) return ;
+    	
+    	if((string)$xml->vtype == 1 || (string)$xml->vtype == 2 )  {
+    	
+    		if(empty($row['star']) || $row['cate'] || $row['area'] || $row['year']) return ;
+    	}
     	//查看playlink相同的视频是否存在
 		$videos = self::model('videos');
 		$video = $videos->getByPlayLink(array(":playlink"=>$row['playlink']));
