@@ -187,9 +187,10 @@ class groupService implements mini_db_unbuffer
 			
 			if(time() - $this->nowtime > 30)
 			{
-				$this->nowtime = time();
+				
 				echo "sleep start 10/m ...\r\n";
-				sleep(30);
+				sleep(20);
+				$this->nowtime = time();
 				echo "sleep end 10/m ...\r\n";
 			}
 			
