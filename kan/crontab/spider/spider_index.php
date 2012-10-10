@@ -92,20 +92,36 @@ mini_db_unitofwork::getHandle()->commit();
 // }
 // mini_db_unitofwork::getHandle()->commit();
 
-$letv_url="http://so.letv.com/list/c1_t-1_a-1_y-1_f-1_at1_o1_i-1_p{page}.html";
+// $letv_url="http://so.letv.com/list/c1_t-1_a-1_y-1_f-1_at1_o1_i-1_p{page}.html";
 
-for($page = 1; $page<=30 ;$page++)
-{
-	$pagetr = array("{page}"=>$page);
-	$targeturl = strtr($letv_url, $pagetr);
+// for($page = 1; $page<=30 ;$page++)
+// {
+// 	$pagetr = array("{page}"=>$page);
+// 	$targeturl = strtr($letv_url, $pagetr);
 
-	$row['title'] = "letv电影分页".$page;
-	$row['siteid'] = 8;
-	$row['spidercall'] = 1;
-	$row['vtype'] = 1;
-	$row['targeturl'] = $targeturl;
-	echo $targeturl."...over\r\n";
-	$model = mini_db_model::model('vspiders');
-	$model->create($row);
-}
-mini_db_unitofwork::getHandle()->commit();
+// 	$row['title'] = "letv电影分页".$page;
+// 	$row['siteid'] = 8;
+// 	$row['spidercall'] = 1;
+// 	$row['vtype'] = 1;
+// 	$row['targeturl'] = $targeturl;
+// 	echo $targeturl."...over\r\n";
+// 	$model = mini_db_model::model('vspiders');
+// 	$model->create($row);
+// }
+// mini_db_unitofwork::getHandle()->commit();
+	$pptv_url="http://list.pptv.com/sort_list/1---------{page}.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($letv_url, $pagetr);
+
+		$row['title'] = "pptv电影分页".$page;
+		$row['siteid'] = 7;
+		$row['spidercall'] = 1;
+		$row['vtype'] = 1;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
