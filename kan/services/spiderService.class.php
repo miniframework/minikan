@@ -48,7 +48,8 @@ class spiderService implements mini_db_unbuffer
 				foreach($error as $k => $v) {
 					$message .= "path:" . $xmlpath . "\tline:" . $v->line . "\tcolumn" . $v->column . "\tmessage:" . $v->message;
 				}
-				mini::e("config not load xml file {file} message:{message}" ,array('{file}'=>$xmlpath,'{message}'=>$message));
+				echo $message."\r\n";
+				//mini::e("config not load xml file {file} message:{message}" ,array('{file}'=>$xmlpath,'{message}'=>$message));
 			}
 			foreach($xmlobj->video as $k => $xml)
 			{

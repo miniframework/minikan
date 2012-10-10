@@ -95,7 +95,9 @@ class vspiders extends mini_db_model
     					else 
     					{
 	    					$line = implode("\t", $info);
-	    					$xmldata .= $line;
+	    					$xmldata .="<![CDATA[";
+	    					$xmldata .= trim($line);
+	    					$xmldata .="]]>";
     					}
     				}
     				else
