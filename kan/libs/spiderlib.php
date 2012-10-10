@@ -1258,7 +1258,13 @@ function coverMovieLetv($url)
 		}
 	
 	//area
-	$areaDoms = $coverTxt->find(".Li04",0)->find('.p2',0)->find('.s2',0)->find("a");
+	//检测页面
+	$li04 = $coverTxt->find(".Li04",0);
+	$p2 = $li04->find('.p2',0);
+	if(empty($p2)) return array();
+		
+		
+	$areaDoms = $p2->find('.s2',0)->find("a");
 	if(!empty($areaDoms))
 		foreach($areaDoms as $k => $areaDom)
 		{
