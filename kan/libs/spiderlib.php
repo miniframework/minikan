@@ -2300,6 +2300,7 @@ function coverMoviePptv($url)
 	
 	//info segment
 	$actor = $baseinfo->children(5);
+	if(empty($actor)) return array();
 	$starDoms = $actor->find("a");
 	//star
 	if(!empty($starDoms))
