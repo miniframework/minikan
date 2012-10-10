@@ -195,10 +195,10 @@ class videos extends mini_db_model
     	
     	if(empty($row['title']) || empty($row['playlink']) || empty($row['imagelink'])) return ;
     	
-//     	if((string)$xml->vtype == 1 || (string)$xml->vtype == 2 )  {
+    	if((string)$xml->vtype == 1 || (string)$xml->vtype == 2 )  {
     	
-//     		if(empty($row['star']) || $row['cate'] || $row['area'] || $row['year']) return ;
-//     	}
+    		if(empty($row['area']) || empty($row['cate']) || empty($row['area']) || empty($row['area'])) return ;
+    	}
     	//查看playlink相同的视频是否存在
 		$videos = self::model('videos');
 		$video = $videos->getByPlayLink(array(":playlink"=>$row['playlink']));
