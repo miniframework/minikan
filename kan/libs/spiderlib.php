@@ -2255,6 +2255,7 @@ function spiderMovieQq($url)
 //pptv.com
 function coverMoviePptv($url)
 {
+	echo $url;
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	
@@ -2276,9 +2277,7 @@ function coverMoviePptv($url)
 	
 	$child = $baseinfo->children(0);
 	if(empty($child)) return array();
-	$titlea = $child->find("a",0);
-	if(empty($titlea)) return array();
-	
+	$titlea = $coverRoot->find("h1");
 	$vrow['title'] = $titlea->plaintext;
 	
 	//year
