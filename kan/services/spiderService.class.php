@@ -45,7 +45,7 @@ class spiderService implements mini_db_unbuffer
 				$error = libxml_get_errors();
 				libxml_clear_errors();
 				foreach($error as $k => $v) {
-					$message .= "path:" . $path . "\tline:" . $v->line . "\tcolumn" . $v->column . "\tmessage:" . $v->message;
+					$message .= "path:" . $xmlpath . "\tline:" . $v->line . "\tcolumn" . $v->column . "\tmessage:" . $v->message;
 				}
 				mini::e("config not load xml file {file} message:{message}" ,array('{file}'=>$xmlpath,'{message}'=>$message));
 			}
