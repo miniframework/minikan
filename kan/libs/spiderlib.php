@@ -2353,6 +2353,7 @@ function coverMoviePptv($url)
 	}
 	$vrow['star'] = $star;
 	$vrow['director'] = $director;
+	if(isset($area[0]))
 	$vrow['area'] = $area[0];
 	$vrow['cate'] = $cate;
 	$vrow['year'] = $year;
