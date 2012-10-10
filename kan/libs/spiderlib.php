@@ -2266,6 +2266,7 @@ function coverMoviePptv($url)
 		return array();
 	$star = $director = $area = $cate = $year = array();
 	$coverinfo = $coverRoot->find(".showinfo", 0);
+	if(empty($coverinfo)) return array();
 	$baseinfo = $coverinfo->find(".bd", 0)->find("ul", 0);
 	//playlink title segment
 	if(empty($baseinfo)) return array();
@@ -2297,7 +2298,7 @@ function coverMoviePptv($url)
 
 	
 	//info segment
-	$actor = $baseinfo->children(4);
+	$actor = $baseinfo->children(5);
 	$starDoms = $actor->find("a");
 	//star
 	if(!empty($starDoms))
@@ -2306,7 +2307,7 @@ function coverMoviePptv($url)
 			$star[] = $starDom->plaintext;
 		}
 	//director
-	$directord = $baseinfo->children(3);
+	$directord = $baseinfo->children(4);
 	$directorDoms = $directord->find("a");
 	if(!empty($directorDoms))
 		foreach($directorDoms as $k => $directorDom)
@@ -2323,7 +2324,7 @@ function coverMoviePptv($url)
 		if(!empty($scorenum))
 			$vrow['score'] = $scorenum->plaintext;
 	}
-	$areacatedom = $baseinfo->children(2);
+	$areacatedom = $baseinfo->children(3);
 	if(!empty($areacatedom))
 	{
 		$areacateHtml = $areacatedom->innertext;
@@ -2345,7 +2346,7 @@ function coverMoviePptv($url)
 		}
 	}
 	$summary = '';
-	$summaryDom = $baseinfo->children(6);
+	$summaryDom = $baseinfo->children(7);
 	if(!empty($summaryDom))
 	{
 		$summary = str_replace("更多","",$summaryDom->plaintext);
