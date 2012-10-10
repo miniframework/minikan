@@ -2277,7 +2277,7 @@ function coverMoviePptv($url)
 	
 	$child = $baseinfo->children(0);
 	if(empty($child)) return array();
-	$titlea = $coverRoot->find("h1");
+	$titlea = $coverRoot->find("h1",0);
 	$vrow['title'] = $titlea->plaintext;
 	
 	//year
