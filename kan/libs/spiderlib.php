@@ -2255,7 +2255,6 @@ function spiderMovieQq($url)
 //pptv.com
 function coverMoviePptv($url)
 {
-	echo $url;
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	
