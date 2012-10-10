@@ -113,7 +113,7 @@ mini_db_unitofwork::getHandle()->commit();
 	for($page = 1; $page<=30 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
-		$targeturl = strtr($letv_url, $pagetr);
+		$targeturl = strtr($pptv_url, $pagetr);
 
 		$row['title'] = "pptv电影分页".$page;
 		$row['siteid'] = 7;
