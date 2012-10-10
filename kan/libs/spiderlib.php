@@ -1236,6 +1236,11 @@ function coverMovieLetv($url)
 	
 	//info segment
 	$coverTxt = $coverinfo->find(".text", 0);
+	
+	//验证是否页面正确
+	$startdom = $coverRoot->find("#actor_info",0);
+	if(empty($startdom)) return array();
+	
 	$starDoms = $coverRoot->find("#actor_info",0)->find('a');
 	//star
 	if(!empty($starDoms))
