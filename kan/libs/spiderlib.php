@@ -2267,7 +2267,9 @@ function coverMoviePptv($url)
 	$star = $director = $area = $cate = $year = array();
 	$coverinfo = $coverRoot->find(".showinfo", 0);
 	if(empty($coverinfo)) return array();
-	$baseinfo = $coverinfo->find(".bd", 0)->find("ul", 0);
+	$bd =  $coverinfo->find(".bd", 0);
+	if(empty($bd)) return array();
+	$baseinfo = $bd->find("ul", 0);
 	//playlink title segment
 	if(empty($baseinfo)) return array();
 	$vrow['playlink'] = $url;
