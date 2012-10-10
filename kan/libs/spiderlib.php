@@ -266,7 +266,9 @@ function coverTeleplayYouku($url)
 		if(!empty($followuls))
 			foreach($followuls as $k => $userdom)
 			{
-				if($userdom->find(".portray",0)->title == '导演')
+				$portray = $userdom->find(".portray",0);
+				if(empty($portray)) continue;
+				if($portray->title == '导演')
 				{
 					$director[] = $userdom->find(".username",0)->find("a",0)->title;
 				}
