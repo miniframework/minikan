@@ -1260,6 +1260,7 @@ function coverMovieLetv($url)
 	//area
 	//检测页面
 	$li04 = $coverTxt->find(".Li04",0);
+	if(empty($li04)) return array();
 	$p2 = $li04->find('.p2',0);
 	if(empty($p2)) return array();
 		
