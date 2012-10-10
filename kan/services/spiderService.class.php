@@ -44,6 +44,7 @@ class spiderService implements mini_db_unbuffer
 			
 				$error = libxml_get_errors();
 				libxml_clear_errors();
+				$message ="";
 				foreach($error as $k => $v) {
 					$message .= "path:" . $xmlpath . "\tline:" . $v->line . "\tcolumn" . $v->column . "\tmessage:" . $v->message;
 				}
