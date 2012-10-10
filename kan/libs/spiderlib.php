@@ -726,6 +726,7 @@ function coverTeleplayTudou($url)
 	if(!empty($eplisodelist))
 	{
 		$eplisoderow = $eplisodelist->find(".row");
+		$ii = 0;
 		if(!empty($eplisoderow))
 			foreach($eplisoderow as $k => $row)
 			{
@@ -733,13 +734,16 @@ function coverTeleplayTudou($url)
 				if(!empty($line))
 				foreach($line as $l => $block)
 				{
+					
 					$pic = $block->find(".pic",0);
 					$eplisodehref = $pic->find("a",0)->href;
 					$eplisodesrc = $pic->find("img",0)->src;
 					if(!empty($iids))
-						$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$l]));
+						$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$ii]));
 					else 
 						$flv ='';
+					
+					$ii++;
 					$vrow['episodes'][] = array('playlink'=>$eplisodehref,'imagelink'=>$eplisodesrc,'flv'=>$flv);
 				}
 			}
