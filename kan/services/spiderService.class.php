@@ -73,6 +73,7 @@ class spiderService implements mini_db_unbuffer
 			mini_db_unitofwork::getHandle()->commit();
 			$spiderlogs->endtime = date("Y-m-d H:i:s");
 		}
+		echo "to video db over...\r\n";
 		mini_db_unitofwork::getHandle()->commit();
 	}
 	public function spiderDay($daynum=0, $limit=10)

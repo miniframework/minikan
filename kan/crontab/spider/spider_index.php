@@ -73,16 +73,34 @@ mini_db_unitofwork::getHandle()->commit();
 
 
 //$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq');
-$sohu_url="http://so.tv.sohu.com/list_p1100_p2_p3_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
+// $sohu_url="http://so.tv.sohu.com/list_p1100_p2_p3_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
 
+
+// for($page = 1; $page<=30 ;$page++)
+// {
+// 	$pagetr = array("{page}"=>$page);
+// 	$targeturl = strtr($sohu_url, $pagetr);
+
+// 	$row['title'] = "Sohu电影分页".$page;
+// 	$row['siteid'] = 6;
+// 	$row['spidercall'] = 1;
+// 	$row['vtype'] = 1;
+// 	$row['targeturl'] = $targeturl;
+// 	echo $targeturl."...over\r\n";
+// 	$model = mini_db_model::model('vspiders');
+// 	$model->create($row);
+// }
+// mini_db_unitofwork::getHandle()->commit();
+
+$letv_url="http://so.letv.com/list/c1_t-1_a-1_y-1_f-1_at1_o1_i-1_p{page}.html";
 
 for($page = 1; $page<=30 ;$page++)
 {
 	$pagetr = array("{page}"=>$page);
-	$targeturl = strtr($sohu_url, $pagetr);
+	$targeturl = strtr($letv_url, $pagetr);
 
-	$row['title'] = "QQ电影分页".$page;
-	$row['siteid'] = 6;
+	$row['title'] = "letv电影分页".$page;
+	$row['siteid'] = 8;
 	$row['spidercall'] = 1;
 	$row['vtype'] = 1;
 	$row['targeturl'] = $targeturl;
