@@ -189,7 +189,7 @@ class groupService implements mini_db_unbuffer
 			{
 				$this->nowtime = time();
 				echo "sleep start 10/m ...\r\n";
-				sleep(10);
+				sleep(15);
 				echo "sleep end 10/m ...\r\n";
 			}
 			
