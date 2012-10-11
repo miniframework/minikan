@@ -75,7 +75,13 @@ class spiderService implements mini_db_unbuffer
 			unset($xmlobj);
 			mini_db_unitofwork::getHandle()->commit();
 		}
-		echo "to video db over...\r\n";
+		if(count($ids) > 0)
+		{
+			echo "to video db over...\r\n";
+		}
+		else {
+			echo "to video db none...\r\n";
+		}
 		
 	}
 	public function spiderDay($daynum=0, $limit=10)
