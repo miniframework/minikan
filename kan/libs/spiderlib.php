@@ -1975,7 +1975,6 @@ function coverTeleplayQq($url)
 	$vrow['infolink'] = $url;
 	//$coverRoot = domByCurl($url);
 	
-	
 	$data = curlByUrl($url);
 	if(empty($data))
 		return array();
@@ -2005,6 +2004,7 @@ function coverTeleplayQq($url)
 	
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverTxt->children(5);
+	if(empty($eplisodeinfo)) return array(); //@@@@
 	$eplisodetxt = $eplisodeinfo->plaintext;
 	if(preg_match('/全.*?(\d+)集/', $eplisodetxt,$match))
 	{
