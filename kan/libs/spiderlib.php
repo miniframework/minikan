@@ -1779,6 +1779,7 @@ function spiderMovieSohu($url)
 }
 function coverTeleplaySohu($url)
 {
+	echo $url."\r\n";
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	$vrow['playlink'] = $url;
@@ -1798,7 +1799,9 @@ function coverTeleplaySohu($url)
 	
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".blockLA", 0);
-	$tab1cont  = $eplisodeinfo->find("#allist",0)->find(".d1",0)->children(0);
+	$allist =  $eplisodeinfo->find("#allist",0);
+	if(empty($allist)) return array();
+	$tab1cont  = $allist->find(".d1",0)->children(0);
 	$eplisodetxt = $tab1cont->plaintext;
 	if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
 	{
@@ -1811,7 +1814,9 @@ function coverTeleplaySohu($url)
 	$vrow['allepisodes'] = $allepisodes;
 	$vrow['nowepisodes'] = $nowepisodes;
 	
-	$eplisoderow = $eplisodeinfo->find("#list_asc",0)->find(".similarLists",0)->find("li");
+	$list_asc = $eplisodeinfo->find("#list_asc",0);
+	if(empty($list_asc)) return array();
+	$eplisoderow = $list_asc->find(".similarLists",0)->find("li");
 	
 	if(!empty($eplisoderow))
 		foreach($eplisoderow as $k => $block)

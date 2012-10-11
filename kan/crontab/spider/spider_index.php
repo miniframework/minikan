@@ -192,7 +192,7 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 
 
 	$url="http://so.tv.sohu.com/list_p1101_p2_p3_u5185_u5730_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
-	for($page = 1; $page<=30 ;$page++)
+	for($page = 1; $page<=20 ;$page++)
 		{
 			$pagetr = array("{page}"=>$page);
 			$targeturl = strtr($url, $pagetr);
