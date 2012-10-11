@@ -208,7 +208,7 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 		}
 // 		mini_db_unitofwork::getHandle()->commit();
 		
-	$url="http://list.pptv.com/sort_list/2------6---1.html";
+	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
 	for($page = 1; $page<=20 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
