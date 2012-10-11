@@ -198,28 +198,28 @@ class groupService implements mini_db_unbuffer
 			$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
 			$doubanspider = new doubanspiderService($params);
 			$data = $doubanspider->searchLikeApi($row);
-			if(empty($data))
-			{
+// 			if(empty($data))
+// 			{
 				
-				//服务器上ip被封，没被封，把cookie置空就可以。fuck.
-				$bidfile = dirname(__FILE__).'/../crontab/spider/bid.data';
-				$biddata = file_get_contents($bidfile);
-				if(empty($biddata)) echo "bid file empty...\r\n";
-				$bid_arr = explode("\t", $biddata);
+// 				//服务器上ip被封，没被封，把cookie置空就可以。fuck.
+// 				$bidfile = dirname(__FILE__).'/../crontab/spider/bid.data';
+// 				$biddata = file_get_contents($bidfile);
+// 				if(empty($biddata)) echo "bid file empty...\r\n";
+// 				$bid_arr = explode("\t", $biddata);
 				
-				//获取第一个，然后删除第一个，写入文件
-				$bid = $bid_arr[0];
-				unset($bid_arr[0]);
-				$bid_str = implode("\t", $bid_arr);
-				file_put_contents($bidfile, $bid_str);
+// 				//获取第一个，然后删除第一个，写入文件
+// 				$bid = $bid_arr[0];
+// 				unset($bid_arr[0]);
+// 				$bid_str = implode("\t", $bid_arr);
+// 				file_put_contents($bidfile, $bid_str);
+// 				echo $bid."...\r\n";
+// 				//替换cookie bid 
+// 				$cookiedata = file_get_contents($params['cookiefile']);
+// 				$replacedata = preg_replace('/bid.*?"(.*?)"/ism','bid     "'.$bid.'"',$cookiedata);
 				
-				//替换cookie bid 
-				$cookiedata = file_get_contents($params['cookiefile']);
-				$replacedata = preg_replace('/bid.*?"(.*?)"/ism','bid     "'.$bid.'"',$cookiedata);
-				
-				file_put_contents($params['cookiefile'], $replacedata);
-				echo "cookie get bid...\r\n";
-			}
+// 				file_put_contents($params['cookiefile'], $replacedata);
+// 				echo "cookie get bid...\r\n";
+// 			}
 			$grow['title'] = $row['title'];
 			$grow['area'] = isset($data['area']) ? $data['area'] : $row['area'];
 			$grow['director'] = isset($data['director']) ? $data['director'] : $row['director'];
