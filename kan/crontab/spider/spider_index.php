@@ -155,18 +155,36 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	}
 // 	mini_db_unitofwork::getHandle()->commit();
 	
-	$url="http://so.letv.com/list/c2_t-1_a-1_y-1_f-1_at1_o3_i-1_p{page}.html";
+// 	$url="http://so.letv.com/list/c2_t-1_a-1_y-1_f-1_at1_o3_i-1_p{page}.html";
+// 	for($page = 1; $page<=30 ;$page++)
+// 	{
+// 	$pagetr = array("{page}"=>$page);
+// 	$targeturl = strtr($url, $pagetr);
+	
+// 	$row['title'] = "letv电视剧分页".$page;
+// 	$row['siteid'] = 8;
+// 	$row['spidercall'] = 2;
+// 	$row['vtype'] = 2;
+// 	$row['targeturl'] = $targeturl;
+// 	echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
+	
+	
+	$url="http://v.qq.com/list/2_-1_-1_-1_1_0_{page}_20_-1_-1.html";
 	for($page = 1; $page<=30 ;$page++)
 	{
-	$pagetr = array("{page}"=>$page);
-	$targeturl = strtr($url, $pagetr);
-	
-	$row['title'] = "letv电视剧分页".$page;
-	$row['siteid'] = 8;
-	$row['spidercall'] = 2;
-	$row['vtype'] = 2;
-	$row['targeturl'] = $targeturl;
-	echo $targeturl."...over\r\n";
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
+		
+		$row['title'] = "qq电视剧分页".$page;
+		$row['siteid'] = 9;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
 		$model = mini_db_model::model('vspiders');
 		$model->create($row);
 	}
