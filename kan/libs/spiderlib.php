@@ -1471,7 +1471,7 @@ function spiderTeleplayLetv($url)
 {
 	$vrow = array();
 	$dom = domByCurl($url);
-
+	if(empty($dom)) return array();
 	$root = $dom->find('#tabx_c_1', 0);
 	if(empty($root))
 	{
