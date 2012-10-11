@@ -1779,7 +1779,6 @@ function spiderMovieSohu($url)
 }
 function coverTeleplaySohu($url)
 {
-	echo $url."\r\n";
 	$vrow = array();
 	$vrow['infolink'] = $url;
 	$vrow['playlink'] = $url;
