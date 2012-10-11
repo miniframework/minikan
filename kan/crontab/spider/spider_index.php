@@ -138,18 +138,35 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 			$model->create($row);
 // 		}
 // 		mini_db_unitofwork::getHandle()->commit();
-	$url="http://www.youku.com/v_olist/c_97_a__s__g__r__lg__im__st__mt__tg__d_1_et_0_fv_0_fl__fc__fe__o_7_p_{page}.html";
+// 	$url="http://www.youku.com/v_olist/c_97_a__s__g__r__lg__im__st__mt__tg__d_1_et_0_fv_0_fl__fc__fe__o_7_p_{page}.html";
+// 	for($page = 1; $page<=30 ;$page++)
+// 	{
+// 	$pagetr = array("{page}"=>$page);
+// 	$targeturl = strtr($url, $pagetr);
+	
+// 		$row['title'] = "youku电视剧分页".$page;
+// 		$row['siteid'] = 2;
+// 		$row['spidercall'] = 2;
+// 		$row['vtype'] = 2;
+// 		$row['targeturl'] = $targeturl;
+// 				echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
+	
+	$url="http://so.letv.com/list/c2_t-1_a-1_y-1_f-1_at1_o3_i-1_p{page}.html";
 	for($page = 1; $page<=30 ;$page++)
 	{
 	$pagetr = array("{page}"=>$page);
 	$targeturl = strtr($url, $pagetr);
 	
-		$row['title'] = "youku电视剧分页".$page;
-		$row['siteid'] = 2;
-		$row['spidercall'] = 2;
-		$row['vtype'] = 2;
-		$row['targeturl'] = $targeturl;
-				echo $targeturl."...over\r\n";
+	$row['title'] = "letv电视剧分页".$page;
+	$row['siteid'] = 8;
+	$row['spidercall'] = 2;
+	$row['vtype'] = 2;
+	$row['targeturl'] = $targeturl;
+	echo $targeturl."...over\r\n";
 		$model = mini_db_model::model('vspiders');
 		$model->create($row);
 	}
