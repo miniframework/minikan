@@ -185,14 +185,14 @@ class groupService implements mini_db_unbuffer
 		} else {
 			
 			
-			if(time() - $this->nowtime > 30)
-			{
+// 			if(time() - $this->nowtime > 30)
+// 			{
 				
-				echo "sleep start 10/m ...\r\n";
-				sleep(60);
-				$this->nowtime = time();
-				echo "sleep end 10/m ...\r\n";
-			}
+// 				echo "sleep start 10/m ...\r\n";
+// 				sleep(60);
+// 				$this->nowtime = time();
+// 				echo "sleep end 10/m ...\r\n";
+// 			}
 			
 			//豆瓣搜索蜘蛛接口
 			$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
