@@ -2425,6 +2425,7 @@ function coverTeleplayPptv($url)
 	
 	if(empty($coverRoot)) return array();
 	$coverinfo = $coverRoot->find(".showinfo", 0);
+	if(empty($coverinfo)) return array();
 	$baseinfo = $coverinfo->find("ul", 0);
 	
 	
@@ -2518,6 +2519,7 @@ function coverTeleplayPptv($url)
 	
 	
 	$first_url = $vrow['episodes'][0]['playlink'];
+	echo $first_url."\r\n";
 	$coverRoot = domByCurl($first_url);
 	if(empty($coverRoot)) return array();
 	$showinfo = $coverRoot->find('.showinfo',0);
@@ -2545,7 +2547,7 @@ function coverTeleplayPptv($url)
 
 	
 	//info segment
-	$actor = $baseinfo->children(4);
+	$actor = $baseinfo->children(5);
 	$starDoms = $actor->find("a");
 	//star
 	if(!empty($starDoms))
@@ -2554,7 +2556,7 @@ function coverTeleplayPptv($url)
 			$star[] = $starDom->plaintext;
 		}
 	//director
-	$directord = $baseinfo->children(3);
+	$directord = $baseinfo->children(4);
 	$directorDoms = $directord->find("a");
 	if(!empty($directorDoms))
 		foreach($directorDoms as $k => $directorDom)
@@ -2571,13 +2573,14 @@ function coverTeleplayPptv($url)
 		if(!empty($scorenum))
 			$vrow['score'] = $scorenum->plaintext;
 	}
-	$areacatedom = $baseinfo->children(2);
+	$areacatedom = $baseinfo->children(3);
 	if(!empty($areacatedom))
 	{
 		$areacateHtml = $areacatedom->innertext;
 		if(preg_match('/地区(.*?)类型/ims',$areacateHtml,$match))
 		{
 			$areahtml = $match[1];
+			
 			if(preg_match_all('/<a.*?>(.*?)<\/a>/ims',$areahtml,$matcha))
 			{
 				$area = $matcha[1];
@@ -2593,7 +2596,7 @@ function coverTeleplayPptv($url)
 		}
 	}
 	$summary = '';
-	$summaryDom = $baseinfo->children(6);
+	$summaryDom = $baseinfo->children(7);
 	if(!empty($summaryDom))
 	{
 		$summary = str_replace("更多","",$summaryDom->plaintext);
