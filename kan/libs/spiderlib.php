@@ -2494,6 +2494,7 @@ function coverTeleplayPptv($url)
 		$episode_coverRoot->clear();
 	}
 	
+	if(!isset($vrow['episodes'])) return array();
 	
 	if(($vrow['allepisodes'] == $vrow['nowepisodes']) &&
 			!empty($vrow['allepisodes']) &&
