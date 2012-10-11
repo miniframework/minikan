@@ -2093,8 +2093,13 @@ function coverTeleplayQq($url)
 	if(!empty($yearDom))
 		$year = $yearDom->plaintext;
 	
-	$summaryDoms = $coverinfo->find('#mod_desc',0)->find("p.mod_cont", 0);
-	$summary = $summaryDoms->plaintext;
+	$mod_desc = $coverinfo->find('#mod_desc',0);
+	$summary = ''; 
+	if(!empty($mod_desc))
+	{
+		$summaryDoms = $mod_desc->find("p.mod_cont", 0);
+		$summary = $summaryDoms->plaintext;
+	}
 	$vrow['star'] = $star;
 	$vrow['director'] = $director;
 	$vrow['area'] = $area[0];
