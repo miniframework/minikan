@@ -119,13 +119,22 @@ class indexController extends mini_web_controller
     }
     public function doHttpproxy()
     {
-    	echo "http://www.baidu.com";
+    	
+    	$proxyurl = mini_base_application::app()->getRunPath()."/data/editor/proxyurl.data";
+    	$data_content = file_get_contents($proxyurl);
+    	if(!empty($data_content)) echo $data_content;
     	
     	exit;
     }
     public function doHttpdata()
     {
-    
+    	$proxydata = $this->request->get("proxydata");
+    	$proxyfile = mini_base_application::app()->getRunPath()."/data/editor/proxydata.data";
+    	
+    	$proxyurl = mini_base_application::app()->getRunPath()."/data/editor/proxyurl.data";
+    	file_put_contents($proxyurl, '');
+    	file_put_contents($proxyfile, $proxydata);
+    	
     	echo "ok";
     	exit;
     }
