@@ -193,13 +193,13 @@ class groupService implements mini_db_unbuffer
 // 				$this->nowtime = time();
 // 				echo "sleep end 10/m ...\r\n";
 // 			}
-			
+// 			if($row['vtype'] == 1 || $row['vtype'] == 2) {
 			//豆瓣搜索蜘蛛接口
-			$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
-			$doubanspider = new doubanspiderService($params, 1);
-			$data = $doubanspider->searchLikeApi($row);
-			
-			
+				$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
+				$doubanspider = new doubanspiderService($params, 1);
+				$data = $doubanspider->searchLikeApi($row);
+				if(!empty($data)) {echo "yes..\r\n";
+// 			}
 // 			if(empty($data))
 // 			{
 
