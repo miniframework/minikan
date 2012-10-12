@@ -208,18 +208,37 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 		}
 // 		mini_db_unitofwork::getHandle()->commit();
 		
+// 	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
+// 	for($page = 1; $page<=20 ;$page++)
+// 	{
+// 		$pagetr = array("{page}"=>$page);
+// 		$targeturl = strtr($url, $pagetr);
+	
+// 		$row['title'] = "pptv电视剧分页".$page;
+// 		$row['siteid'] = 7;
+// 		$row['spidercall'] = 2;
+// 		$row['vtype'] = 2;
+// 		$row['targeturl'] = $targeturl;
+// 				echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
+	
+	
+	
 	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
 	for($page = 1; $page<=20 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
 		$targeturl = strtr($url, $pagetr);
-	
-		$row['title'] = "pptv电视剧分页".$page;
-		$row['siteid'] = 7;
-		$row['spidercall'] = 2;
-		$row['vtype'] = 2;
+		
+		$row['title'] = "tudou动漫分页".$page;
+		$row['siteid'] = 1;
+		$row['spidercall'] = 3;
+		$row['vtype'] = 3;
 		$row['targeturl'] = $targeturl;
-				echo $targeturl."...over\r\n";
+		echo $targeturl."...over\r\n";
 		$model = mini_db_model::model('vspiders');
 		$model->create($row);
 	}
