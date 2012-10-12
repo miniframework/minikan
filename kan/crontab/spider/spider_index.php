@@ -227,7 +227,7 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 	
 	
 	
-	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
+	$url="http://cartoon.tudou.com/albumtop/c9t-1v-1z-1a-1y-1h-1s1p{page}.html";
 	for($page = 1; $page<=20 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
