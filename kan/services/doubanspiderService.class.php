@@ -1,14 +1,38 @@
 <?php
+class proxycurl {
+	public function __construct()
+	{
+		
+	}
+	public function getData($url)
+	{
+		$proxyurl = mini_base_application::app()->getRunPath()."/data/editor/proxyurl.data";
+		file_put_contents($proxyurl, $url);
+		sleep(1);
+		$proxyfile = mini_base_application::app()->getRunPath()."/data/editor/proxydata.data";
+		$data_content = file_get_contents($proxyfile);
+		file_put_contents($proxyfile, '');
+		return $data_content;
+	}
+}
 class doubanspiderService
 {
 	private $curl = null;
 	public $searchUrl = "http://movie.douban.com/subject_search?cat=1002&search_text={keyword}";
 	public $reviewUrl = "http://movie.douban.com/j/review/{keyword}/fullinfo?show_works=False";
 	public $movieUrl = "http://movie.douban.com/subject/{keyword}/";
-	public function __construct($params=array())
+	public function __construct($params=array(), $proxy=0)
 	{
-		$curl = new mini_tool_curl($params);
-		$this->curl = $curl;
+		if($proxy == 1) {
+			
+			$curl = new proxycurl();
+			$this->curl = $curl;
+		} else {
+			
+			$curl = new mini_tool_curl($params);
+			$this->curl = $curl;
+		}
+		
 		$this->nowtime = time();
 	}
 	public function getData($url, $keyword)
