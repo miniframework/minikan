@@ -198,7 +198,7 @@ class groupService implements mini_db_unbuffer
 				$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
 				$doubanspider = new doubanspiderService($params, 1);
 				$data = $doubanspider->searchLikeApi($row);
-				if(!empty($data)) {echo "yes..\r\n";
+				if(!empty($data)) echo "yes..\r\n";
 // 			}
 // 			if(empty($data))
 // 			{
