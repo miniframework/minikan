@@ -33,6 +33,13 @@ return array(
 	'/kan/search/(?P<page>.*?)?/?'=>
 					array('app'=>'site',
 						  'controller'=>'kan',
-						  'action'=>'search')
+						  'action'=>'search'),
+	'/httpproxy'	=>array('app'=>'site',
+				'controller'=>'index',
+				'action'=>'httpproxy'),
+		
+	'/httpdata'	=>array('app'=>'site',
+				'controller'=>'index',
+				'action'=>'httpdata'),
 			
 );
