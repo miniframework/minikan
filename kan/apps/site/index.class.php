@@ -128,7 +128,7 @@ class indexController extends mini_web_controller
     }
     public function doHttpdata()
     {
-    	$proxydata = $this->request->get("proxydata");
+    	$proxydata = urldecode($this->request->get("proxydata"));
     	$proxyfile = mini_base_application::app()->getRunPath()."/data/editor/proxydata.data";
     	
     	$proxyurl = mini_base_application::app()->getRunPath()."/data/editor/proxyurl.data";

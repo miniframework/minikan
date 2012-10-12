@@ -8,11 +8,9 @@ class proxycurl {
 	{
 		$proxyurl = mini_base_application::app()->getRunPath()."/data/editor/proxyurl.data";
 		file_put_contents($proxyurl, $url);
-		echo $url."\r\n";
-		sleep(1);
+		
 		$proxyfile = mini_base_application::app()->getRunPath()."/data/editor/proxydata.data";
 		$data_content = file_get_contents($proxyfile);
-		var_dump($data_content);
 		file_put_contents($proxyfile, '');
 		return $data_content;
 	}
