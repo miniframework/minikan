@@ -117,5 +117,17 @@ class indexController extends mini_web_controller
     	$url = array("site","index",$action,array(),array('cate'=>$search['cate'],'area'=>$search['area'],'year'=>$search['year']));
     	return $url;
     }
+    public function doHttpproxy()
+    {
+    	echo "http://www.baidu.com";
+    	
+    	exit;
+    }
+    public function doHttpdata()
+    {
+    
+    	echo "ok";
+    	exit;
+    }
   
 }
