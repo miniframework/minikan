@@ -1513,11 +1513,11 @@ function coverCartoonLetv($url)
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".info", 0)->find(".i-t",0);
 	$eplisodetxt = trim($eplisodeinfo->plaintext);
-	if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
+	if(preg_match('/共.*?(\d+).*?集/', $eplisodetxt,$match))
 	{
 		$allepisodes = $match[1];
 	}
-	if(preg_match('/更新至(\d+)集/', $eplisodetxt,$match))
+	if(preg_match('/更新至.*?(\d+).*?集/', $eplisodetxt,$match))
 	{
 		$nowepisodes = $match[1];
 	}

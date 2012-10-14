@@ -263,14 +263,31 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	mini_db_unitofwork::getHandle()->commit();
 
 	
-	$url="http://so.letv.com/list/c3_t-1_a41_y-1_f-1_at-1_o3_i-1_p{page}.html";
+// 	$url="http://so.letv.com/list/c3_t-1_a41_y-1_f-1_at-1_o3_i-1_p{page}.html";
+// 	for($page = 1; $page<=5 ;$page++)
+// 	{
+// 		$pagetr = array("{page}"=>$page);
+// 		$targeturl = strtr($url, $pagetr);
+	
+// 		$row['title'] = "letv动漫分页".$page;
+// 		$row['siteid'] = 8;
+// 		$row['spidercall'] = 3;
+// 		$row['vtype'] = 3;
+// 		$row['targeturl'] = $targeturl;
+// 		echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
+	
+	$url="http://list.pptv.com/sort_list/3--8-------{page}.html";
 	for($page = 1; $page<=5 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
 		$targeturl = strtr($url, $pagetr);
-	
-		$row['title'] = "letv动漫分页".$page;
-		$row['siteid'] = 8;
+		
+		$row['title'] = "pptv动漫分页".$page;
+		$row['siteid'] = 7;
 		$row['spidercall'] = 3;
 		$row['vtype'] = 3;
 		$row['targeturl'] = $targeturl;
