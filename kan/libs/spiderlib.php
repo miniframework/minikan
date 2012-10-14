@@ -2834,6 +2834,7 @@ function coverCartoonPptv($url)
 	$coverRoot->clear();
 	return $vrow;
 }
+//pptv动漫失效
 function spiderCartoonPptv($url)
 {
 	$vrow = array();
