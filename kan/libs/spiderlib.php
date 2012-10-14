@@ -864,9 +864,12 @@ function coverCartoonTudou($url)
 	$vrow['allepisodes'] = $allepisodes;
 	$vrow['nowepisodes'] = $nowepisodes;
 	$eplisodelist = $coverRoot->find("#playItems", 0);
+	
 	if(!empty($eplisodelist))
 	{
+		
 		$eplisoderow = $eplisodelist->find(".row");
+		$ii = 0;
 		if(!empty($eplisoderow))
 			foreach($eplisoderow as $k => $row)
 			{
@@ -879,9 +882,11 @@ function coverCartoonTudou($url)
 						$eplisodesrc = $pic->find("img",0)->src;
 							
 						if(!empty($iids))
-							$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$l]));
+							$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$ii]));
 						else 
 							$flv ='';
+						
+						$ii++;
 						$vrow['episodes'][] = array('playlink'=>$eplisodehref,'imagelink'=>$eplisodesrc,'flv'=>$flv);
 					}
 			}
