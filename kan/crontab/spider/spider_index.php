@@ -263,7 +263,7 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	mini_db_unitofwork::getHandle()->commit();
 
 	
-	$url="http://so.letv.com/list/c3_t-1_a41_y-1_f-1_at-1_o1_i-1_p{page}.html";
+	$url="http://so.letv.com/list/c3_t-1_a41_y-1_f-1_at-1_o3_i-1_p{page}.html";
 	for($page = 1; $page<=5 ;$page++)
 	{
 		$pagetr = array("{page}"=>$page);
