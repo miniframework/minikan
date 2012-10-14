@@ -44,7 +44,8 @@ class groupService implements mini_db_unbuffer
 	public function callback($row)
 	{
 		//is title and siteid exists
-		$sql = "select id,vgroupid,siteid from videos where title='{$row['title']}' and vtype='{$row['vtype']}' and  vgroupid !=''";
+		$title = addslashes($row['title']);
+		$sql = "select id,vgroupid,siteid from videos where title='{$title}' and vtype='{$row['vtype']}' and  vgroupid !=''";
 		$vrow = $this->db->find($sql);
 		if(!empty($vrow))
 		{
