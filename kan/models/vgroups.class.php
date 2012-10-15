@@ -518,7 +518,7 @@ class vgroups extends mini_db_model
 			$episodelist[$i]['episodes'] = $episodes->getsByVideoid(array(':videoid'=>$videoid['videoid']));
 			$episodelist[$i]['siteid'] = $siteid;
 			$episodelist[$i]['videoid']  = $videoid['videoid'];
-			$episodelist[$i]['playlink'] = $videoid['playlink'];
+			$episodelist[$i]['playlink'] = $episodelist[$i]['episodes'][0]->playlink;
 			$i++;
 		}
 		if(count($episodelist) <=1 || $this->vtype==1) return $episodelist;

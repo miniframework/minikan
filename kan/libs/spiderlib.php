@@ -2692,6 +2692,7 @@ function coverCartoonPptv($url)
 	
 	if(empty($coverRoot)) return array();
 	$coverinfo = $coverRoot->find(".showinfo", 0);
+	if(empty($coverinfo)) return array();
 	$baseinfo = $coverinfo->find("ul", 0);
 	
 	
