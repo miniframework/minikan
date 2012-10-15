@@ -872,7 +872,7 @@ function coverCartoonTudou($url)
 
 						$eplisodedata = curlByUrl($eplisodehref);
 						$iid= $flv = '';
-						if(preg_match("/(?:itemData={.*?iid:.*?(\d+).*?};/ism", $eplisodedata, $match))
+						if(preg_match("/itemData={.*?iid:.*?(\d+).*?};/ism", $eplisodedata, $match))
 						{
 							$iid = $match[1];
 							$flv = json_encode(array("sid"=>$sid, "iid"=>$iid));
