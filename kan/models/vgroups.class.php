@@ -221,7 +221,7 @@ class vgroups extends mini_db_model
     		
     		$player[] = array(		 'siteid'=>$siteid,
     								 'videoid'=>$videoid,
-    								 'playlink'=>$video['playlink'],
+    								 'playlink'=>$flv[0]['playlink'],
     							     'flv'=>$flv);
     	}
     	return $player;

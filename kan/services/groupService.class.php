@@ -33,7 +33,6 @@ class groupService implements mini_db_unbuffer
 		}
 		$where .= " and status = 0";
 		$sql = "select * from videos  ".$where;
-		echo $sql;
 		return $sql;
 	}
 	
