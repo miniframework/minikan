@@ -29,10 +29,11 @@ class groupService implements mini_db_unbuffer
 		}
 		if($this->isgroup)
 		{
-			$where .= "and vgroupid =''";
+			$where .= "and vgroupid =0";
 		}
 		$where .= "and status = 0";
 		$sql = "select * from videos  ".$where;
+		echo $sql;
 		return $sql;
 	}
 	
