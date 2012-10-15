@@ -44,24 +44,24 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 
 
 
-// $qq_url="http://v.qq.com/list/1_-1_-1_-1_1_0_{page}_20_0_-1.html";
+$qq_url="http://v.qq.com/list/1_-1_-1_-1_1_0_{page}_20_0_-1.html";
 
 
-// for($page = 1; $page<=30 ;$page++)
-// {
-// 	$pagetr = array("{page}"=>$page);
-// 	$targeturl = strtr($qq_url, $pagetr);
+for($page = 1; $page<=30 ;$page++)
+{
+	$pagetr = array("{page}"=>$page);
+	$targeturl = strtr($qq_url, $pagetr);
 
-// 	$row['title'] = "QQ电影分页".$page;
-// 	$row['siteid'] = 9;
-// 	$row['spidercall'] = 1;
-// 	$row['vtype'] = 1;
-// 	$row['targeturl'] = $targeturl;
-// 	echo $targeturl."...over\r\n";
-// 	$model = mini_db_model::model('vspiders');
-// 	$model->create($row);
-// }
-// mini_db_unitofwork::getHandle()->commit();
+	$row['title'] = "QQ电影分页".$page;
+	$row['siteid'] = 9;
+	$row['spidercall'] = 1;
+	$row['vtype'] = 1;
+	$row['targeturl'] = $targeturl;
+	echo $targeturl."...over\r\n";
+	$model = mini_db_model::model('vspiders');
+	$model->create($row);
+}
+mini_db_unitofwork::getHandle()->commit();
 
 
 
@@ -280,20 +280,20 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	}
 // 	mini_db_unitofwork::getHandle()->commit();
 	
-	$url="http://list.pptv.com/sort_list/3--8-------{page}.html";
-	for($page = 1; $page<=5 ;$page++)
-	{
-		$pagetr = array("{page}"=>$page);
-		$targeturl = strtr($url, $pagetr);
+// 	$url="http://list.pptv.com/sort_list/3--8-------{page}.html";
+// 	for($page = 1; $page<=5 ;$page++)
+// 	{
+// 		$pagetr = array("{page}"=>$page);
+// 		$targeturl = strtr($url, $pagetr);
 		
-		$row['title'] = "pptv动漫分页".$page;
-		$row['siteid'] = 7;
-		$row['spidercall'] = 3;
-		$row['vtype'] = 3;
-		$row['targeturl'] = $targeturl;
-		echo $targeturl."...over\r\n";
-		$model = mini_db_model::model('vspiders');
-		$model->create($row);
-	}
-	mini_db_unitofwork::getHandle()->commit();
+// 		$row['title'] = "pptv动漫分页".$page;
+// 		$row['siteid'] = 7;
+// 		$row['spidercall'] = 3;
+// 		$row['vtype'] = 3;
+// 		$row['targeturl'] = $targeturl;
+// 		echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
 //$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq');

@@ -197,7 +197,7 @@ class videos extends mini_db_model
     	
     	if((string)$xml->vtype == 1 || (string)$xml->vtype == 2 )  {
     	
-    		if(empty($row['area']) || empty($row['cate']) || empty($row['area']) || empty($row['area'])) return ;
+    		//if(empty($row['area']) || empty($row['cate']) || empty($row['area']) || empty($row['area'])) return ;
     	}
     	//查看playlink相同的视频是否存在
 		$videos = self::model('videos');

@@ -699,17 +699,7 @@ function coverTeleplayTudou($url)
 	}
 	$playurl = str_replace('albumcover', 'albumplay', $url);
 	
-	$data = curlByUrl($playurl);
-	if(empty($data))
-		return array();
-	if(!strpos($data, 'partnerIds'))
-	{
-		if(preg_match_all("/(?:listData=\[)?{.*?iid:(\d+).*?cartoonType.*?}/ism", $data, $match))
-		{
-			$iids = $match[1];
-		}
-	}
-	unset($data);
+
 	//eplisode 
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".album-msg", 0);
@@ -728,7 +718,6 @@ function coverTeleplayTudou($url)
 	if(!empty($eplisodelist))
 	{
 		$eplisoderow = $eplisodelist->find(".row");
-		$ii = 0;
 		if(!empty($eplisoderow))
 			foreach($eplisoderow as $k => $row)
 			{
@@ -739,13 +728,15 @@ function coverTeleplayTudou($url)
 					
 					$pic = $block->find(".pic",0);
 					$eplisodehref = $pic->find("a",0)->href;
+					$eplisodehref = trim($eplisodehref);
 					$eplisodesrc = $pic->find("img",0)->src;
-					if(!empty($iids))
-						$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$ii]));
-					else 
-						$flv ='';
-					
-					$ii++;
+					$eplisodedata = curlByUrl($eplisodehref);
+					$iid= $flv = '';
+					if(preg_match("/itemData={.*?iid:.*?(\d+).*?};/ism", $eplisodedata, $match))
+					{
+						$iid = $match[1];
+						$flv = json_encode(array("sid"=>$sid, "iid"=>$iid));
+					}
 					$vrow['episodes'][] = array('playlink'=>$eplisodehref,'imagelink'=>$eplisodesrc,'flv'=>$flv);
 				}
 			}
@@ -854,7 +845,6 @@ function coverCartoonTudou($url)
 	$vrow['allepisodes'] = $allepisodes;
 	$vrow['nowepisodes'] = $nowepisodes;
 	$eplisodelist = $coverRoot->find("#playItems", 0);
-	
 	if(!empty($eplisodelist))
 	{
 		
@@ -868,8 +858,8 @@ function coverCartoonTudou($url)
 					{
 						$pic = $block->find(".pic",0);
 						$eplisodehref = $pic->find("a",0)->href;
+						$eplisodehref = trim($eplisodehref);
 						$eplisodesrc = $pic->find("img",0)->src;
-
 						$eplisodedata = curlByUrl($eplisodehref);
 						$iid= $flv = '';
 						if(preg_match("/itemData={.*?iid:.*?(\d+).*?};/ism", $eplisodedata, $match))
@@ -877,7 +867,6 @@ function coverCartoonTudou($url)
 							$iid = $match[1];
 							$flv = json_encode(array("sid"=>$sid, "iid"=>$iid));
 						}
-						unset($eplisodehref);
 						$vrow['episodes'][] = array('playlink'=>$eplisodehref,'imagelink'=>$eplisodesrc,'flv'=>$flv);
 					}
 			}
@@ -2057,6 +2046,20 @@ function coverTeleplayQq($url)
 		$vrow['epsign'] = 1;
 	}
 	
+	$onedoms = $coverTxt->children(0);
+	$plaintext = $onedoms->plaintext;
+	if(substr_count($plaintext, '导演') < 1)
+	{
+		return array();
+	}
+	
+	//director
+	$directorDoms = $coverTxt->children(0)->find("a");
+	if(!empty($directorDoms))
+		foreach($directorDoms as $k => $directorDom)
+		{
+			$director[] = $directorDom->plaintext;
+		}
 	
 	$starDoms = $coverTxt->children(1)->find("a");
 	//star
@@ -2066,13 +2069,8 @@ function coverTeleplayQq($url)
 			$star[] = $starDom->plaintext;
 		}
 	
-	//director
-	$directorDoms = $coverTxt->children(0)->find("a");
-	if(!empty($directorDoms))
-		foreach($directorDoms as $k => $directorDom)
-		{
-			$director[] = $directorDom->plaintext;
-		}
+	
+	
 	
 	//area
 	$areaDoms = $coverTxt->children(2)->find("a");
@@ -2092,7 +2090,10 @@ function coverTeleplayQq($url)
 	$yearDom = $coverTxt->children(3)->find("a",0);
 	if(!empty($yearDom))
 		$year = $yearDom->plaintext;
-	
+	if($year =='其他') 
+	{
+		$year = '';
+	}
 	$mod_desc = $coverinfo->find('#mod_desc',0);
 	$summary = ''; 
 	if(!empty($mod_desc))
@@ -2179,13 +2180,13 @@ function coverMovieQq($url)
 	}
 	//info segment
 	$coverTxt = $coverinfo->find(".details_list", 0);
-	$starDoms = $coverTxt->children(1)->find("a");
-	//star
-	if(!empty($starDoms))
-		foreach($starDoms as $k => $starDom)
-		{
-			$star[] = $starDom->plaintext;
-		}
+	
+	$onedoms = $coverTxt->children(0);
+	$plaintext = $onedoms->plaintext;
+	if(substr_count($plaintext, '导演') < 1)
+	{
+		return array();
+	}
 	
 	//director
 	$directorDoms = $coverTxt->children(0)->find("a");
@@ -2194,6 +2195,16 @@ function coverMovieQq($url)
 		{
 			$director[] = $directorDom->plaintext;
 		}
+	
+	$starDoms = $coverTxt->children(1)->find("a");
+	//star
+	if(!empty($starDoms))
+		foreach($starDoms as $k => $starDom)
+		{
+			$star[] = $starDom->plaintext;
+		}
+	
+
 	
 	//area
 	$areaDoms = $coverTxt->children(2)->find("a");
@@ -2213,6 +2224,11 @@ function coverMovieQq($url)
 	$yearDom = $coverTxt->children(3)->find("a",0);
 	if(!empty($yearDom))
 	$year = $yearDom->plaintext;
+	if($year == '其他')
+	{
+		$year = '';
+	}
+	
 	$summary = '';
 	$desc = $coverinfo->find('#mod_desc',0);
 	if(!empty($desc))
@@ -2308,6 +2324,24 @@ function coverMoviePptv($url)
 	}
 
 	
+	
+	//director
+	
+	
+	$directord = $baseinfo->children(4);
+	
+	$plaintext = $directord->plaintext;
+	if(substr_count($plaintext, '导演') < 1)
+	{
+		return array();
+	}
+	$directorDoms = $directord->find("a");
+	if(!empty($directorDoms))
+		foreach($directorDoms as $k => $directorDom)
+		{
+			$director[] = $directorDom->plaintext;
+		}
+	
 	//info segment
 	$actor = $baseinfo->children(5);
 	if(empty($actor)) return array();
@@ -2318,14 +2352,7 @@ function coverMoviePptv($url)
 		{
 			$star[] = $starDom->plaintext;
 		}
-	//director
-	$directord = $baseinfo->children(4);
-	$directorDoms = $directord->find("a");
-	if(!empty($directorDoms))
-		foreach($directorDoms as $k => $directorDom)
-		{
-			$director[] = $directorDom->plaintext;
-		}
+	
 		
 	//score	
 	$scoredom = $baseinfo->find(".showrating",0);
@@ -2541,7 +2568,25 @@ function coverTeleplayPptv($url)
 			$year = $match[1];
 		}
 	}
-
+	
+	
+	
+	//director
+	$directord = $baseinfo->children(4);
+	
+	$plaintext = $directord->plaintext;
+	if(substr_count($plaintext, '导演') < 1)
+	{
+		return array();
+	}
+	
+	
+	$directorDoms = $directord->find("a");
+	if(!empty($directorDoms))
+		foreach($directorDoms as $k => $directorDom)
+		{
+			$director[] = $directorDom->plaintext;
+		}
 	
 	//info segment
 	$actor = $baseinfo->children(5);
@@ -2552,14 +2597,7 @@ function coverTeleplayPptv($url)
 		{
 			$star[] = $starDom->plaintext;
 		}
-	//director
-	$directord = $baseinfo->children(4);
-	$directorDoms = $directord->find("a");
-	if(!empty($directorDoms))
-		foreach($directorDoms as $k => $directorDom)
-		{
-			$director[] = $directorDom->plaintext;
-		}
+	
 		
 	//score	
 	$scoredom = $baseinfo->find(".showrating",0);
