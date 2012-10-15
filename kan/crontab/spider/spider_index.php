@@ -105,22 +105,22 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // mini_db_unitofwork::getHandle()->commit();
 
 
-	$pptv_url="http://list.pptv.com/sort_list/1---------{page}.html";
-	for($page = 1; $page<=4 ;$page++)
-	{
-		$pagetr = array("{page}"=>$page);
-		$targeturl = strtr($pptv_url, $pagetr);
+// 	$pptv_url="http://list.pptv.com/sort_list/1---------{page}.html";
+// 	for($page = 1; $page<=4 ;$page++)
+// 	{
+// 		$pagetr = array("{page}"=>$page);
+// 		$targeturl = strtr($pptv_url, $pagetr);
 
-		$row['title'] = "pptv电影分页".$page;
-		$row['siteid'] = 7;
-		$row['spidercall'] = 1;
-		$row['vtype'] = 1;
-		$row['targeturl'] = $targeturl;
-		echo $targeturl."...over\r\n";
-		$model = mini_db_model::model('vspiders');
-		$model->create($row);
-	}
-	mini_db_unitofwork::getHandle()->commit();
+// 		$row['title'] = "pptv电影分页".$page;
+// 		$row['siteid'] = 7;
+// 		$row['spidercall'] = 1;
+// 		$row['vtype'] = 1;
+// 		$row['targeturl'] = $targeturl;
+// 		echo $targeturl."...over\r\n";
+// 		$model = mini_db_model::model('vspiders');
+// 		$model->create($row);
+// 	}
+// 	mini_db_unitofwork::getHandle()->commit();
 
 // 	$url="http://tv.tudou.com/albumtop/c30t-1v-1z-1a-1y-1h-1s1p{page}.html";
 // 	for($page = 1; $page<=30 ;$page++)
@@ -280,20 +280,20 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 // 	}
 // 	mini_db_unitofwork::getHandle()->commit();
 	
-// 	$url="http://list.pptv.com/sort_list/3--8-------{page}.html";
-// 	for($page = 1; $page<=5 ;$page++)
-// 	{
-// 		$pagetr = array("{page}"=>$page);
-// 		$targeturl = strtr($url, $pagetr);
+	$url="http://list.pptv.com/sort_list/3--8-------{page}.html";
+	for($page = 1; $page<=5 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
 		
-// 		$row['title'] = "pptv动漫分页".$page;
-// 		$row['siteid'] = 7;
-// 		$row['spidercall'] = 3;
-// 		$row['vtype'] = 3;
-// 		$row['targeturl'] = $targeturl;
-// 		echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "pptv动漫分页".$page;
+		$row['siteid'] = 7;
+		$row['spidercall'] = 3;
+		$row['vtype'] = 3;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 //$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq');

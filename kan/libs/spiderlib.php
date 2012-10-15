@@ -2573,7 +2573,7 @@ function coverTeleplayPptv($url)
 	
 	//director
 	$directord = $baseinfo->children(4);
-	
+	if(empty($directord)) return array();
 	$plaintext = $directord->plaintext;
 	if(substr_count($plaintext, '导演') < 1)
 	{
