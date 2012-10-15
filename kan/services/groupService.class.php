@@ -252,7 +252,8 @@ class groupService implements mini_db_unbuffer
 		//创建归并视频 segment.
 		$grow['score'] = $row['score'];
 		//$grow['doubanid'] =  isset($data['subjectid']) ? $data['subjectid']:0;
-		$videoids[$row['siteid']] = array("playlink"=>$row['playlink'],"videoid"=>$row['id']);
+		//$videoids[$row['siteid']] = array("playlink"=>$row['playlink'],"videoid"=>$row['id']);
+		$videoids[$row['siteid']] = array("videoid"=>$row['id']);
 		$grow['videoids'] = json_encode($videoids);
 		$vgroup = mini_db_model::model("vgroups");
 		$grow['ctime'] = $grow['mtime'] = time();
