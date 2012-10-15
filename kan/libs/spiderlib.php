@@ -2453,9 +2453,8 @@ function coverTeleplayPptv($url)
 	
 	
 	$allepisodes = $nowepisodes = 0;
-	$eplisodeinfo = $baseinfo->children(5);
-	$eplisodetxt = trim($eplisodeinfo->plaintext);
-	if(preg_match('/集数.*?(\d+)集/', $eplisodetxt,$match))
+	$eplisodetxt = $coverRoot->find(".upto", 0);
+	if(preg_match('/(\d+)集全/', $eplisodetxt,$match))
 	{
 		$allepisodes = $match[1];
 	}
