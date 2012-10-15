@@ -837,17 +837,7 @@ function coverCartoonTudou($url)
 	}
 	$playurl = str_replace('albumcover', 'albumplay', $url);
 	
-	$data = curlByUrl($playurl);
-	if(empty($data))
-		return array();
-	if(!strpos($data, 'partnerIds'))
-	{
-		if(preg_match_all("/(?:listData=\[)?{.*?iid:(\d+).*?cartoonType.*?}/ism", $data, $match))
-		{
-			$iids = $match[1];
-		}
-	}
-	unset($data);
+	
 	
 	//eplisode
 	$allepisodes = $nowepisodes = 0;
@@ -869,7 +859,6 @@ function coverCartoonTudou($url)
 	{
 		
 		$eplisoderow = $eplisodelist->find(".row");
-		$ii = 0;
 		if(!empty($eplisoderow))
 			foreach($eplisoderow as $k => $row)
 			{
@@ -880,13 +869,15 @@ function coverCartoonTudou($url)
 						$pic = $block->find(".pic",0);
 						$eplisodehref = $pic->find("a",0)->href;
 						$eplisodesrc = $pic->find("img",0)->src;
-							
-						if(!empty($iids))
-							$flv = json_encode(array("sid"=>$sid, "iid"=>$iids[$ii]));
-						else 
-							$flv ='';
-						
-						$ii++;
+
+						$eplisodedata = curlByUrl($eplisodehref);
+						$iid= $flv = '';
+						if(preg_match("/(?:itemData={.*?iid:.*?(\d+).*?};/ism", $data, $match))
+						{
+							$iid = $match[1];
+							$flv = json_encode(array("sid"=>$sid, "iid"=>$iid));
+						}
+						unset($eplisodehref);
 						$vrow['episodes'][] = array('playlink'=>$eplisodehref,'imagelink'=>$eplisodesrc,'flv'=>$flv);
 					}
 			}
