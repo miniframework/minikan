@@ -44,24 +44,24 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 
 
 
-$qq_url="http://v.qq.com/list/1_-1_-1_-1_1_0_{page}_20_0_-1.html";
+// $qq_url="http://v.qq.com/list/1_-1_-1_-1_1_0_{page}_20_0_-1.html";
 
 
-for($page = 1; $page<=30 ;$page++)
-{
-	$pagetr = array("{page}"=>$page);
-	$targeturl = strtr($qq_url, $pagetr);
+// for($page = 1; $page<=30 ;$page++)
+// {
+// 	$pagetr = array("{page}"=>$page);
+// 	$targeturl = strtr($qq_url, $pagetr);
 
-	$row['title'] = "QQ电影分页".$page;
-	$row['siteid'] = 9;
-	$row['spidercall'] = 1;
-	$row['vtype'] = 1;
-	$row['targeturl'] = $targeturl;
-	echo $targeturl."...over\r\n";
-	$model = mini_db_model::model('vspiders');
-	$model->create($row);
-}
-mini_db_unitofwork::getHandle()->commit();
+// 	$row['title'] = "QQ电影分页".$page;
+// 	$row['siteid'] = 9;
+// 	$row['spidercall'] = 1;
+// 	$row['vtype'] = 1;
+// 	$row['targeturl'] = $targeturl;
+// 	echo $targeturl."...over\r\n";
+// 	$model = mini_db_model::model('vspiders');
+// 	$model->create($row);
+// }
+// mini_db_unitofwork::getHandle()->commit();
 
 
 
@@ -173,22 +173,22 @@ mini_db_unitofwork::getHandle()->commit();
 // 	mini_db_unitofwork::getHandle()->commit();
 	
 	
-// 	$url="http://v.qq.com/list/2_-1_-1_-1_1_0_{page}_20_-1_-1.html";
-// 	for($page = 1; $page<=30 ;$page++)
-// 	{
-// 		$pagetr = array("{page}"=>$page);
-// 		$targeturl = strtr($url, $pagetr);
+	$url="http://v.qq.com/list/2_-1_-1_-1_1_0_{page}_20_-1_-1.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
 		
-// 		$row['title'] = "qq电视剧分页".$page;
-// 		$row['siteid'] = 9;
-// 		$row['spidercall'] = 2;
-// 		$row['vtype'] = 2;
-// 		$row['targeturl'] = $targeturl;
-// 		echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "qq电视剧分页".$page;
+		$row['siteid'] = 9;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 
 
 // 	$url="http://so.tv.sohu.com/list_p1101_p2_p3_u5185_u5730_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
