@@ -14,6 +14,7 @@ class spiderService implements mini_db_unbuffer
 	{
 		$model = mini_db_model::model("vspiders");
 		$vspiders= $model->getDaynumAndIsstoreAndUnlock($daynum,1,2,$limit);
+		$ids = array();
 		if(!empty($vspiders))
 			foreach($vspiders as $k => $vspider)
 			{

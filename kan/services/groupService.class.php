@@ -133,7 +133,8 @@ class groupService implements mini_db_unbuffer
 				$vgroup->score = $row['score'];
 			
 			
-			$videoids[$row['siteid']] = array('playlink'=>$row['playlink'],'videoid'=>$row['id']);
+		//	$videoids[$row['siteid']] = array('playlink'=>$row['playlink'],'videoid'=>$row['id']);
+			$videoids[$row['siteid']] = array('videoid'=>$row['id']);
 			
 // 			$videoids = $this->defaultPlay($videoids, $row);
 			$updatevideoids = json_encode($videoids);

@@ -2249,7 +2249,7 @@ function spiderMovieQq($url)
 {
 	$vrow = array();
 	$dom = domByCurl($url);
-	
+	if(empty($dom)) return array();
 	$root = $dom->find('#content', 0);
 	if(empty($root))
 	{
