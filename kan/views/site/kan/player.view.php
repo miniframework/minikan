@@ -391,15 +391,15 @@
 							 foreach($yourlikes as $k => $yourlike){
 						?>
 						<li class="item">
-							<a class="poster-link" target="_self" href="/m/haTqY0D5QHTAUR.html" >
+							<a class="poster-link" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" >
 								<img class="poster-img" src="<?php echo $yourlike->getImageLink()?>">
 								<div class="hide-bg"></div>
 								<div class="hide-text">
 									<span class="trait"><?php echo $yourlike->year;?>年</span>							
-									<span class="grade"><em><?php echo $yourlike->getRate();?></em>分</span>
+									<!--  <span class="grade"><em><?php echo $yourlike->getRate();?></em>分</span>-->
 								</div>
 							</a>
-							<h2 class="title"><a target="_self" href="/m/haTqY0D5QHTAUR.html" ><?php echo $yourlike->title;?></a></h2>
+							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" ><?php echo $yourlike->title;?></a></h2>
 							<p class="text"><?php echo $yourlike->star;?></p>
 						</li>
 						<?php }?>
@@ -414,10 +414,10 @@
 								<div class="hide-bg"></div>
 								<div class="hide-text">
 									<span class="trait"><?php echo $samestar->year;?>年</span>							
-									<span class="grade"><em><?php echo $samestar->getRate();?></em>分</span>
+									<!-- <span class="grade"><em><?php echo $samestar->getRate();?></em>分</span> -->
 								</div>
 							</a>
-							<h2 class="title"><a target="_self" href="/m/haTqY0D5QHTAUR.html" ><?php echo $samestar->title;?></a></h2>
+							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samestar->id));?>" ><?php echo $samestar->title;?></a></h2>
 							<p class="text"><?php echo $samestar->star;?></p>
 						</li>
 						<?php }?>
@@ -432,7 +432,7 @@
 								<div class="hide-bg"></div>
 								<div class="hide-text">
 									<span class="trait"><?php echo $samedirector->year;?>年</span>							
-									<span class="grade"><em><?php echo $samedirector->getRate();?></em>分</span>
+									<!-- <span class="grade"><em><?php echo $samedirector->getRate();?></em>分</span>-->
 								</div>
 							</a>
 							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samedirector->id));?>"><?php echo $samedirector->title;?></a></h2>
