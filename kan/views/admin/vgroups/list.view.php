@@ -149,7 +149,7 @@
 	                                                </td>
 	                                                <td>
 	                                                <?php $videoids = $model->getVideoids() ; foreach($videoids as $siteid => $videoid) {?>
-	                                                <a target="_blank" href="<?php echo $videoid['playlink'];?>" >
+	                                                <a target="_blank" href="" >
 	                                               	 <img src="/styles/kan/images/icon/<?php echo $video->getIcon($siteid);?>" />
 	                                                </a>
 	                                                <?php }?>
