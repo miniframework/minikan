@@ -163,12 +163,14 @@ function coverMovieYouku($url)
 		}
 	//director
 	$directord = $baseinfo->find(".director", 0);
-	$directorDoms = $directord->find("a");
-	if(!empty($directorDoms))
-		foreach($directorDoms as $k => $directorDom)
-		{
-			$director[] = $directorDom->plaintext;
-		}
+	if(!empty($directord)) {
+		$directorDoms = $directord->find("a");
+		if(!empty($directorDoms))
+			foreach($directorDoms as $k => $directorDom)
+			{
+				$director[] = $directorDom->plaintext;
+			}
+	}
 	//area
 	$aread = $baseinfo->find(".area", 0);
 	$areaDoms = $aread->find("a");
