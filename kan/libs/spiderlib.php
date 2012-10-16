@@ -2481,9 +2481,9 @@ function coverTeleplayPptv($url)
 	{
 		$http_episodes_num = $allepisodes;
 	}
-	for($i = $j= 1; $i <= $http_episodes_num; $i=$i+20,$j=$j+20)
+	for($i = $j= 1; $i <= $http_episodes_num; $i=$i+20,$j=$j+1)
 	{
-		$episode_url = "http://api2.v.pptv.com/api/page/episodes.js?page=$i&channel_id=$channel_id";
+		$episode_url = "http://api2.v.pptv.com/api/page/episodes.js?page=$j&channel_id=$channel_id";
 		$episode_data = curlByUrl($episode_url);
 		if(empty($episode_data))
 			return array();
@@ -2515,7 +2515,6 @@ function coverTeleplayPptv($url)
 		unset($episode_data);
 		$episode_coverRoot->clear();
 	}
-	
 	if(!isset($vrow['episodes'])) return array();
 	
 	if(($vrow['allepisodes'] == $vrow['nowepisodes']) &&
@@ -2542,7 +2541,6 @@ function coverTeleplayPptv($url)
 	
 	
 	$first_url = $vrow['episodes'][0]['playlink'];
-	echo $first_url."\r\n";
 	$coverRoot = domByCurl($first_url);
 	if(empty($coverRoot)) return array();
 	$showinfo = $coverRoot->find('.showinfo',0);

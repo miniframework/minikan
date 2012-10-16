@@ -179,7 +179,7 @@ class groupService implements mini_db_unbuffer
 			$grow['summary'] = isset($data['summary']) ? $data['summary'] : $row['summary'];
 			$grow['imagelink'] =  $row['imagelink'];
 			$grow['doubanimage'] =isset($data['image']) ? $data['image'] : '';
-			$grow['tag'] = isset($data['tag']) ?implode("\t", $data['tag']): '';
+			//$grow['tag'] = isset($data['tag']) ?implode("\t", $data['tag']): '';
 			$grow['vtype'] = $row['vtype'];
 			$grow['rate'] = isset($data['rate']) ? $data['rate']: 0;
 			//$grow['imdb'] = isset($data['imdb']) ? $data['imdb']:0;
@@ -241,7 +241,7 @@ class groupService implements mini_db_unbuffer
 			$grow['summary'] = isset($data['summary']) ? $data['summary'] : $row['summary'];
 			$grow['imagelink'] =  $row['imagelink'];
 			$grow['doubanimage'] =isset($data['image']) ? $data['image'] : '';
-			$grow['tag'] = isset($data['tag']) ?implode("\t", $data['tag']): '';
+			//$grow['tag'] = isset($data['tag']) ?implode("\t", $data['tag']): '';
 			$grow['vtype'] = $row['vtype'];
 			$grow['rate'] = isset($data['rate']) ? $data['rate']: 0;
 			//$grow['imdb'] = isset($data['imdb']) ? $data['imdb']:0;
@@ -343,7 +343,42 @@ class groupService implements mini_db_unbuffer
 			}
 		}
 		
+		$pdirectors = explode("\t", $grow['director']);
 		
+		if(!empty($pdirectors))
+			foreach($pdirectors as $k => $pvalue)
+			{
+				$pdirector = trim($pvalue);
+				if(empty($pstar)) continue;
+				$vpeoples = mini_db_model::model("vpeoples");
+				$vpeople = $vpeoples->getByName(array(':name'=>$pstar));
+				if(empty($vpeople))
+				{	$prow = array();
+					$prow['name'] = $pdirector;
+					$vpeople = mini_db_model::model("vpeoples");
+					$vpeople->create($prow);
+					$gprow = array();
+					$grouppeople = mini_db_model::model("grouppeople");
+					$gprow['groupid'] = $vgroup->id;
+					$gprow['peopleid'] = $vpeople->id;
+					$gprow['type'] = 1;
+					$grouppeople->create($gprow);
+				}
+				else
+				{
+					$grouppeoples = mini_db_model::model("grouppeople");
+					$grouppeople = $grouppeoples->getByGroupid(array(':groupid'=>$vgroup->id,':peopleid'=>$vpeople->id));
+					if(empty($grouppeople))
+					{
+						$gprow = array();
+						$grouppeople = mini_db_model::model("grouppeople");
+						$gprow['groupid'] = $vgroup->id;
+						$gprow['peopleid'] = $vpeople->id;
+						$gprow['type'] = 1;
+						$grouppeople->create($gprow);
+					}
+				}
+			}
 		
 		//360 rate segment.
 // 		$v360api = new v360Service();
