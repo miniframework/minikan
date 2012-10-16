@@ -198,11 +198,15 @@ function coverMovieYouku($url)
 			$cate[] = $cateDom->plaintext;
 		}
 		//year
+		$summary = '';
 	$year =	$coverRoot->find("#title",0)->find(".base",0)->find(".title",0)->find(".pub",0)->plaintext;
 	$summaryDom = $coverRoot->find("#overview",0)->find(".long",0);
-	if(empty($summaryDom))
-		$summaryDom = $coverRoot->find("#overview",0)->find(".short",0);
-	$summary = $summaryDom->plaintext;
+	if(!empty($summaryDom))
+		$overview = $coverRoot->find("#overview",0);
+	if(!empty($overview))
+		$short = $overview->find(".short",0);
+	if(!empty($short))
+		$summary = $short->plaintext;
 	$vrow['star'] = $star;
 	$vrow['director'] = $director;
 	if(isset($area[0]))
