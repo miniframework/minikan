@@ -200,7 +200,6 @@ class groupService implements mini_db_unbuffer
 				$params = array('cookiefile'=>dirname(__FILE__).'/../crontab/spider/douban_spider_cookie.txt');
 				$doubanspider = new doubanspiderService($params);
 				$data = $doubanspider->searchLikeApi($row);
-				if(!empty($data)) echo "yes..\r\n";
  			}
 // 			if(empty($data))
 // 			{
@@ -349,9 +348,9 @@ class groupService implements mini_db_unbuffer
 			foreach($pdirectors as $k => $pvalue)
 			{
 				$pdirector = trim($pvalue);
-				if(empty($pstar)) continue;
+				if(empty($pdirector)) continue;
 				$vpeoples = mini_db_model::model("vpeoples");
-				$vpeople = $vpeoples->getByName(array(':name'=>$pstar));
+				$vpeople = $vpeoples->getByName(array(':name'=>$pdirector));
 				if(empty($vpeople))
 				{	$prow = array();
 					$prow['name'] = $pdirector;
