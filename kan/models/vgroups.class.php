@@ -364,6 +364,21 @@ class vgroups extends mini_db_model
     		return '';
     	}
     }
+    public function getEpSignforShortStr()
+    {
+    	if($this->epsign == 2)
+    	{
+    		return $this->nowepisodes."集全";
+    	}
+    	else if($this->epsign == 1)
+    	{
+    		return "至".$this->nowepisodes."集";
+    	}
+    	else
+    	{
+    		return '';
+    	}
+    }
     public function getYourLike()
     {
     	$cate = $this->cate;
