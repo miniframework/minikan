@@ -55,7 +55,7 @@
 	            <span class="tip">24集全</span> 
             </a>
             <h4 class="name"><a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
-            <p class="info">都市最爆笑爱情喜剧</p>
+            <p class="info"><?php echo $v->getShortcomment();?></p>
           </li>
           <?php }?>
         </ul>

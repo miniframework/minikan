@@ -2,7 +2,7 @@
 class recommends extends mini_db_model
 {
     protected  $table = 'recommends';
-    protected  $columns = array('id','version','groupid','typeid','onum');
+    protected  $columns = array('id','version','groupid','typeid','onum','info');
     protected  $primaryKey = 'id';
     protected  $autoSave = true;
     protected  $autoIncrement = false;
@@ -69,6 +69,7 @@ class recommends extends mini_db_model
 		'version'=>'Version',
 		'groupid'=>'聚合id',
 		'typeid'=>'推荐类别',
-		'onum'=>'排序');
+		'onum'=>'排序',
+        'info'=>'其他信息');
     }
 }

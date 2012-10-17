@@ -37,6 +37,15 @@
 						<td><input type="text" class="txt" name="onum" value=""></td>
 						<td></td>
                     </tr>
+                                       <tr>
+						<th colspan="2">一句话短评:</th>
+					</tr>
+					<tr>
+						<td><input type="text" class="txt" name="shortcomment" value=""></td>
+						<td></td>
+                    </tr>
+                    
+                    
 					                </tbody>
 			</table>
 			<div class="opt"><input type="submit" name="submit" value=" 提 交 " class="btn" tabindex="3"></div>

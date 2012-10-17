@@ -38,7 +38,7 @@ class catalogs extends mini_db_model
     {
     	
     	$typeid = $this->id;
-    	$sql = "select onum,vgroups.*
+    	$sql = "select info,onum,vgroups.*
 			    	from
 			    		recommends
 			    	left join

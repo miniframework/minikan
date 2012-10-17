@@ -33,6 +33,13 @@
 						<td><input type="text" class="txt" name="onum" value="<?php echo $model->onum;?>"></td>
 						<td></td>
                     </tr>
+                     <tr>
+						<th colspan="2">一句话短评:</th>
+					</tr>
+					<tr>
+						<td><input type="text" class="txt" name="shortcomment" value="<?php echo $model->getShortcomment();?>"></td>
+						<td></td>
+                    </tr>
 									</tbody>
 			</table>
 			<div class="opt">

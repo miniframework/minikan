@@ -379,6 +379,21 @@ class vgroups extends mini_db_model
     		return '';
     	}
     }
+    public function getShortcomment()
+    {
+    	if(!empty($this->info))
+    	{
+    		$info = json_decode($this->info,true);
+    		if(!empty($info['shortcomment']))
+    		{
+    			return $info['shortcomment'];
+    		}
+    	}
+    	else
+    	{
+    		return '';
+    	}
+    }
     public function getYourLike()
     {
     	$cate = $this->cate;
