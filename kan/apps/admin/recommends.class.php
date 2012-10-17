@@ -65,6 +65,13 @@ class recommendsController extends mini_web_controller
 	}
 	public function doModify()
 	{
+		
+		$shortcomment = $this->request->get("shortcomment");
+		if(!empty($shortcomment))
+		{
+			$shortjson = json_encode(array("shortcomment"=>$shortcomment));
+			$this->request->set("info",$shortjson);
+		}
 		$model = $this->model("recommends")->setByRequest($this->request);
 		if($model === null)
 		{
