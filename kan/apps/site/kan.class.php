@@ -169,7 +169,7 @@ class kanController extends mini_web_controller
 		$vgroups = $model->searchByKeyword($keyword);
 		$model = $this->model("vgroups");
 		$movietop10 = $model->getTop10(2);
-		$this->view->keyword = $keyword;
+		$this->view->keyword = htmlspecialchars($keyword);
 		$this->view->movietop10 = $movietop10;
 		$this->view->vgroups = $vgroups;
 		$this->view->page = $page;

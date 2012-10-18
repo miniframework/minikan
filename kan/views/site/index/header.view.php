@@ -12,7 +12,7 @@
     <div class="search-bd">
       <form target="_blank" method="GET" action="<?php echo $this->createUrl("site","kan","search");?>" id="search-form" class="clearfix">
         <span class="ipt-search-area">
-        <input type="text" id="kw" class="ipt-search" name="q" autocomplete="off">
+        <input type="text" id="kw" class="ipt-search" value="<?php if(isset($keyword)) echo $keyword;?>" name="q" autocomplete="off">
         <input type="hidden" name="t" value="1">
         <!--[if lte IE8]>
 					<span class="shadowtop"></span>

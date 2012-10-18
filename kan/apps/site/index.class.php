@@ -51,6 +51,7 @@ class indexController extends mini_web_controller
     {
     	$this->view->hotSearch = $this->getHotSearch();
     	$this->view->parentId = $this->parentId;
+    	$this->view->keyword = htmlspecialchars($this->request->get("q"));
     }
     private function getHotSearch()
     {

@@ -53,7 +53,7 @@ for($page = 1; $page<=30 ;$page++)
 		$pagetr = array("{page}"=>$page);
 		$targeturl = strtr($youku_url, $pagetr);
 
-		$row['title'] = "优酷－历史最多－电影分页".$page;
+		$row['title'] = "youku－历史最多－电影分页".$page;
 		$row['siteid'] = 2;
 		$row['spidercall'] = 1;
 
