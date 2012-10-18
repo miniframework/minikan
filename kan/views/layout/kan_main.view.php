@@ -18,11 +18,12 @@
 	<span>Copyright &copy; 2012 .com. All Rights Reserved. </span> 
 	<em><a href="#" target="_blank">京ICP备11002035号</a></em>
 </div>
+<div style="display:none">
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F252cac332415da763f6f7bfffdf7c3dd' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
+</div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -36,6 +37,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   })();
 
 </script>
-<a href="http://webscan.360.cn/index/checkwebsite/url/ailezi.com" name="79db8ccfdfbde71d8e3a19aa2a78b660" >360网站安全检测平台</a>
 </body>
 </html>

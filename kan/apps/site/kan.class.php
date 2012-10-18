@@ -11,7 +11,7 @@ class kanController extends mini_web_controller
 		$searchRow['cate'] = $cate;
 		$searchRow['area'] = $area;
 		$searchRow['year'] = $year;
-		$searchRow['star'] = $star;
+		$searchRow['star'] = htmlspecialchars($star);
 		if(empty($order)) $order = 1;
 		$searchRow['order'] = $order;
 		$searchRow['vtype'] = 1;
@@ -40,7 +40,7 @@ class kanController extends mini_web_controller
 		$searchRow['cate'] = $cate;
 		$searchRow['area'] = $area;
 		$searchRow['year'] = $year;
-		$searchRow['star'] = $star;
+		$searchRow['star'] = htmlspecialchars($star);
 		if(empty($order)) $order = 1;
 		$searchRow['order'] = $order;
 		$searchRow['vtype'] = 2;
