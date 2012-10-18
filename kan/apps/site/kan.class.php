@@ -176,7 +176,7 @@ class kanController extends mini_web_controller
 	}
 	private function buildUrl($search,$action)
 	{
-		$url = array("site","kan",$action,array(),array('cate'=>$search['cate'],'area'=>$search['area'],'year'=>$search['year'],"order"=>$search['order']));
+		$url = array("site","kan",$action,array(),array('cate'=>$search['cate'],'area'=>$search['area'],'year'=>$search['year'],'star'=>$search['star'],"order"=>$search['order']));
 		return $url;
 	}
 }
