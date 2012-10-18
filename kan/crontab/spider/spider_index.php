@@ -5,7 +5,7 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 
 
 
-
+/*
 $tudou_url = "http://movie.tudou.com/albumtop/c22t-1v-1z-1a-1y-1h-1s1p{page}.html";
 
 for($page = 1; $page<=30 ;$page++)
@@ -121,109 +121,109 @@ mini_db_unitofwork::getHandle()->commit();
 		$model->create($row);
 	}
 	mini_db_unitofwork::getHandle()->commit();
+*/
+	$url="http://tv.tudou.com/albumtop/c30t-1v-1z-1a-1y-1h-1s1p{page}.html";
+	for($page = 1; $page<=30 ;$page++)
+		{
+			$pagetr = array("{page}"=>$page);
+			$targeturl = strtr($url, $pagetr);
 
-// 	$url="http://tv.tudou.com/albumtop/c30t-1v-1z-1a-1y-1h-1s1p{page}.html";
-// 	for($page = 1; $page<=30 ;$page++)
-// 		{
-// 			$pagetr = array("{page}"=>$page);
-// 			$targeturl = strtr($url, $pagetr);
-
-// 			$row['title'] = "tudou电视剧分页".$page;
-// 			$row['siteid'] = 1;
-// 			$row['spidercall'] = 2;
-// 			$row['vtype'] = 2;
-// 			$row['targeturl'] = $targeturl;
-// 			echo $targeturl."...over\r\n";
-// 			$model = mini_db_model::model('vspiders');
-// 			$model->create($row);
-// 		}
-// 		mini_db_unitofwork::getHandle()->commit();
-// 	$url="http://www.youku.com/v_olist/c_97_a__s__g__r__lg__im__st__mt__tg__d_1_et_0_fv_0_fl__fc__fe__o_7_p_{page}.html";
-// 	for($page = 1; $page<=30 ;$page++)
-// 	{
-// 	$pagetr = array("{page}"=>$page);
-// 	$targeturl = strtr($url, $pagetr);
+			$row['title'] = "tudou-最旺-电视剧-分页".$page;
+			$row['siteid'] = 1;
+			$row['spidercall'] = 2;
+			$row['vtype'] = 2;
+			$row['targeturl'] = $targeturl;
+			echo $targeturl."...over\r\n";
+			$model = mini_db_model::model('vspiders');
+			$model->create($row);
+		}
+		mini_db_unitofwork::getHandle()->commit();
+	$url="http://www.youku.com/v_olist/c_97_a__s__g__r__lg__im__st__mt__tg__d_1_et_0_fv_0_fl__fc__fe__o_7_p_{page}.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
 	
-// 		$row['title'] = "youku电视剧分页".$page;
-// 		$row['siteid'] = 2;
-// 		$row['spidercall'] = 2;
-// 		$row['vtype'] = 2;
-// 		$row['targeturl'] = $targeturl;
-// 				echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "youku-近日最多-电视剧分页".$page;
+		$row['siteid'] = 2;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+				echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 	
-// 	$url="http://so.letv.com/list/c2_t-1_a-1_y-1_f-1_at1_o3_i-1_p{page}.html";
-// 	for($page = 1; $page<=30 ;$page++)
-// 	{
-// 	$pagetr = array("{page}"=>$page);
-// 	$targeturl = strtr($url, $pagetr);
+	$url="http://so.letv.com/list/c2_t-1_a-1_y-1_f-1_at1_o1_i-1_p{page}.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+	$pagetr = array("{page}"=>$page);
+	$targeturl = strtr($url, $pagetr);
 	
-// 	$row['title'] = "letv电视剧分页".$page;
-// 	$row['siteid'] = 8;
-// 	$row['spidercall'] = 2;
-// 	$row['vtype'] = 2;
-// 	$row['targeturl'] = $targeturl;
-// 	echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "letv-最近更新-电视剧-分页".$page;
+		$row['siteid'] = 8;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 	
 	
-// 	$url="http://v.qq.com/list/2_-1_-1_-1_1_0_{page}_20_-1_-1.html";
-// 	for($page = 1; $page<=30 ;$page++)
-// 	{
-// 		$pagetr = array("{page}"=>$page);
-// 		$targeturl = strtr($url, $pagetr);
+	$url="http://v.qq.com/list/2_-1_-1_-1_1_0_{page}_20_-1_-1.html";
+	for($page = 1; $page<=30 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
 		
-// 		$row['title'] = "qq电视剧分页".$page;
-// 		$row['siteid'] = 9;
-// 		$row['spidercall'] = 2;
-// 		$row['vtype'] = 2;
-// 		$row['targeturl'] = $targeturl;
-// 		echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "qq－最热－电视剧－分页".$page;
+		$row['siteid'] = 9;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+		echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 
 
-// 	$url="http://so.tv.sohu.com/list_p1101_p2_p3_u5185_u5730_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
-// 	for($page = 1; $page<=20 ;$page++)
-// 		{
-// 			$pagetr = array("{page}"=>$page);
-// 			$targeturl = strtr($url, $pagetr);
+	$url="http://so.tv.sohu.com/list_p1101_p2_p3_u5185_u5730_p4-1_p5_p6_p70_p80_p9-1_p10{page}_p11.html";
+	for($page = 1; $page<=20 ;$page++)
+		{
+			$pagetr = array("{page}"=>$page);
+			$targeturl = strtr($url, $pagetr);
 
-// 			$row['title'] = "sohu电视剧分页".$page;
-// 			$row['siteid'] = 6;
-// 			$row['spidercall'] = 2;
-// 			$row['vtype'] = 2;
-// 			$row['targeturl'] = $targeturl;
-// 			echo $targeturl."...over\r\n";
-// 			$model = mini_db_model::model('vspiders');
-// 			$model->create($row);
-// 		}
-// 		mini_db_unitofwork::getHandle()->commit();
+			$row['title'] = "sohu－相关程度-电视剧分页".$page;
+			$row['siteid'] = 6;
+			$row['spidercall'] = 2;
+			$row['vtype'] = 2;
+			$row['targeturl'] = $targeturl;
+			echo $targeturl."...over\r\n";
+			$model = mini_db_model::model('vspiders');
+			$model->create($row);
+		}
+		mini_db_unitofwork::getHandle()->commit();
 		
-// 	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
-// 	for($page = 1; $page<=20 ;$page++)
-// 	{
-// 		$pagetr = array("{page}"=>$page);
-// 		$targeturl = strtr($url, $pagetr);
+	$url="http://list.pptv.com/sort_list/2------6---{page}.html";
+	for($page = 1; $page<=20 ;$page++)
+	{
+		$pagetr = array("{page}"=>$page);
+		$targeturl = strtr($url, $pagetr);
 	
-// 		$row['title'] = "pptv电视剧分页".$page;
-// 		$row['siteid'] = 7;
-// 		$row['spidercall'] = 2;
-// 		$row['vtype'] = 2;
-// 		$row['targeturl'] = $targeturl;
-// 				echo $targeturl."...over\r\n";
-// 		$model = mini_db_model::model('vspiders');
-// 		$model->create($row);
-// 	}
-// 	mini_db_unitofwork::getHandle()->commit();
+		$row['title'] = "pptv-最高人气－电视剧－分页".$page;
+		$row['siteid'] = 7;
+		$row['spidercall'] = 2;
+		$row['vtype'] = 2;
+		$row['targeturl'] = $targeturl;
+				echo $targeturl."...over\r\n";
+		$model = mini_db_model::model('vspiders');
+		$model->create($row);
+	}
+	mini_db_unitofwork::getHandle()->commit();
 	
 
 	
