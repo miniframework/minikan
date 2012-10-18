@@ -19,6 +19,11 @@
 	<em><a href="#" target="_blank">京ICP备11002035号</a></em>
 </div>
 <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F252cac332415da763f6f7bfffdf7c3dd' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21332676-1']);
