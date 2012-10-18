@@ -76,7 +76,7 @@ class spiderService implements mini_db_unbuffer
 			unset($xmlobj);
 			mini_db_unitofwork::getHandle()->commit();
 		}
-		echo "to video db over...\r\n";
+		echo date('Y-m-d H:i:s')."to video db over...\r\n";
 		
 	}
 	public function spiderDay($daynum=0, $limit=10)
@@ -275,9 +275,9 @@ class spiderService implements mini_db_unbuffer
 									$this->db->query($update_vgroup_sql);
 						}
 						
-					echo $row['id']."update ep..\r\n";
+					echo $row['id']." update ep..\r\n";
 				} else {
-					echo $row['id']."no update ep..\r\n";
+					echo $row['id']." no update ep..\r\n";
 				}
 				
 			}
@@ -287,9 +287,8 @@ class spiderService implements mini_db_unbuffer
 		{
 			$updatesql = "update videos set status=2 where id ='{$row['id']}'";
 			$this->db->query($updatesql);
-			echo $row['id']."link error..\r\n";
+			echo $row['id']." link error..\r\n";
 		}
-		echo $updateFunction."\r\n";
 	}
 	
 	
