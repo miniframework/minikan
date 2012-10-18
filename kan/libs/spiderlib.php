@@ -1335,7 +1335,10 @@ function coverTeleplayLetv($url)
 	
 	//eplisode
 	$allepisodes = $nowepisodes = 0;
-	$eplisodeinfo = $coverRoot->find(".info", 0)->find(".i-t",0);
+	$info = $coverRoot->find(".info", 0);
+	if(empty($info)) return array();
+	
+	$eplisodeinfo = $info->find(".i-t",0);
 	$eplisodetxt = trim($eplisodeinfo->plaintext);
 	if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
 	{
