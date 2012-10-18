@@ -31,5 +31,6 @@
   })();
 
 </script>
+<a href="http://webscan.360.cn/index/checkwebsite/url/ailezi.com" name="79db8ccfdfbde71d8e3a19aa2a78b660" >360网站安全检测平台</a>
 </body>
 </html>
