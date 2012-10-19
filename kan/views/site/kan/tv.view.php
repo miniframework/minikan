@@ -1,4 +1,26 @@
-<?php $this->layout('kan_main',array("title"=>"最新电视剧 好看的电视剧"));?>
+<?php
+$cateMap = $vgroup->cateMap(2);
+$areaMap = $vgroup->areaMap(2);
+$yearMap = $vgroup->yearMap();
+$change_title = '';
+if(isset($cateMap[$search['year']]))
+{
+	$change_title.=$yearMap[$search['year']]."年";
+}
+if(isset($cateMap[$search['area']]))
+{
+	$change_title.=$areaMap[$search['area']];
+}
+if(isset($cateMap[$search['cate']]))
+{
+	$change_title.=$cateMap[$search['cate']];
+}
+
+
+$change_title.=$search['star'];
+$header_title = "最新的".$change_title."电视剧"." "."热门".$change_title."电视剧";
+
+$this->layout('kan_main',array("title"=>$header_title));?>
 
 <div id="searching" class="fm960 clearfix">
   <div class="searching-bd">
@@ -58,7 +80,7 @@
     </div>
       		<?php if(!empty($search['cate']) || !empty($search['area']) || !empty($search['year'])) {?>
 		     <?php  $cateMap = $vgroup->cateMap(2);
-		     		$areaMap = $vgroup->areaMap();
+		     		$areaMap = $vgroup->areaMap(2);
 		    		$yearMap = $vgroup->yearMap();
 		     ?>
 		    <ul class="title_order_box">                             

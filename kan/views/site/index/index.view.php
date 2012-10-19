@@ -206,7 +206,7 @@
         <?php $i = 0; foreach($vgroup->yearMap() as $k => $year) { if($i==7) break;?>
         <li><a   href="<?php echo $this->createUrl('site','kan','movie',array(),array('year'=>$k));?>"><?php echo $year;?></a></li>
         <?php $i++;}?>
-        <li><a href="/dianshi/index.php?cat=101">更早</a></li>
+        <li><a href="#">更早</a></li>
       </ul>
     </div>
     <div class="mod_a">

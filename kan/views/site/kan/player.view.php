@@ -1,4 +1,11 @@
-<?php $this->layout('kan_main',array("title"=>$vgroup->title."在线观看"));?>
+<?php if($vgroup->vtype==1){
+	$header_title = "《".$vgroup->title."》电影－高清在线观看-爱乐子电影";
+} else if($vgroup->vtype ==2) {
+	$header_title = "《".$vgroup->title."》电视剧－全集在线观看-爱乐子电视剧";
+} else if($vgroup->vtype ==3) {
+	$header_title = "《".$vgroup->title."》动漫－全集在线观看-爱乐子动漫";
+} ?>
+<?php $this->layout('kan_main',array("title"=>$header_title));?>
 
 	<div class="flv_player fm960 clearfix" id="flv_player_now"  style="display:none" >
 		<div id="flash_play"></div>

@@ -1,4 +1,23 @@
-<?php $this->layout('kan_main',array("title"=>"最新动漫 好看的动漫"));?>
+<?php 
+$cateMap = $vgroup->cateMap(3);
+$areaMap = $vgroup->areaMap(3);
+$yearMap = $vgroup->yearMap();
+$change_title = '';
+if(isset($cateMap[$search['year']]))
+{
+	$change_title.=$yearMap[$search['year']]."年";
+}
+if(isset($cateMap[$search['area']]))
+{
+	$change_title.=$areaMap[$search['area']];
+}
+if(isset($cateMap[$search['cate']]))
+{
+	$change_title.=$cateMap[$search['cate']];
+}
+
+$header_title = "最新的".$change_title."动漫"." "."最热".$change_title."动漫";
+$this->layout('kan_main',array("title"=>$header_title));?>
 
 <div id="searching" class="fm960 clearfix">
   <div class="searching-bd">

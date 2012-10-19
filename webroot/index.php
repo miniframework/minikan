@@ -14,7 +14,6 @@ defined('MINI_EXCEPTION_HANDLER') || define('MINI_EXCEPTION_HANDLER',true);
 defined('MINI_ERROR_HANDLER') || define('MINI_ERROR_HANDLER',true);
 defined('MINI_DEBUG') || define('MINI_DEBUG', true);
 
-#if($_SERVER['REMOTE_ADDR'] == '72.14.189.178')  header("Location:http://www.youjizz.com/");
 /**
  * include php miniframework import file
  */
