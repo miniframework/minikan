@@ -2657,7 +2657,7 @@ function spiderTeleplayPptv($url)
 {
 	$vrow = array();
 	$dom = domByCurl($url);
-	
+	if(empty($dom)) return ;
 	$root = $dom->find('.list_120x160', 0);
 	if(empty($root))
 	{
