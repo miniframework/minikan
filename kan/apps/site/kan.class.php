@@ -105,7 +105,7 @@ class kanController extends mini_web_controller
 		if($vgroup === null)
 		{
 			$message ='';
-			$message.= $_SERVER['REQUEST_URI'];
+			$message.= $_SERVER['REMOTE_ADDR'].$_SERVER['REQUEST_URI'];
 			$message.="not find vgroup getByPk|doPlayer.";
 			$this->logger->log($message ,mini_log_logger::LEVEL_TRACE ,"kanapp");
 			$this->logger->flush();
