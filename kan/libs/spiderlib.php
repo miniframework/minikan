@@ -504,7 +504,7 @@ function coverCartoonYouku($url)
 		}
 		$episodeShowDom->clear();
 	}
-
+	if(!isset($vrow['episodes']) || empty($vrow['episodes'])) return array();
 	if(($vrow['allepisodes'] == $vrow['nowepisodes']) &&
 			!empty($vrow['allepisodes']) &&
 			!empty($vrow['nowepisodes']))
