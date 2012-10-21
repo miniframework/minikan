@@ -398,7 +398,7 @@
 							 foreach($yourlikes as $k => $yourlike){
 						?>
 						<li class="item">
-							<a class="poster-link" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" >
+							<a class="poster-link" title="<?php echo $yourlike->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" >
 								<img class="poster-img" src="<?php echo $yourlike->getImageLink()?>">
 								<div class="hide-bg"></div>
 								<div class="hide-text">
@@ -406,7 +406,7 @@
 									<!--  <span class="grade"><em><?php echo $yourlike->getRate();?></em>分</span>-->
 								</div>
 							</a>
-							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" ><?php echo $yourlike->title;?></a></h2>
+							<h2 class="title"><a title="<?php echo $yourlike->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$yourlike->id));?>" ><?php echo $yourlike->title;?></a></h2>
 							<p class="text"><?php echo $yourlike->star;?></p>
 						</li>
 						<?php }?>
@@ -416,7 +416,7 @@
 					<ul class="list clearfix" type="star" style="display: none; ">
 						<?php foreach($samestars as $k => $samestar) {?>
 						<li class="item">
-							<a class="poster-link" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samestar->id));?>" >
+							<a class="poster-link" title="<?php echo $samestar->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samestar->id));?>" >
 								<img class="poster-img" src="<?php echo $samestar->getImageLink()?>">
 								<div class="hide-bg"></div>
 								<div class="hide-text">
@@ -424,7 +424,7 @@
 									<!-- <span class="grade"><em><?php echo $samestar->getRate();?></em>分</span> -->
 								</div>
 							</a>
-							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samestar->id));?>" ><?php echo $samestar->title;?></a></h2>
+							<h2 class="title"><a title="<?php echo $samestar->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samestar->id));?>" ><?php echo $samestar->title;?></a></h2>
 							<p class="text"><?php echo $samestar->star;?></p>
 						</li>
 						<?php }?>
@@ -434,7 +434,7 @@
 					<ul class="list clearfix" type="director" style="display: none; ">
 						<?php foreach($samedirectors as $k => $samedirector) {?>
 						<li class="item">
-							<a class="poster-link" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samedirector->id));?>" >
+							<a class="poster-link" title="<?php echo $samedirector->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samedirector->id));?>" >
 								<img class="poster-img" src="<?php echo $samedirector->getImageLink()?>">
 								<div class="hide-bg"></div>
 								<div class="hide-text">
@@ -442,7 +442,7 @@
 									<!-- <span class="grade"><em><?php echo $samedirector->getRate();?></em>分</span>-->
 								</div>
 							</a>
-							<h2 class="title"><a target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samedirector->id));?>"><?php echo $samedirector->title;?></a></h2>
+							<h2 class="title"><a title="<?php echo $samedirector->title;?>" target="_self" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$samedirector->id));?>"><?php echo $samedirector->title;?></a></h2>
 							<p class="text"><?php echo $samedirector->star;?></p>
 						</li>
 						<?php }?>

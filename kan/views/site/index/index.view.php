@@ -45,7 +45,7 @@
         		foreach($regroups as $k => $v){
         	?>
           <li> 
-          <a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
+          <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
             					<!--[if lt IE 9]>
 								<span class="playmask"></span>
@@ -54,7 +54,7 @@
 								<![endif]-->
 	            <span class="tip">24集全</span> 
             </a>
-            <h4 class="name"><a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
+            <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
           </li>
           <?php }?>
@@ -71,7 +71,7 @@
         				foreach($remv as $k => $v){
         			?>
         
-          <li><a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>"><?php echo $v->getShowTitle();?></a></li>
+          <li><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>"><?php echo $v->getShowTitle();?></a></li>
           <?php }}?>
         </ul>
       </div>
@@ -89,7 +89,7 @@
 	          	<?php echo $catalog_tv->showtitle;?>
 	          </h3>
 	        <?php } ?>
-          <a href="<?php echo $this->createUrl("site","kan","tv");?>" class="more">更多&gt;&gt;</a> 
+          <a  href="<?php echo $this->createUrl("site","kan","tv");?>" class="more">更多&gt;&gt;</a> 
         </div>
       </div>
       <?php if(!empty($catalog_tvs)) { ?>
@@ -100,7 +100,7 @@
         		foreach($regroups as $k => $v){
         	?>
           <li> 
-          <a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
+          <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
             					<!--[if lt IE 9]>
 								<span class="playmask"></span>
@@ -109,7 +109,7 @@
 								<![endif]-->
 	            <span class="tip">24集全</span> 
             </a>
-            <h4 class="name"><a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
+            <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
           </li>
           <?php }?>
@@ -143,7 +143,7 @@
         		foreach($regroups as $k => $v){
         	?>
           <li> 
-          <a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
+          <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
             					<!--[if lt IE 9]>
 								<span class="playmask"></span>
@@ -152,7 +152,7 @@
 								<![endif]-->
 	            <span class="tip">24集全</span> 
             </a>
-            <h4 class="name"><a href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
+            <h4 class="name"><a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
           </li>
           <?php }?>
@@ -182,7 +182,7 @@
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($movietop10)) foreach($movietop10 as $k => $movietop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="<?php echo $this->createUrl('site','kan','player',array('id'=>$movietop->id));?>" ><?php echo $movietop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $movietop->rate;?></span>分</span> </li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $movietop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$movietop->id));?>" ><?php echo $movietop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $movietop->rate;?></span>分</span> </li>
           <?php }?>
         </ul>
       </div>
@@ -192,19 +192,19 @@
       <h3 class="subtit">按类型</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->cateMap(1) as $k => $cate) { if($i==20) break;?>
-        <li><a <?php if(array_key_exists($cate, $colorCate[1])) {echo 'style="'.$colorCate[1][$cate].'"';}?>  href="<?php echo $this->createUrl('site','kan','movie',array(),array('cate'=>$k));?>"><?php echo $cate;?></a></li>
+        <li><a title="<?php echo $cate;?>" <?php if(array_key_exists($cate, $colorCate[1])) {echo 'style="'.$colorCate[1][$cate].'"';}?>  href="<?php echo $this->createUrl('site','kan','movie',array(),array('cate'=>$k));?>"><?php echo $cate;?></a></li>
         <?php $i++;}?>
       </ul>
       <h3 class="subtit">按地区</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->areaMap(1) as $k => $area) { if($i==8) break;?>
-        <li><a href="<?php echo $this->createUrl('site','kan','movie',array(),array('area'=>$k));?>"><?php echo $area;?></a></li>
+        <li><a title="<?php echo $area;?>" href="<?php echo $this->createUrl('site','kan','movie',array(),array('area'=>$k));?>"><?php echo $area;?></a></li>
         <?php $i++;}?>
       </ul>
       <h3 class="subtit">按年代</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->yearMap() as $k => $year) { if($i==7) break;?>
-        <li><a   href="<?php echo $this->createUrl('site','kan','movie',array(),array('year'=>$k));?>"><?php echo $year;?></a></li>
+        <li><a title="<?php echo $year;?>年"  href="<?php echo $this->createUrl('site','kan','movie',array(),array('year'=>$k));?>"><?php echo $year;?></a></li>
         <?php $i++;}?>
         <li><a href="#">更早</a></li>
       </ul>
@@ -214,7 +214,7 @@
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($tvtop10)) foreach($tvtop10 as $k => $tvtop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="<?php echo $this->createUrl('site','kan','player',array('id'=>$tvtop->id));?>" ><?php echo $tvtop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $tvtop->getEpSignforShortStr();?></li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $tvtop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$tvtop->id));?>" ><?php echo $tvtop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $tvtop->getEpSignforShortStr();?></li>
           <?php }?>
         </ul>
       </div>
@@ -224,19 +224,19 @@
       <h3 class="subtit">按类型</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->cateMap(2) as $k => $cate) { if($i==20) break;?>
-        <li><a <?php if(array_key_exists($cate, $colorCate[2])) {echo 'style="'.$colorCate[2][$cate].'"';}?>  href="<?php echo $this->createUrl('site','kan','tv',array(),array('cate'=>$k));?>"><?php echo $cate;?></a></li>
+        <li><a title="<?php echo $cate;?>" <?php if(array_key_exists($cate, $colorCate[2])) {echo 'style="'.$colorCate[2][$cate].'"';}?>  href="<?php echo $this->createUrl('site','kan','tv',array(),array('cate'=>$k));?>"><?php echo $cate;?></a></li>
         <?php $i++;}?>
       </ul>
       <h3 class="subtit">按地区</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->areaMap(2) as $k => $area) { if($i==8) break;?>
-        <li><a href="<?php echo $this->createUrl('site','kan','tv',array(),array('area'=>$k));?>"><?php echo $area;?></a></li>
+        <li><a title="<?php echo $area;?>"  href="<?php echo $this->createUrl('site','kan','tv',array(),array('area'=>$k));?>"><?php echo $area;?></a></li>
         <?php $i++;}?>
       </ul>
       <h3 class="subtit">按年代</h3>
       <ul class="dlist clearfix">
         <?php $i = 0; foreach($vgroup->yearMap() as $k => $year) { if($i==7) break;?>
-        <li><a   href="<?php echo $this->createUrl('site','kan','tv',array(),array('year'=>$k));?>"><?php echo $year;?></a></li>
+        <li><a title="<?php echo $year;?>年"  href="<?php echo $this->createUrl('site','kan','tv',array(),array('year'=>$k));?>"><?php echo $year;?></a></li>
         <?php $i++;}?>
         <li><a href="＃">更早</a></li>
       </ul>
@@ -246,7 +246,7 @@
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($comictop10)) foreach($comictop10 as $k => $comictop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="<?php echo $this->createUrl('site','kan','player',array('id'=>$comictop->id));?>" ><?php echo $comictop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $comictop->getEpSignforShortStr();?></li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $comictop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$comictop->id));?>" ><?php echo $comictop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $comictop->getEpSignforShortStr();?></li>
           <?php }?>
         </ul>
       </div>

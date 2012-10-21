@@ -91,7 +91,7 @@ $this->layout('kan_main',array("title"=>$header_title));?>
     <li>
       <dl>
         <dt> 
-        <a target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"> 
+        <a target="_blank" title="<?php echo $model->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"> 
         	<img width="120" height="160" src="<?php echo $model->getImageLink();?>">
         	<span class="tip"><?php  echo $model->getEpSignforStr();?></span>  
         </a>
@@ -103,7 +103,7 @@ $this->layout('kan_main',array("title"=>$header_title));?>
 			if(!empty($rate)) { ?>
           <i><?php echo $rate;?></i> 分
           <?php }?>
-          </span> <a target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"><?php echo $model->getShowTitle();?></a> <?php echo $model->year;?></dd>
+          </span> <a title="<?php echo $model->getShowTitle();?>" target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"><?php echo $model->getShowTitle();?></a> <?php echo $model->year;?></dd>
         <dd> 类型：<span><?php foreach($model->getCate2Arr() as $c=>$name){?>
         			<a href="<?php echo $this->createUrl("site","kan","cartoon",array("page"=>1),array("cate"=>$model->getCateKey(3,$name)));?>"><?php echo $name;?></a>
 					<?php }	?></span> 地区：<span><?php echo $model->area;?></span> </dd>
@@ -114,7 +114,7 @@ $this->layout('kan_main',array("title"=>$header_title));?>
         </dd>
         <dd class="play"> <em>观看：</em> <span>
           <?php $videoids = $model->getVideoids() ;  foreach($videoids as $siteid => $videoid) {?>
-          <a target="_blank" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id),array('autoplay'=>1,'site'=>$siteid));?>"> <img src="/styles/kan/images/icon/<?php echo $video->getIcon($siteid);?>" /><?php echo $video->getSiteZh($siteid);?> </a>
+          <a target="_blank" title="<?php echo $model->getShowTitle();?>-<?php echo $video->getSiteZh($siteid);?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id),array('autoplay'=>1,'site'=>$siteid));?>"> <img src="/styles/kan/images/icon/<?php echo $video->getIcon($siteid);?>" /><?php echo $video->getSiteZh($siteid);?> </a>
           <?php }?>
           </span> 
        </dd>
