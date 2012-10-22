@@ -7,7 +7,7 @@
 } ?>
 <?php $this->layout('kan_main',array("title"=>$header_title));?>
 
-	<div class="flv_player fm960 clearfix" id="flv_player_now"  style="display:none" >
+	<div class="flv_player fm960 clearfix" id="flv_player_now"   style="height:530px;display:none" >
 		<div id="flash_play"></div>
 		<div class="fm960 clearfix" id="play_info">
 			<div class="web_play">(如无法播放)

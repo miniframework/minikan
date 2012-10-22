@@ -148,14 +148,14 @@ class vgroups extends mini_db_model
     }
     public function combineHot($firhot,$midhot,$endhot)
     {
-    	if(empty($firhot) && empty($midhot) && empty($endhot))
-    	{
-    		$hotnum = 0;
-    	}
-    	else
-    	{
+    	
     		$hotnum = "1";
-    		if(strlen($firhot) <=1 ) {
+    		
+    		if(empty($firhot))
+    		{
+    			$hotnum .= "00";
+    		}
+    		else if(strlen($firhot) <=1 ) {
     			$hotnum .= "0".$firhot;
     		}
     		else if(strlen($firhot) <=2 ) {
@@ -164,7 +164,11 @@ class vgroups extends mini_db_model
     		else {
     			$hotnum .= '99';
     		}
-    		if(strlen($midhot) <=1 ) {
+    		if(empty($midhot))
+    		{
+    			$hotnum .= "00";
+    		}
+    		else if(strlen($midhot) <=1 ) {
     			$hotnum .= "0".$midhot;
     		}
     		else if(strlen($midhot) <=2 ) {
@@ -174,7 +178,11 @@ class vgroups extends mini_db_model
     			$hotnum .= '99';
     		}
     			
-    		if(strlen($endhot) ==4 ) {
+    		if(empty($endhot))
+    		{
+    			$hotnum .= "0000";
+    		}
+    		elseif(strlen($endhot) ==4 ) {
     			$hotnum .= $endhot;
     		}
     		else if(strlen($endhot) <4 ) {
@@ -190,7 +198,6 @@ class vgroups extends mini_db_model
     		else {
     			$hotnum .= '9999';
     		}
-    	}
     	$this->hot = $hotnum;
     	return $hotnum;
     }
