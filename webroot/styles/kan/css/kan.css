@@ -208,7 +208,6 @@ rgb(102, 102, 102); padding-left: 6px; }
 .title_order_box { overflow: hidden; height: 18px; line-height: 18px; float: right; }
 .title_order_box li { float: left; }
 .title_order_box span { display: block; float: left; height: 18px; width: auto; background-position: 0 -328px; padding: 0 18px 0 5px; color: white; font-weight: 700; position: relative; margin-right: 4px; }
-.ct { text-indent: -999px; text-align: left; overflow: hidden; font-size: 0; line-height: 0; }
 .title_order_box a { width: 9px; height: 8px; background-position: -34px -426px; position: absolute; right: 4px; top: 5px; }
 
 
