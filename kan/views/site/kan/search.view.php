@@ -7,7 +7,7 @@
         <!--  <span>高清 01:24:23</span>	-->
         </a>
         <div class="content">
-          <h2> <a  target="_blank" class="title" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$vgroup->id));?>"><?php echo $vgroup->getShowTitle();?></a> <em>[</em><strong>电影</strong><em>]</em> </h2>
+          <h2> <a  target="_blank" class="title" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$vgroup->id));?>"><?php echo $vgroup->getShowTitle();?></a> <em>[</em><strong style="color:green"><?php echo $vgroup->getVtypezh();?></strong><em>]</em> </h2>
           <?php if($vgroup->vtype!=3) {?>
           <p class="detail_list"> <span>主演：</span><em>
             <?php foreach($vgroup->getStars() as $k => $star){?>

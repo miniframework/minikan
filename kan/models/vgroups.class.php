@@ -604,6 +604,15 @@ class vgroups extends mini_db_model
 			return $map[$key];
 		}
 	}
+	public function getVtypezh()
+	{
+		if($this->vtype==1)
+			return "电影";
+		else if($this->vtype==2)
+			return "电视剧";
+		else if($this->vtype ==3)
+			return "动漫";
+	}
 	public function getCutSummary($len=40)
 	{
 		if(!empty($this->summary))
