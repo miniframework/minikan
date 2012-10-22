@@ -214,7 +214,7 @@
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($tvtop10)) foreach($tvtop10 as $k => $tvtop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $tvtop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$tvtop->id));?>" ><?php echo $tvtop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $tvtop->getEpSignforShortStr();?></li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $tvtop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$tvtop->id));?>" ><?php echo $tvtop->getShowTitle();?></a></span> <span class="info"><?php echo $tvtop->getEpSignforShortStr();?></span></li>
           <?php }?>
         </ul>
       </div>
@@ -246,7 +246,7 @@
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($comictop10)) foreach($comictop10 as $k => $comictop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $comictop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$comictop->id));?>" ><?php echo $comictop->getShowTitle();?></a></span> <span class="info"><span class="orange_num"><?php echo $comictop->getEpSignforShortStr();?></li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a title="<?php echo $comictop->getShowTitle();?>" href="<?php echo $this->createUrl('site','kan','player',array('id'=>$comictop->id));?>" ><?php echo $comictop->getShowTitle();?></a></span> <span class="info"><?php echo $comictop->getEpSignforShortStr();?></span></li>
           <?php }?>
         </ul>
       </div>
