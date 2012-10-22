@@ -127,7 +127,10 @@ class vgroups extends mini_db_model
     	}
     	else if ($row['order'] == 3)
     	{
-    		$condition->order = "year desc";
+    		if($row['vtype'] == 1)
+    			$condition->order = "year desc";
+    		else 
+    			$condition->order = "mtime desc, year desc";	
     	}
     	return $this->record->findAll($condition);
     }
