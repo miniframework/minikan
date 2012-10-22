@@ -1,9 +1,9 @@
 <?php if($vgroup->vtype==1){
-	$header_title = "《".$vgroup->title."》电影－高清在线观看-爱乐子电影";
+	$header_title = "《".$vgroup->title."》高清在线观看－电影－爱乐子电影";
 } else if($vgroup->vtype ==2) {
-	$header_title = "《".$vgroup->title."》电视剧－全集在线观看-爱乐子电视剧";
+	$header_title = "《".$vgroup->title."》全集在线观看－电视剧－爱乐子电视剧";
 } else if($vgroup->vtype ==3) {
-	$header_title = "《".$vgroup->title."》动漫－全集在线观看-爱乐子动漫";
+	$header_title = "《".$vgroup->title."》全集在线观看-动漫－爱乐子动漫";
 } ?>
 <?php $this->layout('kan_main',array("title"=>$header_title));?>
 
