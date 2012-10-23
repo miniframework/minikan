@@ -5,8 +5,7 @@ class episodesHelper extends mini_web_helper
 
 	public function showFirst($model)
 	{
-		$episodes = $model->getFirstEpisodes();
-		$allnum = count($episodes);
+		$allnum  = $model->nowepisodes;
 		if($allnum <= self::SHOW_PER_NUM+1)
 		{
 			$html = '';
@@ -15,12 +14,13 @@ class episodesHelper extends mini_web_helper
 		{
 			$html = '<div class="partli"> <a href="'.$this->view->createUrl('site','kan','player',array('id'=>$model->id)).'" class="allpart"  target="_self">全部>></a> </div>';
 		}
-		if(!empty($episodes))
+		if(!empty($allnum))
 		{
 			if($allnum <=self::SHOW_PER_NUM)
 			{
-				foreach($episodes as $k => $episode) {
-				$html .='<a target="blank" href="'.$this->view->createUrl('site','kan','player',array('id'=>$model->id),array('autoplay'=>1,'episode'=>($k+1))).'" rel="nofollow">'.($k+1).'集</a>';
+				for($n = 0 ; $n<$allnum; $n++)
+				{
+					$html .='<a target="blank" href="'.$this->view->createUrl('site','kan','player',array('id'=>$model->id),array('autoplay'=>1,'episode'=>($n+1))).'" rel="nofollow">'.($n+1).'集</a>';
 				} 
 			} else { 
 				for($i = 0; $i < self::SHOW_PER_NUM; $i++) {
