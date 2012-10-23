@@ -1,11 +1,17 @@
 <?php if($vgroup->vtype==1){
 	$header_title = "《".$vgroup->title."》高清在线观看－电影－爱乐子电影";
+	$header_keywords = "电影".$vgroup->title.",".$vgroup->title."电影在线观看,爱乐子电影";
+	$header_description = "最新电影".$vgroup->title."在线播观看，以及聚合各大视频网站最新".$vgroup->title."电影,让您和您的朋友同时观看各种聚合视频";
 } else if($vgroup->vtype ==2) {
 	$header_title = "《".$vgroup->title."》全集在线观看－电视剧－爱乐子电视剧";
+	$header_keywords = "电视剧".$vgroup->title.",".$vgroup->title."电视剧在线观看,爱乐子电视剧";
+	$header_description = "最新电视剧".$vgroup->title."在线播观看，以及聚合各大视频网站".$vgroup->title."电视剧全集,让您和您的朋友同时观看各种聚合视频";
 } else if($vgroup->vtype ==3) {
 	$header_title = "《".$vgroup->title."》全集在线观看-动漫－爱乐子动漫";
+	$header_keywords = "动漫".$vgroup->title.",".$vgroup->title."动漫在线观看,爱乐子动漫";
+	$header_description = "最新动漫".$vgroup->title."在线播观看，以及聚合各大视频网站最新".$vgroup->title."动漫全集,让您和您的朋友同时观看各种聚合视频";
 } ?>
-<?php $this->layout('kan_main',array("title"=>$header_title));?>
+<?php $this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
 
 	<div class="flv_player fm960 clearfix" id="flv_player_now"   style="height:530px;display:none" >
 		<div id="flash_play"></div>

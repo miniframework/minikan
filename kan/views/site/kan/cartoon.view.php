@@ -17,7 +17,10 @@ if(isset($cateMap[$search['cate']]))
 }
 
 $header_title = "最新的".$change_title."动漫"." "."最热".$change_title."动漫";
-$this->layout('kan_main',array("title"=>$header_title));?>
+$header_keywords = $change_title."动漫在线观看,动漫列表第".$page->currentpage."页,爱乐子动漫";
+$header_description = "爱乐子-最新动漫".$change_title."在线播观看，以及聚合各大视频网站最新".$change_title."动漫,让您和您的朋友同时观看各种聚合动漫";
+
+$this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
 
 <div id="searching" class="fm960 clearfix">
   <div class="searching-bd">

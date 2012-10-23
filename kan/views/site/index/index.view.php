@@ -1,4 +1,7 @@
-<?php $this->layout('kan_main',array("title"=>"最新电影 最新电视剧 最新动漫 在线观看"));?>
+<?php $this->layout('kan_main',array("title"=>"爱乐子在线电影,电视剧全集,最新动漫,在线观看",
+									 "keywords"=>"在线电影,电视剧全集,最新动漫,视频聚合,爱乐子",
+									 "description"=>"爱乐子-提供最全的最新最热门电影、电视剧、动漫、在线观看，以及聚合各大视频网站最新最全的电影、电视剧、动漫,让您和您的朋友同时观看各种聚合视频"
+					));?>
 <script>
             $(document).ready(function() {
 				 $(".js_tab > h3").each(function(i){

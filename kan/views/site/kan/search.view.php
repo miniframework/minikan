@@ -1,4 +1,7 @@
-<?php $this->layout('kan_main',array("title"=>$keyword."在线观看 搜索-$keyword"));?>
+<?php 
+$header_keywords = $keyword."在线电影,".$keyword."在线动漫,".$keyword."在线电视剧";
+$header_description = "最全的".$keyword."在线电影,动漫,电视剧信息";
+$this->layout('kan_main',array("title"=>$keyword."在线播放-爱乐子",'keywords'=>$header_keywords,'description'=>$header_description));?>
 <div class="search_list fm960 clearfix">
   <div class="search_left">
     <ul class="clearfix">

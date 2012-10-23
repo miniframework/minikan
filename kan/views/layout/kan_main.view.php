@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="/styles/kan/css/kan.css" />
 <script type="text/javascript"  src="/styles/kan/js/jquery.min.js" ></script>
 <title><?php if(isset($title)) echo $title;?></title>
+<meta name="keywords" content="<?php if(isset($keywords)) echo $keywords;?>" />
+<meta name="description" content="<?php if(isset($description)) echo $description;?>" />
 </head>
 <body>
 <?php $this->controller("site",'index','header');?>

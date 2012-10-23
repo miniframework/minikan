@@ -18,8 +18,11 @@ if(isset($cateMap[$search['cate']]))
 
 
 $change_title.=$search['star'];
-$header_title = "最新的".$change_title."电影"." "."好看的".$change_title."电影";
-$this->layout('kan_main',array("title"=>$header_title));?>
+$header_title = "最新的".$change_title."电影"." "."好看的".$change_title."电影在线观看－在线观看电影列表第".$page->currentpage."页-爱乐子";
+$header_keywords = $change_title."电影在线观看,电影列表第".$page->currentpage."页,爱乐子电影";
+$header_description = "爱乐子-最新电影".$change_title."在线播观看，以及聚合各大视频网站最新".$change_title."电影,让您和您的朋友同时观看各种聚合电影";
+
+$this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
 
 
 	<div id="searching" class="fm960 clearfix">

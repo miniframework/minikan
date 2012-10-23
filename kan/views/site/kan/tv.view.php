@@ -19,8 +19,11 @@ if(isset($cateMap[$search['cate']]))
 
 $change_title.=$search['star'];
 $header_title = "最新的".$change_title."电视剧"." "."热门".$change_title."电视剧";
+$header_keywords = $change_title."电视剧在线观看,电视剧列表第".$page->currentpage."页,爱乐子电视剧";
+$header_description = "爱乐子-最新电视剧".$change_title."在线播观看，以及聚合各大视频网站最新".$change_title."电视剧,让您和您的朋友同时观看各种聚合电视剧";
 
-$this->layout('kan_main',array("title"=>$header_title));?>
+$this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
+
 
 <div id="searching" class="fm960 clearfix">
   <div class="searching-bd">
