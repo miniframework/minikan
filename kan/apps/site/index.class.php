@@ -139,5 +139,9 @@ class indexController extends mini_web_controller
     	echo "ok";
     	exit;
     }
-  
+  	public function doXlunion()
+  	{
+  		echo "gtA-NeJXtT_pkbsh2XrVmowDadRSIi7Yw3_6ROm7aeE.";
+  		exit;
+  	}
 }

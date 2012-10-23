@@ -34,12 +34,18 @@ return array(
 					array('app'=>'site',
 						  'controller'=>'kan',
 						  'action'=>'search'),
-	'/httpproxy'	=>array('app'=>'site',
-				'controller'=>'index',
-				'action'=>'httpproxy'),
+	'/httpproxy'=>
+				array('app'=>'site',
+					'controller'=>'index',
+					'action'=>'httpproxy'),
 		
-	'/httpdata'	=>array('app'=>'site',
-				'controller'=>'index',
-				'action'=>'httpdata'),
+	'/httpdata'=>
+				array('app'=>'site',
+					'controller'=>'index',
+					'action'=>'httpdata'),
+	'/xlunion'=>
+				array('app'=>'site',
+					'controller'=>'index',
+					'action'=>'xlunion'),
 			
 );
