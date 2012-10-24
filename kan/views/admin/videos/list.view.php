@@ -92,7 +92,7 @@
 						<tr>
 							<td><?php echo $model->id;?></td>
 							                        <td><a href="<?php echo $model->playlink;?>" target="_blank" ><img src="/styles/kan/images/icon/<?php echo $model->getIcon($model->siteid);?>"/></a></td>
-	                                                <td><?php echo $model->vgroupid;?></td>
+	                                                <td><a href="<?php echo $this->createUrl("admin","vgroups","modifyview",array("id"=>$model->vgroupid));?>"><?php echo $model->vgroupid;?></a></td>
 	                                                <td><?php echo $model->vtypeMap($model->vtype);?></td>
 	                                                <td><?php echo $model->status;?></td>
 	                                                <td><?php echo $model->title;?></td>
