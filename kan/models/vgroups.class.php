@@ -219,7 +219,7 @@ class vgroups extends mini_db_model
     		if(!isset($video['videoid'])) continue;
     		$videoid = $video['videoid'];
     		$episodes = mini_db_model::model('episodes');
-    		if($this->siteid == 8)
+    		if($siteid == 8)
     		{
     			$episodes = $episodes->getsByVideoid(array(':videoid'=>$videoid));
     		}
@@ -561,7 +561,7 @@ class vgroups extends mini_db_model
 			
 			$episodes = mini_db_model::model('episodes');
 			
-			if($this->siteid==8)
+			if($siteid==8)
 			
 				$episodelist[$i]['episodes'] = $episodes->getsByVideoidHACK(array(':videoid'=>$videoid['videoid']));
 			
