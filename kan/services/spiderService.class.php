@@ -239,7 +239,8 @@ class spiderService implements mini_db_unbuffer
 			{
 				//更新剧集
 				$nowepisodes_num = count($data['episodes']);
-				if(isset($data['episodes']) &&  $nowepisodes_num > $row['nowepisodes'])
+				//&&  $nowepisodes_num > $row['nowepisodes']
+				if(isset($data['episodes']) )
 				{
 						$videoid = $row['id'];
 						$delete_episodes_sql = "delete from episodes  where videoid={$videoid}";
@@ -254,6 +255,7 @@ class spiderService implements mini_db_unbuffer
 							$erow['flv'] = $v['flv'];
 							$erow['vtype'] = $row['vtype'];
 							$erow['videoid'] = $videoid;
+							$erow['epindex'] = $k;
 							$episodes = mini_db_model::model("episodes");
 							$episodes->create($erow);
 							
