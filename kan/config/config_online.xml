@@ -4,19 +4,19 @@
 	<db>
 		<driver>mysqli</driver>
 		<master name="master">
-			<host>42.121.3.140</host>
+			<host>127.0.0.1</host>
 			<user>root</user>
-			<pass>19850207wzb</pass>
+			<pass></pass>
 			<port>3306</port>
-			<dbname>ailezi_com</dbname>
+			<dbname>ailezi_cn</dbname>
 			<charset>utf8</charset>
 		</master>
 		<slave name="slave1">
-			<host>42.121.3.140</host>
+			<host>127.0.0.1</host>
 			<user>root</user>
-			<pass>19850207wzb</pass>
+			<pass></pass>
 			<port>3306</port>
-			<dbname>ailezi_com</dbname>
+			<dbname>ailezi_cn</dbname>
 			<charset>utf8</charset>
 			<percent>100</percent>
 		</slave>
