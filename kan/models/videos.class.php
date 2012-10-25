@@ -63,7 +63,7 @@ class videos extends mini_db_model
     }
     public function siteidMap($key ='')
     {
-    	$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq');
+    	$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq',10=>'dytt8');
     	if(empty($key))
     	{
     		return $map;
@@ -74,7 +74,7 @@ class videos extends mini_db_model
     }
     public function getSiteZh($key='')
     {
-    	$map = array(1=>"土豆",2=>"优库",3=>"网易",4=>"新浪",5=>"电影网",6=>"搜狐",7=>"PPTV",8=>'乐视',9=>'腾讯');
+    	$map = array(1=>"土豆",2=>"优库",3=>"网易",4=>"新浪",5=>"电影网",6=>"搜狐",7=>"PPTV",8=>'乐视',9=>'腾讯',10=>'电影天堂');
     	if(empty($key))
     	{
     		return $map;
@@ -218,6 +218,7 @@ class videos extends mini_db_model
 	    		$erow['playlink'] = (string)$xml->playlink;
 	    		$erow['imagelink'] = (string)$xml->imagelink;
 	    		$erow['vtype'] = (string)$xml->vtype;
+	    		$erow['epindex'] = $k;
 	    		$erow['videoid'] = $this->id;
 	    		$erow['flv'] = (string)$xml->flv;
 	    		$episode = self::model('episodes');
@@ -246,6 +247,7 @@ class videos extends mini_db_model
 	    				$erow['playlink'] = (string)$link->playlink;
 	    				$erow['imagelink'] = (string)$link->imagelink;
 	    				$erow['vtype'] = (string)$xml->vtype;
+	    				$erow['epindex'] = $k;
 	    				$erow['videoid'] = $this->id;
 	    				$erow['flv'] = (string)$link->flv;
 	    				$episode = self::model('episodes');
