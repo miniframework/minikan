@@ -240,7 +240,7 @@ class spiderService implements mini_db_unbuffer
 				//更新剧集
 				$nowepisodes_num = count($data['episodes']);
 				//&&  $nowepisodes_num > $row['nowepisodes']
-				if(isset($data['episodes']) )
+				if(isset($data['episodes']) &&  $nowepisodes_num > $row['nowepisodes'])
 				{
 						$videoid = $row['id'];
 						$delete_episodes_sql = "delete from episodes  where videoid={$videoid}";
