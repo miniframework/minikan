@@ -64,7 +64,6 @@ function curlByUrl($url, $timeout = 10, $retry = 1)
 			break;
 		}
 	}
-
 	if($curl->error || $curl->infocode['http_code'] != '200')
 	{
 		echo "curl get url:$url content error.".$curl->error."\r\n";
@@ -2179,7 +2178,9 @@ function coverMovieQq($url)
 	if(empty($coverRoot)) return array();
 	$star = $director = $area = $cate = $year = array();
 	//pic segment
-	$coverinfo = $coverRoot->find(".mod_info", 0)->find(".mod_cont",0);
+	$mod_info= $coverRoot->find(".mod_info", 0);
+	if(empty($mod_info)) return array();
+	$coverinfo= $mod_info->find(".mod_cont",0);
 	if(empty($coverinfo)) return array();
 	$vrow['playlink'] = $url;
 	$vrow['title'] = $coverinfo->find('#em_cover_title',0)->plaintext;
@@ -3294,3 +3295,4 @@ function spiderApiMovieYouku($url)
 	}
 	return $vrow;
 }
+#include_once dirname(__FILE__).'/seedlib.php'; 
