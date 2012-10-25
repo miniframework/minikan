@@ -838,14 +838,16 @@ function coverCartoonTudou($url)
 	//eplisode
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".album-msg", 0);
-	$eplisodetxt = $eplisodeinfo->plaintext;
-	if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
-	{
-		$allepisodes = $match[1];
-	}
-	if(preg_match('/更新至第.*?(\d+)集/', $eplisodetxt,$match))
-	{
-		$nowepisodes = $match[1];
+	if(!empty($eplisodeinfo)) {
+		$eplisodetxt = $eplisodeinfo->plaintext;
+		if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
+		{
+			$allepisodes = $match[1];
+		}
+		if(preg_match('/更新至第.*?(\d+)集/', $eplisodetxt,$match))
+		{
+			$nowepisodes = $match[1];
+		}
 	}
 	$vrow['allepisodes'] = $allepisodes;
 	$vrow['nowepisodes'] = $nowepisodes;
