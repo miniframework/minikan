@@ -29,6 +29,11 @@ class episodes extends mini_db_model
     					'condition'=>'videoid=:videoid',
     					'order'=>'epindex asc',
     					),
+    			'getsByVideoidLetv'=>array(
+    					'hasmany'=>true,
+    					'condition'=>'videoid=:videoid',
+    					'order'=>'epindex desc',
+    			),
     			'getByVideoid'=>array(
     					'hasmany'=>false,
     					'condition'=>'videoid=:videoid',
