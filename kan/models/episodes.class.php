@@ -2,7 +2,7 @@
 class episodes extends mini_db_model
 {
     protected  $table = 'episodes';
-    protected  $columns = array('id','version','videoid','vtype','playlink','imagelink','flv');
+    protected  $columns = array('id','version','videoid','vtype','epindex','playlink','imagelink','flv');
     protected  $primaryKey = 'id';
     protected  $autoSave = true;
     protected  $autoIncrement = true;
@@ -27,12 +27,8 @@ class episodes extends mini_db_model
     			'getsByVideoid'=>array(
     					'hasmany'=>true,
     					'condition'=>'videoid=:videoid',
+    					'order'=>'epindex asc',
     					),
-    			'getsByVideoidHACK'=>array(
-    					'hasmany'=>true,
-    					'condition'=>'videoid=:videoid',
-    					'order'=>'id desc',
-    			),
     			'getByVideoid'=>array(
     					'hasmany'=>false,
     					'condition'=>'videoid=:videoid',
@@ -54,6 +50,7 @@ class episodes extends mini_db_model
 		'version'=>'Version',
 		'videoid'=>'视频id',
 		'vtype'=>'类型',
+        'epindex'=>'集数',
 		'playlink'=>'播放地址',
 		'imagelink'=>'图片地址',
         'flv'=>'flash参数');
