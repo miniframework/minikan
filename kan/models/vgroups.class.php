@@ -219,11 +219,12 @@ class vgroups extends mini_db_model
     		if(!isset($video['videoid'])) continue;
     		$videoid = $video['videoid'];
     		$episodes = mini_db_model::model('episodes');
-    		if($siteid == 8)
+    		if($this->epsign == 1 && $siteid == 8)
     		{
     			$episodes = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid));
-    		}
-    		else {
+    			
+    		} else
+    		{
     			$episodes = $episodes->getsByVideoid(array(':videoid'=>$videoid));
     		}
     		$flv = array();
@@ -559,11 +560,12 @@ class vgroups extends mini_db_model
 		{
 			
 			$episodes = mini_db_model::model('episodes');
-			if($siteid == 8)
+			if($this->epsign == 1 && $siteid == 8)
 			{
 				$episodelist[$i]['episodes'] = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid['videoid']));
 			}
-			else {
+			else 
+			{
 				$episodelist[$i]['episodes'] = $episodes->getsByVideoid(array(':videoid'=>$videoid['videoid']));
 			}
 			$episodelist[$i]['siteid'] = $siteid;
