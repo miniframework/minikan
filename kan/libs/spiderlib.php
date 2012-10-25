@@ -825,7 +825,7 @@ function coverCartoonTudou($url)
 	$vrow['infolink'] = $url;
 	$coverRoot = domByCurl($url);
 
-	if(!empty($coverRoot)) return array();
+	if(empty($coverRoot)) return array();
 	//get iid
 	if(preg_match('/http:\/\/.*?\/albumcover\/(.*?)\.html/is', $url, $match))
 	{
