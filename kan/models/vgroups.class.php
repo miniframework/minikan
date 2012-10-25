@@ -221,7 +221,7 @@ class vgroups extends mini_db_model
     		$episodes = mini_db_model::model('episodes');
     		if($siteid == 8)
     		{
-    			$episodelist[$i]['episodes'] = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid['videoid']));
+    			$$episodes = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid));
     		}
     		else {
     			$episodes = $episodes->getsByVideoid(array(':videoid'=>$videoid));
