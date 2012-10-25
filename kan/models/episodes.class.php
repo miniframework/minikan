@@ -27,8 +27,12 @@ class episodes extends mini_db_model
     			'getsByVideoid'=>array(
     					'hasmany'=>true,
     					'condition'=>'videoid=:videoid',
-    					'order'=>'id desc',
     					),
+    			'getsByVideoidHACK'=>array(
+    					'hasmany'=>true,
+    					'condition'=>'videoid=:videoid',
+    					'order'=>'id desc',
+    			),
     			'getByVideoid'=>array(
     					'hasmany'=>false,
     					'condition'=>'videoid=:videoid',
