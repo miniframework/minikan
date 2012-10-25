@@ -219,8 +219,13 @@ class vgroups extends mini_db_model
     		if(!isset($video['videoid'])) continue;
     		$videoid = $video['videoid'];
     		$episodes = mini_db_model::model('episodes');
-    		
-    		$episodes = $episodes->getsByVideoid(array(':videoid'=>$videoid));
+    		if($siteid == 8)
+    		{
+    			$episodelist[$i]['episodes'] = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid['videoid']));
+    		}
+    		else {
+    			$episodes = $episodes->getsByVideoid(array(':videoid'=>$videoid));
+    		}
     		$flv = array();
     		if(!empty($episodes))
     		foreach($episodes as $k => $episode)
@@ -554,9 +559,13 @@ class vgroups extends mini_db_model
 		{
 			
 			$episodes = mini_db_model::model('episodes');
-			
-			$episodelist[$i]['episodes'] = $episodes->getsByVideoid(array(':videoid'=>$videoid['videoid']));
-				
+			if($siteid == 8)
+			{
+				$episodelist[$i]['episodes'] = $episodes->getsByVideoidLetv(array(':videoid'=>$videoid['videoid']));
+			}
+			else {
+				$episodelist[$i]['episodes'] = $episodes->getsByVideoid(array(':videoid'=>$videoid['videoid']));
+			}
 			$episodelist[$i]['siteid'] = $siteid;
 			$episodelist[$i]['videoid']  = $videoid['videoid'];
 			$episodelist[$i]['playlink'] = $episodelist[$i]['episodes'][0]->playlink;
