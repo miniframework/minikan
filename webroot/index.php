@@ -20,7 +20,7 @@ include RUNPATH."/config/bootstrap.php";
  * include php miniframework import file
  */
 $mini=dirname(__FILE__).'/../../mini/mini.class.php';
-include_once $mini;
+include $mini;
 /**
  * set config path
  */
