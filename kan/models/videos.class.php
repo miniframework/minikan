@@ -218,7 +218,7 @@ class videos extends mini_db_model
 	    		$erow['playlink'] = (string)$xml->playlink;
 	    		$erow['imagelink'] = (string)$xml->imagelink;
 	    		$erow['vtype'] = (string)$xml->vtype;
-	    		$erow['epindex'] = $k;
+	    		$erow['epindex'] = 0;
 	    		$erow['videoid'] = $this->id;
 	    		$erow['flv'] = (string)$xml->flv;
 	    		$episode = self::model('episodes');
