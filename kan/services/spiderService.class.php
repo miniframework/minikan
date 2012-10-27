@@ -1,7 +1,7 @@
 <?php
 class spiderService implements mini_db_unbuffer
 {
-	public $onedaynum = 5;
+	public $onedaynum = 2;
 	public $db = null;
 	public function __construct($params = array())
 	{
