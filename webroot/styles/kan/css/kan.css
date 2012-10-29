@@ -151,7 +151,7 @@ rgb(102, 102, 102); padding-left: 6px; }
 .episode_list { padding: 8px 0 3px; }
 .episode_list a, .episode_list i,.last_update a, .last_update i { margin: 0 4px 4px 0; width: 40px; height: 22px; line-height: 22px; display: inline-block; border: 1px solid rgb(228, 228, 228); text-align: center; }
 .episode_list a:hover, .episode_list a.curr,.last_update a:hover, .last_update a.curr { background: none repeat scroll 0 0 #398AC1; border: 1px solid #398AC1; color: #FFFFFF; text-decoration: none; }
-.episode_list a:visited,.last_update a:visited  { border: 1px solid #398AC1;  color:#398AC1}
+
 .newpart {position: absolute;background: url(/styles/kan/images/bgimg.gif) -274px 0 no-repeat;width: 26px;height: 14px;bottom: 13px;right: 0;}
 
 #play_info{background-color:#000;}
