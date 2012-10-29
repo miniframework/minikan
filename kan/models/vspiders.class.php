@@ -2,7 +2,7 @@
 class vspiders extends mini_db_model
 {
     protected  $table = 'vspiders';
-    protected  $columns = array('id','version','siteid','vtype','spidercall','title','targeturl','catchtime','endtime','updatenum','daynum','locking','isstore');
+    protected  $columns = array('id','version','siteid','vtype','dtype','spidercall','title','targeturl','catchtime','endtime','updatenum','daynum','locking','isstore');
     protected  $primaryKey = 'id';
     protected  $autoSave = true;
     protected  $autoIncrement = false;
@@ -28,7 +28,18 @@ class vspiders extends mini_db_model
     }
     public function spiderCall($key='')
     {
-    	$map = array(1=>"Movie",2=>"Teleplay",3=>"Cartoon",4=>"Variety",5=>"ApiMovie");
+    	$map = array(1=>"Movie",2=>"Teleplay",3=>"Cartoon",4=>"Variety",5=>"ApiMovie",6=>"DownMovie");
+    	if(empty($key))
+    	{
+    		return $map;
+    	}
+    	else {
+    		return $map[$key];
+    	}
+    }
+    public function typeMap($key='')
+    {
+    	$map = array(0=>"在线",1=>"下载");
     	if(empty($key))
     	{
     		return $map;
@@ -129,7 +140,7 @@ class vspiders extends mini_db_model
     	$condition->compare("daynum","=", $daynum);
     	if($onedaynum>0)
     	{
-    		$condition->compare("daynum",">=", $onedaynum,'or');
+    		$condition->compare("daynum","<=", $onedaynum,'or');
     	}
     	$condition->compare("locking","=", $locking);
     	$condition->limit = $limit;
