@@ -1,6 +1,31 @@
 <?php
 class repairService 
 {
+	public static function delVideo($videoid)
+	{
+		if(empty($videoid)) { echo "videoid is empty.\r\n";return ; }
+		$videos = mini_db_model::model("videos");
+		$video = $videos->getByPk($videoid);
+		if(empty($video))
+		{
+			echo "not find video.\r\n";
+			return ;
+		}
+		
+		if($video->status != 1) {echo "video status must 1.\r\n";return ;}
+		$vgroupid = $video->vgroupid;
+		if(!empty($vgroupid)) {echo "video groupid must 0.\r\n";return ;}
+		$db  = mini_db_connection::getHandle();
+		
+		$del_videogroup_sql = "delete from groupvideo where videoid=$videoid";
+		$db->query($del_videogroup_sql);
+		$del_episode_sql = "delete from episodes where videoid=$videoid";
+		$db->query($del_episode_sql);
+		
+		$video->delete();
+		echo "del video:".$videoid."\r\n";
+		mini_db_unitofwork::getHandle()->commit();
+	}
 	public static function removeVideoFromGroup($videoid)
 	{
 		if(empty($videoid)) { echo "videoid is empty.\r\n";return ; }
@@ -110,5 +135,6 @@ class repairService
 	
 		echo "del group:".$pk."\r\n";
 		$model->delete();
+		mini_db_unitofwork::getHandle()->commit();
 	}
 }
