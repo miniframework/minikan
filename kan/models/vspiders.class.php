@@ -137,11 +137,11 @@ class vspiders extends mini_db_model
     	{
     		$condition->compare("isstore","=", 0,"or");
     	}
-    	$condition->compare("daynum","=", $daynum);
-    	if($onedaynum>0)
-    	{
-    		$condition->compare("daynum","<=", $onedaynum,'or');
-    	}
+//     	$condition->compare("daynum","=", $daynum);
+//     	if($onedaynum>0)
+//     	{
+    		$condition->compare("daynum","<=", $onedaynum);
+//     	}
     	$condition->compare("locking","=", $locking);
     	$condition->limit = $limit;
     	return $this->record->findAll($condition);
