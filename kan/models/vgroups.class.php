@@ -31,7 +31,19 @@ class vgroups extends mini_db_model
     			'getBySeriesid'=>array(
     					'hasmany'=>true,
     					'join'=>"left join groupseries b on b.groupid=t.id where b.seriesid=:seriesid"
-    					)
+    					),
+    			'getByCtime10'=>array(
+    					'hasmany'=>true,
+    					'condition'=>'vtype=:vtype and areashow=:areashow',
+    					'order'=>'ctime desc',
+    					'limit'=>10,
+    					),
+    			'getByLove10'=>array(
+    					'hasmany'=>true,
+    					'condition'=>'vtype=:vtype and catesum&:catesum=:catesum',
+    					'order'=>'ctime desc',
+    					'limit'=>10,
+    			)
     	);
     }
     public function getSeriesGroup()
