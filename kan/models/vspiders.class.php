@@ -140,7 +140,7 @@ class vspiders extends mini_db_model
 //     	$condition->compare("daynum","=", $daynum);
 //     	if($onedaynum>0)
 //     	{
-    		$condition->compare("daynum","<=", $onedaynum);
+    		$condition->compare("daynum","<=", $daynum);
 //     	}
     	$condition->compare("locking","=", $locking);
     	$condition->limit = $limit;
