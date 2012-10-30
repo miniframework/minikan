@@ -16,17 +16,58 @@ class indexController extends mini_web_controller
     	
 //     	$main_hot_vgroups = $vgroup->getByRecommendByTypeid(1);
 //     	$this->view->main_hot_vgroups = $main_hot_vgroups;
+
     	
+    	/***********电影自动****************/
     	$catalogs = $this->model('catalogs');
     	$catalog_moives = $catalogs->getByOgroup(1);
     	$this->view->catalog_moives = $catalog_moives;
     	
+    	//10最新
+    	$new_movies = $vgroup->getByCtime10(array(':vtype'=>1,':areashow'=>'大陆'));
+    	$this->view->new_movies = $new_movies;
+    	
+    	//11爱情
+    	$love_movies = $vgroup->getByLove10(array(':vtype'=>1,':catesum'=>2));
+    	$this->view->love_movies = $love_movies;
+    	
+    	//12喜剧
+    	$xiju_movies = $vgroup->getByLove10(array(':vtype'=>1,':catesum'=>1));
+    	$this->view->xiju_movies = $xiju_movies;
+    	
+    	//13伦理
+    	$lunli_movies = $vgroup->getByLove10(array(':vtype'=>1,':catesum'=>32768));
+    	$this->view->lunli_movies = $lunli_movies;
+    	
+    	/***********电视剧自动****************/
     	$catalog_tvs = $catalogs->getByOgroup(2);
     	$this->view->catalog_tvs = $catalog_tvs;
     	
+    	//10最新
+    	$new_tvs = $vgroup->getByCtime10(array(':vtype'=>2,':areashow'=>'大陆'));
+    	$this->view->new_tvs = $new_tvs;
+    	 
+    	//11爱情
+    	$love_tvs = $vgroup->getByLove10(array(':vtype'=>2,':catesum'=>2));
+    	$this->view->love_tvs = $love_tvs;
+    	 
+    	//12喜剧
+    	$xiju_tvs = $vgroup->getByLove10(array(':vtype'=>2,':catesum'=>4));
+    	$this->view->xiju_tvs = $xiju_tvs;
+    	 
+    	//13偶像
+    	$ouxiang_tvs = $vgroup->getByLove10(array(':vtype'=>2,':catesum'=>1));
+    	$this->view->ouxiang_tvs = $ouxiang_tvs;
+    	
+    	
+    	/***********动漫自动****************/
+    	
+    	
     	$catalog_comics = $catalogs->getByOgroup(3);
     	$this->view->catalog_comics = $catalog_comics;
-    	
+    	//10最新
+    	$new_cos = $vgroup->getByCtime10(array(':vtype'=>3,':areashow'=>'日本'));
+    	$this->view->new_cos = $new_cos;
     	
     	$mv_botton_recs = $catalogs->getByOgroup(4);
     	$this->view->mv_botton_recs = $mv_botton_recs;
