@@ -166,6 +166,7 @@ class videos extends mini_db_model
     				$erow['imagelink'] = (string)$link->imagelink;
     				$erow['vtype'] = (string)$video->vtype;
     				$erow['videoid'] = $video->id;
+    				$erow['epindex'] = $k;
     				$erow['flv'] = (string)$link->flv;
     				$episode = self::model('episodes');
     				$episode->create($erow);
