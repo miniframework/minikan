@@ -61,6 +61,7 @@
 					params.allowfullscreen="true";
 					params.allownetworking="all";
 					params.allowscriptaccess="always";
+					flashvars.auto=1;
 					swfobject.embedSWF(src, flash_id, "960", "500", "9.0.0", 
 							"/styles/kan/js/swfobject/expressInstall.swf",
 							flashvars,params,attributes);
