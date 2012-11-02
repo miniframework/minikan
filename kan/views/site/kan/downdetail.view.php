@@ -7,7 +7,7 @@ overflow: hidden;
 <div class="detail fm960 clearfix">
 		<div class="left_detail">
 			<div class="poster">
-				<a href=""><img style="width:230px;height:307px" src="<?php echo  $vdownload->getBigImageLink();?>"></a>
+				<a href=""><img style="width:230px;height:307px" src="<?php echo  $vdownload->getImageLink();?>"></a>
 			</div>
 		</div>
 		<div class="right_detail">
