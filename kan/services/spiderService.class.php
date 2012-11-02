@@ -71,7 +71,7 @@ class spiderService implements mini_db_unbuffer
 			{
 				foreach($xmlobj->video as $k => $xml)
 				{
-					$vdownloads = $this->model('vdownloads');
+					$vdownloads = mini_db_model::model('vdownloads');
 					$vdownloads->createByXml($xml);
 				}
 			}
