@@ -4,6 +4,7 @@
     <li class="split <?php if($parentId == 'sitekanmovie') echo "c";?>"><a href="<?php echo $this->createUrl('site','kan','movie');?>">电影</a></li>
     <li class="split <?php if($parentId == 'sitekantv') echo "c";?>"><a href="<?php echo $this->createUrl('site','kan','tv');?>">电视剧</a></li>
     <li class="split <?php if($parentId == 'sitekancartoon') echo "c";?>"><a href="<?php echo $this->createUrl('site','kan','cartoon');?>">动漫</a></li>
+    <li class="split <?php if($parentId == 'sitekandownmovie') echo "c";?>"><a href="<?php echo $this->createUrl('site','kan','downmovie');?>">电影下载</a></li>
   </ul>
 </div>
 <div id="header">

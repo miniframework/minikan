@@ -305,7 +305,7 @@ class vdownloads extends mini_db_model
     		}
     		$row['ctime'] = time();
     		$row['groupid'] = $vdownload->id;
-    
+    		$row['gtype'] = 1;
     		$douban->create($row);
     		if(!empty($drow['pic']))
     			$vdownload->doubanimage = $drow['pic'];
@@ -320,7 +320,6 @@ class vdownloads extends mini_db_model
     				$crow = array();
     				$reviews = mini_db_model::model("reviews");
     				$crow['title'] = $vv['title'];
-    				$crow['gtype'] = 1;
     				$crow['groupid'] = $vdownload->id;
     				if(!isset($vv['comment'])) continue;
     				$crow['summary'] = $vv['comment'];
