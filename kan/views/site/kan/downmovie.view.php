@@ -14,9 +14,9 @@ if(isset($search['cate']))
 }
 
 
-$header_title = "最新的".$change_title."电影"." "."好看的".$change_title."电影在线观看－在线观看电影列表第".$page->currentpage."页-爱乐子";
-$header_keywords = $change_title."电影在线观看,电影列表第".$page->currentpage."页,爱乐子电影";
-$header_description = "爱乐子-最新电影".$change_title."在线播观看，以及聚合各大视频网站最新".$change_title."电影,让您和您的朋友同时观看各种聚合电影";
+$header_title = "最新的".$change_title."电影下载"." "."好看的".$change_title."电影下载-手机电影下载－下载电影列表第".$page->currentpage."页-爱乐子";
+$header_keywords = $change_title."电影下载,电影下载".$page->currentpage."页,电影下载,手机电影下载,迅雷电影下载,爱乐子电影";
+$header_description = "爱乐子-最新电影".$change_title."下载，以及迅雷电影下载".$change_title.",超快速的电影下载种子";
 
 $this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
 

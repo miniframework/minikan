@@ -1,5 +1,9 @@
 <?php 
-$this->layout('kan_main');?>
+
+$header_title = "《".$vdownload->getTitle()."》电影下载-手机电影下载-迅雷电影下载-爱乐子";
+$header_keywords = "电影".$vdownload->getTitle().",".$vdownload->getTitle()."电影下载,手机电影下载,迅雷电影下载,爱乐子电影";
+$header_description = "最新电影".$vdownload->title."下载，，以及迅雷电影下载".$vdownload->getTitle().",超快速的电影下载种子";
+$this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
 <style>
 .right_detail {
 overflow: hidden;
