@@ -24,6 +24,20 @@ class spiderService implements mini_db_unbuffer
 			$this->todb($ids);
 			
 	}
+	public function todbDayDown($daynum=0,$limit = 10)
+	{
+		$model = mini_db_model::model("vspiders");
+		$vspiders= $model->getDaynumAndIsstoreAndUnlock($daynum,1,2,$limit,0,0,1);
+		$ids = array();
+		if(!empty($vspiders))
+			foreach($vspiders as $k => $vspider)
+			{
+				$ids[] = $vspider->id;
+			}
+			mini_db_unitofwork::getHandle()->commit();
+			$this->todb($ids);
+				
+	}
 	public function todb($ids=array())
 	{
 		foreach($ids as $s => $id)
@@ -91,6 +105,28 @@ class spiderService implements mini_db_unbuffer
 		}
 		echo date('Y-m-d H:i:s')."to video db over...\r\n";
 		
+	}
+	public function spiderDayDown($daynum=0, $limit=10)
+	{
+		$model = mini_db_model::model("vspiders");
+		$vspiders= $model->getDaynumAndIsstoreAndUnlock($daynum,2,0,$limit,1,$this->onedaynum,1);
+		$ids = array();
+		if(!empty($vspiders))
+			foreach($vspiders as $k => $vspider)
+			{
+				$ids[] = $vspider->id;
+					
+				$vspider->lockxml();
+					
+				// 			if($vspider->daynum >= $this->onedaynum)
+					// 			{
+					// 				$vspider->daynum = 0;
+	
+					// 			}
+							
+					}
+					mini_db_unitofwork::getHandle()->commit();
+					$this->toxml($ids);
 	}
 	public function spiderDay($daynum=0, $limit=10)
 	{

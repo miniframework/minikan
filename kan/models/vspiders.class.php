@@ -129,7 +129,7 @@ class vspiders extends mini_db_model
     	$this->isstore = 1;
 	   	return true;
     }
-    public function getDaynumAndIsstoreAndUnlock($daynum, $isstore, $locking,$limit=10,$isInit=0,$onedaynum=0)
+    public function getDaynumAndIsstoreAndUnlock($daynum, $isstore, $locking,$limit=10,$isInit=0,$onedaynum=0,$dtype=0)
     {
     	$condition = new mini_db_condition();
     	$condition->compare("isstore","=", $isstore);
