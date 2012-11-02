@@ -2,12 +2,12 @@
 body {color: rgb(42, 42, 42);background-color: rgb(242, 242, 242);background-image: url(/styles/kan/images/bg-v3.png); _background-attachment: fixed;}
 /*导航*/
 .navi_list .split,#info_bar .logo { background: url("/styles/kan/images/logo.png") no-repeat scroll 0 0 transparent;
-_background: url("/styles/kan/images/logo.png") no-repeat !important; 
-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/styles/kan/images/logo.png");
-
 }
 #info_bar { overflow: hidden; zoom: 1; height: 60px; padding-top:10px; padding-bottom:10px; }
-#info_bar .logo {  display: block; float: left; height: 60px; text-indent: -9999px; width: 140px; }
+#info_bar .logo {  display: block; float: left; height: 60px; text-indent: -9999px; width: 140px;
+_background: url("/styles/kan/images/logo.png") no-repeat !important; 
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/styles/kan/images/logo.png");
+}
 #navigation { height: 40px; line-height: 37px; margin-bottom: 0; }
 .navi_list { width: 100%; background: rgb(143, 198, 59); height: 40px; }
 .navi_list a { color: #FFFFFF; font-size: 14px; font-weight: bold; line-height: 40px; margin: 0 2px; }
