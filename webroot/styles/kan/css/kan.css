@@ -4,9 +4,10 @@ body {color: rgb(42, 42, 42);background-color: rgb(242, 242, 242);background-ima
 .navi_list .split,#info_bar .logo { background: url("/styles/kan/images/logo.png") no-repeat scroll 0 0 transparent;
 }
 #info_bar { overflow: hidden; zoom: 1; height: 60px; padding-top:10px; padding-bottom:10px; }
-#info_bar .logo {  display: block; float: left; height: 60px; text-indent: -9999px; width: 140px;
-_background: url("/styles/kan/images/logo.png") no-repeat !important; 
-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/styles/kan/images/logo.png");
+#info_bar .logo {  
+display: block; float: left; height: 60px; text-indent: -9999px; width: 140px;
+_background:none;
+_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src='/styles/kan/images/logo.png');
 }
 #navigation { height: 40px; line-height: 37px; margin-bottom: 0; }
 .navi_list { width: 100%; background: rgb(143, 198, 59); height: 40px; }
