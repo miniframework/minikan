@@ -35,7 +35,8 @@ a{ color:#2366A8; text-decoration:none; }
 <li><a href="<?php echo $this->createUrl("admin","doubans","list");?>" target="main">豆瓣信息</a></li>
 <li><a href="<?php echo $this->createUrl("admin","index","test");?>" target="main">测试百度编辑器</a></li>
 <li><a href="<?php echo $this->createUrl("admin","spiderlogs","list");?>" target="main">Spiderlogs</a></li>
-
+<li><a href="<?php echo $this->createUrl("admin","vdownloads","list");?>" target="main">视频下载</a></li>
+<li><a href="<?php echo $this->createUrl("admin","vseeds","list");?>" target="main">种子</a></li>
 <!-- {Mini-Crud-Menu} -->
 	</ul>
 </div>

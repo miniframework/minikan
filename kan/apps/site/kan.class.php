@@ -185,4 +185,56 @@ class kanController extends mini_web_controller
 				'star'=>$search['star'],"order"=>$search['order']));
 		return $url;
 	}
+	public function doDownmovie()
+	{
+		$cate = $this->request->get("cate");
+		$area = $this->request->get("area");
+		$year = $this->request->get("year");
+		$order = $this->request->get("order");
+		$searchRow['cate'] = $cate;
+		$searchRow['area'] = $area;
+		$searchRow['year'] = $year;
+		if(empty($order)) $order = 1;
+		$searchRow['order'] = $order;
+		$searchRow['vtype'] = 1;
+		$vdownload = $this->model('vdownloads');
+		$url = array("site","kan",'downmovie',array(),array('cate'=>$searchRow['cate'],'area'=>$searchRow['area'],'year'=>$searchRow['year'],
+				"order"=>$searchRow['order']));
+		$page = $vdownload->page(array("request"=>$this->request, "route"=>$this->route, "url"=>$url));
+		$models = $vdownload->search($searchRow);
+		
+		//$models = $vdownload->getList();
+			
+		$this->view->search = $searchRow;
+		$this->view->page = $page;
+		$this->view->models = $models;
+		$this->view->vdownload = $vdownload;
+	}
+	public function doDowndetail()
+	{
+		
+		$id = $this->request->get("id");
+		
+		$vdownload = $this->model('vdownloads');
+		
+	
+		if(empty($id))
+		{
+			$this->jumperror();
+		}
+		
+		$vdownload = $vdownload->getByPk($id);
+		if($vdownload === null)
+		{
+			$message ='';
+			$message.= $_SERVER['REMOTE_ADDR'].$_SERVER['REQUEST_URI'];
+			$message.="not find vdownload getByPk|doPlayer.";
+			$this->logger->log($message ,mini_log_logger::LEVEL_TRACE ,"kanapp");
+			$this->logger->flush();
+			$this->jumperror();
+		}
+	
+	
+		$this->view->vdownload = $vdownload;
+	}
 }

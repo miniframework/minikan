@@ -8,7 +8,7 @@
 </div>
 <div id="header">
   <div id="info_bar" class="fm960 clearfix">
-    <div class="logo_show fl"> <a href="/" class="logo" title="">ailezi</a> </div>
+    <div class="logo_show fl"> <a  href="/" class="logo" title="">ailezi</a> </div>
     <div class="search-bd">
       <form target="_blank" method="GET" action="<?php echo $this->createUrl("site","kan","search");?>" id="search-form" class="clearfix">
         <span class="ipt-search-area">

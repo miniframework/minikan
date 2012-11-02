@@ -34,10 +34,21 @@ class spiderController extends mini_web_controller
 			}
 			mini::e("config not load xml file {file} message:{message}" ,array('{file}'=>$xmlpath,'{message}'=>$message));
 		}
-		foreach($xmlobj->video as $k => $xml)
+		if($model->dtype == 1)
 		{
- 			$videos = $this->model('videos');
-			$videos->createByXml($xml);
+			foreach($xmlobj->video as $k => $xml)
+			{
+				$vdownloads = $this->model('vdownloads');
+				$vdownloads->createByXml($xml);
+			}
+		}
+		else 
+		{
+			foreach($xmlobj->video as $k => $xml)
+			{
+				$videos = $this->model('videos');
+				$videos->createByXml($xml);
+			}
 		}
 		$model->isstore = 2;
 		echo "store..db..over.";

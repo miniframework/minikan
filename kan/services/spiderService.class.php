@@ -53,10 +53,21 @@ class spiderService implements mini_db_unbuffer
 				continue;
 				//mini::e("config not load xml file {file} message:{message}" ,array('{file}'=>$xmlpath,'{message}'=>$message));
 			}
-			foreach($xmlobj->video as $k => $xml)
+			if($model->dtype == 1)
 			{
-				$videos = mini_db_model::model('videos');
-				$videos->createByXml($xml);
+				foreach($xmlobj->video as $k => $xml)
+				{
+					$vdownloads = $this->model('vdownloads');
+					$vdownloads->createByXml($xml);
+				}
+			}
+			else
+			{
+				foreach($xmlobj->video as $k => $xml)
+				{
+					$videos = mini_db_model::model('videos');
+					$videos->createByXml($xml);
+				}
 			}
 			if($model->daynum >= $this->onedaynum)
 			{

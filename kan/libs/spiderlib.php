@@ -3297,4 +3297,4 @@ function spiderApiMovieYouku($url)
 	}
 	return $vrow;
 }
-#include_once dirname(__FILE__).'/seedlib.php'; 
+include_once dirname(__FILE__).'/seedlib.php'; 

@@ -21,6 +21,20 @@
 						<td></td>
 					</tr>
 					<tr>
+						<th colspan="2">类型:</th>
+					</tr>
+					<tr>
+						<td>
+							
+							<select name="dtype">
+							<?php foreach($vspider->typeMap() as $k => $v){?>
+							<option value="<?php echo $k;?>"><?php echo $v;?></option>
+							<?php }?>
+						</select>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
 						<th colspan="2">抓取网站:</th>
 					</tr>
 					<tr>

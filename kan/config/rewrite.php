@@ -5,19 +5,27 @@ return array(
 					 'controller'=>'index',
 					 'action'=>'index'),	
 		
-	'/movie/(?P<page>.*?)?/?'=>
-					array('app'=>'site',
-					 'controller'=>'index',
-					 'action'=>'movie'),
+// 	'/movie/(?P<page>.*?)?/?'=>
+// 					array('app'=>'site',
+// 					 'controller'=>'index',
+// 					 'action'=>'movie'),
 		
-	'/tv/(?P<page>.*?)?/?'=>
-					array('app'=>'site',
-					 'controller'=>'index',
-					 'action'=>'tv'),
+// 	'/tv/(?P<page>.*?)?/?'=>
+// 					array('app'=>'site',
+// 					 'controller'=>'index',
+// 					 'action'=>'tv'),
 	'/kan/movie/(?P<page>.*?)?/?'=>
 					array('app'=>'site',
 						  'controller'=>'kan',
 						  'action'=>'movie'),
+	'/down/movie/(?P<page>.*?)?/?'=>
+					array('app'=>'site',
+							'controller'=>'kan',
+							'action'=>'downmovie'),
+	'/down/detail/(?P<id>\d+)/?'=>
+					array('app'=>'site',
+						'controller'=>'kan',
+						'action'=>'downdetail'),
 	'/kan/tv/(?P<page>.*?)?/?'=>
 					array('app'=>'site',
 							'controller'=>'kan',

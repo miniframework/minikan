@@ -527,7 +527,14 @@ class doubanspiderService
 		$indexdata = $this->getIndexData($dom);
 		if(!empty($indexdata))
 		{
-			$data = $this->getIndexRule($indexdata, $params);
+			if(!isset($params['down']))
+			{
+				$data = $this->getIndexRule($indexdata, $params);
+			}
+			else 
+			{
+				$data = $this->getDownIndexRule($indexdata, $params);
+			}
 			if(!empty($data))
 			{
 				return $data['href'];
@@ -535,10 +542,44 @@ class doubanspiderService
 		}
 		return ;
 	}
+	public function getDownIndexRule($indexdata, $params)
+	{
+		$tmp = array();
+		$tmporder = array();
+		$i = 1;
+		foreach($indexdata as $k => $data)
+		{
+			
+				
+			if($this->isequTitle($params['title'], $data['title']))
+			{
+				if(!isset($tmporder[$k])) $tmporder[$k] = 1;
+				else{
+					$tmporder[$k]++;
+				}
+				$tmp[$k] = $data;
+			}
+			
+				
+		}
+		if(!empty($tmporder))
+		{
+			arsort($tmporder);
+			foreach($tmporder as $k => $v)
+			{
+				return $tmp[$k];
+				break;
+			}
+		}
+		return array();
+	}
 	public function getIndexRule($indexdata, $params)
 	{
 		$tmp = array();
 		$tmporder = array();
+		if(!isset($params['year'])) $params['year'] = '';
+		if(!isset($params['star'])) $params['star'] = '';
+		if(!isset($params['director'])) $params['director'] = '';
 		$i = 1;
 		foreach($indexdata as $k => $data)
 		{

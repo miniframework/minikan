@@ -2,7 +2,7 @@
 class doubans extends mini_db_model
 {
     protected  $table = 'doubans';
-    protected  $columns = array('id','version','groupid','doubanid','title','pic','director','writer','star','cate','area','website','lang','pubdate','runtime','alias','imdb','rate','summary','tag','shortcomment','ctime');
+    protected  $columns = array('id','version','groupid','gtype','doubanid','title','pic','director','writer','star','cate','area','website','lang','pubdate','runtime','alias','imdb','rate','summary','tag','shortcomment','ctime');
     protected  $primaryKey = 'id';
     protected  $autoSave = true;
     protected  $autoIncrement = false;
@@ -32,6 +32,7 @@ class doubans extends mini_db_model
 		'id'=>'Id',
 		'version'=>'Version',
 		'groupid'=>'聚合id',
+       	'gtype'=>'是否下载',
 		'doubanid'=>'豆瓣id',
 		'title'=>'标题',
 		'pic'=>'海报',
