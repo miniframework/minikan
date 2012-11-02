@@ -1,0 +1,6 @@
+alter  table episodes  add column epindex int(11) not null comment '集数' after vtype;
+
+alter  table doubans  add column gtype tinyint(3) not null comment '是否下载' after groupid;
+
+alter  table vspiders  add column dtype tinyint(3) not null comment '是否下载' after vtype;
+
