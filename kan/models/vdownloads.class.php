@@ -96,6 +96,18 @@ class vdownloads extends mini_db_model
     }
     public function getBigImageLink()
     {
+    	if(!empty($this->doubanimage))
+    	{
+    		return str_replace('mpic', 'lpic', $this->doubanimage);
+    	}
+   		else if(!empty($this->imagelink))
+    	{
+    		return "http://img.store.sogou.com/net/a/04/link?appid=501&url=".$this->imagelink;
+    		
+    	}
+    }
+    public function getOneImageLink()
+    {
     	if(!empty($this->imagelink))
     	{
     		return "http://img.store.sogou.com/net/a/04/link?appid=501&url=".$this->imagelink;
@@ -138,7 +150,7 @@ class vdownloads extends mini_db_model
     {
     	if($vtype==1)
     	{
-    		$map = array(1=>"中国", 2=>"美国",3 =>"法国",6=>"日本",4=>"香港", 5=>"台湾",7=>"英国",9=>"其他");
+    		$map = array(1=>"中国", 2=>"美国",3 =>"法国",4=>"日本",5=>'韩国',6=>"香港", 7=>"台湾",8=>"英国");
     	}
     	else if($vtype ==2)
     	{

@@ -11,7 +11,7 @@ overflow: hidden;
 <div class="detail fm960 clearfix">
 		<div class="left_detail">
 			<div class="poster">
-				<a href=""><img style="width:230px;height:307px" src="<?php echo  $vdownload->getImageLink();?>"></a>
+				<a href=""><img style="width:230px;height:307px" src="<?php echo  $vdownload->getBigImageLink();?>"></a>
 			</div>
 		</div>
 		<div class="right_detail">
@@ -23,7 +23,7 @@ overflow: hidden;
 			</div>
 
 			<div class="play_box">
-			<span ><img src="<?php echo  $vdownload->getBigImageLink();?>"></span><br/>
+			<span ><img src="<?php echo  $vdownload->getOneImageLink();?>"></span><br/>
 			<span style="font-size:16px;color:orange">◎片　　名　</span><span style="font-size:14px;"><?php echo $vdownload->alias?></span><br/>
 			<span style="font-size:16px;color:orange">◎年　　代　</span><span style="font-size:14px;"><?php echo $vdownload->year?></span><br/>
 			<span style="font-size:16px;color:orange">◎国　　家　</span><span style="font-size:14px;"><?php echo $vdownload->country?></span><br/>
