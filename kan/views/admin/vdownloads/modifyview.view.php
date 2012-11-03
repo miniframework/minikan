@@ -97,10 +97,10 @@
 						<td></td>
                     </tr>
 					                    <tr>
-						<th colspan="2">guid:</th>
+						<th colspan="2">豆瓣id:</th>
 					</tr>
 					<tr>
-						<td><input type="text" class="txt" name="guid" value="<?php echo $model->guid;?>"></td>
+						<td><input type="text" class="txt" name="guid" value="<?php echo $model->doubanid;?>"></td>
 						<td></td>
                     </tr>
 					                    <tr>

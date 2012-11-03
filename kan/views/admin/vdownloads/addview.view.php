@@ -98,10 +98,10 @@
 						<td></td>
                     </tr>
 					                    <tr>
-						<th colspan="2">guid:</th>
+						<th colspan="2">豆瓣id:</th>
 					</tr>
 					<tr>
-						<td><input type="text" class="txt" name="guid" value=""></td>
+						<td><input type="text" class="txt" name="doubanid" value=""></td>
 						<td></td>
                     </tr>
 					                    <tr>
