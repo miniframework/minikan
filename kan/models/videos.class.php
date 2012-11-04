@@ -96,7 +96,7 @@ class videos extends mini_db_model
     }
     public function vtypeMapFun($key='')
     {
-    	$map = array(1=>"Movie",2=>"Teleplay",3=>"Cartoon",4=>"Variety");
+    	$map = array(1=>"Movie",2=>"Teleplay",3=>"Cartoon",4=>"Variety",5=>"Video");
     	if(empty($key))
     	{
     		return $map;
@@ -107,7 +107,7 @@ class videos extends mini_db_model
     }
     public function vtypeMap($key ='')
     {
-    	$map = array(1=>"电影",2=>"电视剧",3=>"动漫",4=>"综艺");
+    	$map = array(1=>"电影",2=>"电视剧",3=>"动漫",4=>"综艺",5=>"视频");
     	if(empty($key))
     	{
     		return $map;

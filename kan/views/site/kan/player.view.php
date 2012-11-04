@@ -12,7 +12,7 @@
 	$header_description = "最新动漫".$vgroup->title."在线播观看，以及聚合各大视频网站最新".$vgroup->title."动漫全集,让您和您的朋友同时观看各种聚合视频";
 } ?>
 <?php $this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywords,"description"=>$header_description));?>
-<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+
 	<div class="flv_player fm960 clearfix" id="flv_player_now"   style="height:530px;display:none" >
 		<div id="flash_play"></div>
 		<div class="fm960 clearfix" id="play_info">
