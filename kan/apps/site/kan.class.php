@@ -165,7 +165,7 @@ class kanController extends mini_web_controller
 	}
 	public function doSearch()
 	{
-		$keyword = $this->request->get("q");
+		$keyword = trim($this->request->get("q"));
 		$model = $this->model("vgroups");
 		$url = array("site","kan","search",array(),array("q"=>$keyword));
 		$page = $model->page(array("request"=>$this->request, "route"=>$this->route, "url"=>$url,"pagesize"=>10));
