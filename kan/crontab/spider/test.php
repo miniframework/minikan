@@ -5,4 +5,4 @@ include dirname(__FILE__).'/../../libs/spiderlib.php';
 
 
 
-coverVideoTudou("http://www.tudou.com/programs/view/3NxesJyoaJY/");
+spiderDownMovieKan2008("http://www.kan2008.net/forum-52-1.html");

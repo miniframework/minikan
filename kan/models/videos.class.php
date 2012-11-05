@@ -63,7 +63,7 @@ class videos extends mini_db_model
     }
     public function siteidMap($key ='')
     {
-    	$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq',10=>'dytt8');
+    	$map = array(1=>"tudou",2=>"youku",3=>"163",4=>"sina",5=>"m1905",6=>"sohu",7=>"pptv",8=>'letv',9=>'qq',10=>'dytt8',11=>'kan2008');
     	if(empty($key))
     	{
     		return $map;
@@ -74,7 +74,7 @@ class videos extends mini_db_model
     }
     public function getSiteZh($key='')
     {
-    	$map = array(1=>"土豆",2=>"优库",3=>"网易",4=>"新浪",5=>"电影网",6=>"搜狐",7=>"PPTV",8=>'乐视',9=>'腾讯',10=>'电影天堂');
+    	$map = array(1=>"土豆",2=>"优酷",3=>"网易",4=>"新浪",5=>"电影网",6=>"搜狐",7=>"PPTV",8=>'乐视',9=>'腾讯',10=>'电影天堂',11=>'南瓜园');
     	if(empty($key))
     	{
     		return $map;
