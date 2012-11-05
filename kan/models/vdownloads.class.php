@@ -2,7 +2,7 @@
 class vdownloads extends mini_db_model
 {
     protected  $table = 'vdownloads';
-    protected  $columns = array('id','version','vtype','title','imagelink','doubanimage','alias','year','cate','country','lang','director','star','summary','photo','doubanid','ctime','mtime');
+    protected  $columns = array('id','version','vtype','title','imagelink','doubanimage','alias','year','cate','country','lang','director','star','summary','photo','doubanid','hot','ctime','mtime');
     protected  $primaryKey = 'id';
     protected  $autoSave = true;
     protected  $autoIncrement = false;
@@ -49,7 +49,7 @@ class vdownloads extends mini_db_model
     	{
     		$condition->compare("year","=", $row['year']);
     	}
-    	
+    	$condition->order = 'hot desc ,year desc';
     	return $this->record->findAll($condition);
     }
     public function getTitle()
@@ -367,7 +367,8 @@ class vdownloads extends mini_db_model
 		'star'=>'明星',
 		'summary'=>'摘要',
 		'photo'=>'剧照',
-		'guid'=>'豆瓣id',
+		'doubanid'=>'豆瓣id',
+        'hot'=>'热度',
 		'ctime'=>'Ctime',
 		'mtime'=>'Mtime');
     }
