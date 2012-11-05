@@ -48,8 +48,8 @@ class vseeds extends mini_db_model
     	if($pos = strripos($this->seed, ']')){
     		return substr($this->seed,$pos+1);
     	}
-    	if($pos = strripos($this->seed, '】')){
-    		return substr($this->seed,$pos+1);
+    	if($pos = mb_stripos($this->seed, '】')){
+    		return mb_substr($this->seed,$pos+3);
     	}
     }
     public function tags()
