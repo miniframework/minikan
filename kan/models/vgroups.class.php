@@ -81,6 +81,7 @@ class vgroups extends mini_db_model
     {
     	$condition = new mini_db_condition();
     	$condition->addSearchCondition('title',$keyword, true);
+    	$condition->addSearchCondition('star',$keyword, true,'or');
     	return $this->record->findAll($condition);
     }
     public function search4SearchRow($searchrow)
