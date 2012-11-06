@@ -142,20 +142,15 @@
           </li>
           <?php }?>
         </ul>
-        
       </div>
       <?php } ?>
       
       <div  class="movie-ft">
         <ul class="grecomlist">
-        <?php if(!empty($mv_botton_recs))
-        		foreach($mv_botton_recs as $kk => $mv_botton) {
-        			$remv = $mv_botton->getByRecommendByTypeid();
-        				foreach($remv as $k => $v){
-        			?>
-        
-          <li><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>"><?php echo $v->getShowTitle();?></a></li>
-          <?php }}?>
+        <?php if(!empty($vdownload10))
+        		foreach($vdownload10 as $kk => $v) {?>
+          <li><a title="<?php echo $v->title;?>" href="<?php echo $this->createUrl("site","kan","downdetail",array("id"=>$v->id)); ?>"><?php echo $v->title;?></a></li>
+          <?php }?>
         </ul>
       </div>
     </div>

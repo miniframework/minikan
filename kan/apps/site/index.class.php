@@ -16,7 +16,11 @@ class indexController extends mini_web_controller
     	
 //     	$main_hot_vgroups = $vgroup->getByRecommendByTypeid(1);
 //     	$this->view->main_hot_vgroups = $main_hot_vgroups;
-
+		/***********电影下载****************/
+		$vdownload = $this->model("vdownloads");
+		$vdownload10 = $vdownload->getTop10(1);
+		$this->view->vdownload10 = $vdownload10;
+		
     	
     	/***********电影自动****************/
     	$catalogs = $this->model('catalogs');
