@@ -30,6 +30,19 @@ class vdownloads extends mini_db_model
     			)
     	);
     }
+    public function search4SearchRow($searchrow)
+    {
+    	$condition = new mini_db_condition();
+    	if(!empty($searchrow["id"]))
+    	{
+    		$condition->compare("id","=",$searchrow["id"]);
+    	}
+    	if(!empty($searchrow["title"]))
+    	{
+    		$condition->addSearchCondition("title",$searchrow["title"]);
+    	}
+    	return $this->record->findAll($condition);
+    }
     public function search($row)
     {
     	$condition = new mini_db_condition();

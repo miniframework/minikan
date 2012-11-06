@@ -8,11 +8,15 @@ class vdownloadsController extends mini_web_controller
 	}
 	public function doList()
 	{
-       
+		$searchrow = array("id"=>$this->request->get("id"), "title"=>$this->request->get("title"),
+				"ishidden"=>$this->request->get("ishidden")
+		);
+		$this->view->searchrow = $searchrow;
+		
         $model = $this->model('vdownloads');
-		$page = $model->page(array("request"=>$this->request, "route"=>$this->route,"url"=>array("admin","vdownloads","list")));
+		$page = $model->page(array("request"=>$this->request, "route"=>$this->route,"url"=>array("admin","vdownloads","list",array(),$searchrow)));
 		$this->view->page = $page;
-		$models = $model->getList();
+		$models = $model->search4SearchRow($searchrow);
 		$this->view->models = $models;
 	}
 	public function doAddview()
