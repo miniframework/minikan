@@ -27,6 +27,7 @@ function spiderDownMovieKan2008($url)
 			
 			$urlchild = $domain.$href;
 			$drow = coverDownMovieKan2008($urlchild);
+			if(empty($drow)) continue;
 			$drow['title'] =$title_arr[0];
 			$vrow[] = $drow;
 		}
@@ -165,7 +166,8 @@ function coverDownMovieKan2008($url)
 			$vrow['seed'][] = $matche[1];
 	}
 	if(empty($vrow['seed'])) return array();
-	$dom->clear();
+	if(empty($vrow['star'])) return array();
+ 	$dom->clear();
 	return $vrow;
 	
 }
@@ -340,7 +342,6 @@ function coverDownMovieDytt8($url)
 		if(!empty($ahref))
 		$vrow['seed'][] = $ahref->href;
 	}
-	if(empty($vrow['star'])) return array();
 	$dom->clear();
 	return $vrow;
 }
