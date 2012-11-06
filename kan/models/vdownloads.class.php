@@ -43,6 +43,21 @@ class vdownloads extends mini_db_model
     	}
     	return $this->record->findAll($condition);
     }
+    public function getTop10($vtype=1)
+    {
+    	$condition = new mini_db_condition();
+    	$condition->compare("vtype","=", $vtype);
+    	$condition->order = "hot desc";
+    	$condition->limit = 10;
+    	$condition->offset = 0;
+    	return $this->record->findAll($condition);
+    	 
+    }
+    public function getCateOne()
+    {
+    	$cate_arr = explode("\t", $this->cate);
+    	if(!empty($cate_arr)) return $cate_arr[0];
+    }
     public function search($row)
     {
     	$condition = new mini_db_condition();

@@ -70,12 +70,25 @@ color: rgb(4, 120, 179);
     <div class="page_list"> <?php echo $page->pageHtml();?> </div>
   </div>
   <div class="search_right">
+  <style>
+  .mod_a{margin-bottom:10px;}
+  </style>
+  <div class="mod_a">
+      <div class="th_a"><span class="th_mark">电影下载top10</span></div>
+      <div class="tb_a">
+        <ul class="list clearfix">
+          <?php if(!empty($vdownload10)) foreach($vdownload10 as $k => $v) {?>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="<?php echo $this->createUrl('site','kan','downdetail',array('id'=>$v->id));?>" ><?php echo $v->title;?></a></span> <span class="info"><span class="orange_num"><?php echo $v->getCateOne();?> </li>
+          <?php }?>
+        </ul>
+      </div>
+    </div>
     <div class="mod_a">
-      <div class="th_a"><span class="th_mark">电影top10</span></div>
+      <div class="th_a"><span class="th_mark">在线电影top10</span></div>
       <div class="tb_a">
         <ul class="list clearfix">
           <?php if(!empty($movietop10)) foreach($movietop10 as $k => $movietop) {?>
-          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="/m/fqXnYkn6QHr8Tx.html" ><?php echo $movietop->title;?></a></span> <span class="info"><span class="orange_num"><?php echo $movietop->rate;?></span>分</span> </li>
+          <li> <em class="index top"><?php echo ($k+1);?></em> <span class="videoname"><a href="<?php echo $this->createUrl('site','kan','player',array('id'=>$movietop->id));?>" ><?php echo $movietop->title;?></a></span> <span class="info"><span class="orange_num"><?php echo $movietop->rate;?></span>分</span> </li>
           <?php }?>
         </ul>
       </div>

@@ -171,7 +171,11 @@ class kanController extends mini_web_controller
 		$page = $model->page(array("request"=>$this->request, "route"=>$this->route, "url"=>$url,"pagesize"=>10));
 		$vgroups = $model->searchByKeyword($keyword);
 		$model = $this->model("vgroups");
-		$movietop10 = $model->getTop10(2);
+		$movietop10 = $model->getTop10(1);
+		
+		$vdownload = $this->model("vdownloads");
+		$vdownload10 = $vdownload->getTop10(1);
+		$this->view->vdownload10 = $vdownload10;
 		$this->view->keyword = htmlspecialchars($keyword);
 		$this->view->movietop10 = $movietop10;
 		$this->view->vgroups = $vgroups;
