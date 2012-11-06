@@ -340,6 +340,7 @@ function coverDownMovieDytt8($url)
 		if(!empty($ahref))
 		$vrow['seed'][] = $ahref->href;
 	}
+	if(empty($vrow['star'])) return array();
 	$dom->clear();
 	return $vrow;
 }
