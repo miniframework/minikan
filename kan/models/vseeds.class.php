@@ -44,13 +44,13 @@ class vseeds extends mini_db_model
     }
     public function getSeedName()
     {
-    	
-    	if($pos = strripos($this->seed, ']')){
-    		return substr($this->seed,$pos+1);
-    	}
     	if($pos = mb_stripos($this->seed, '】')){
     		return mb_substr($this->seed,$pos+3);
     	}
+    	if($pos = strripos($this->seed, ']')){
+    		return substr($this->seed,$pos+1);
+    	}
+    	
     }
     public function tags()
     {

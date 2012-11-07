@@ -62,7 +62,7 @@
 												<th>类型</th>
 												<th>标题</th>
 												<th>头图</th>
-												<th>豆瓣图片</th>
+												<th>时间</th>
 												<th>年</th>
 												<th>分类</th>
 												<th>国家</th>
@@ -74,7 +74,7 @@
 												 <td><?php echo $model->id;?></td>
 						                        <td><?php echo $model->vtype;?></td>
                                                 <td><?php echo $model->title;?></td>
-                                                <td><a target="_blank" href="<?php echo $model->imagelink;?>">图片</a></td>
+                                                <td><?php echo date("Y-m-d H:i",$model->ctime);?></td>
                                                 <td><?php echo $model->doubanimage;?></td>
                                                 <td><?php echo $model->year;?></td>
                                                 <td><?php echo $model->cate;?></td>

@@ -41,6 +41,7 @@ class vdownloads extends mini_db_model
     	{
     		$condition->addSearchCondition("title",$searchrow["title"]);
     	}
+    	$condition->order = "ctime desc";
     	return $this->record->findAll($condition);
     }
     public function getTop10($vtype=1)
