@@ -143,7 +143,7 @@ class vspiders extends mini_db_model
 //     		$condition->compare("daynum","<=", $daynum);
 //     	}
     	$condition->compare("locking","=", $locking);
-    	$condition->compare("dtype","=", 1);
+    	$condition->compare("dtype","=", $dtype);
     	$condition->limit = $limit;
     	return $this->record->findAll($condition);
     }
