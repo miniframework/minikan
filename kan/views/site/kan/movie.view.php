@@ -114,7 +114,7 @@ $this->layout('kan_main',array("title"=>$header_title,"keywords"=>$header_keywor
 		<li>
 			<dl>
 				<dt>
-					<a title="<?php echo $model->getShowTitle();?>"  href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"> 
+					<a target="_blank" title="<?php echo $model->getShowTitle();?>"  href="<?php echo $this->createUrl('site','kan','player',array('id'=>$model->id));?>"> 
 					<img width="120" height="160" src="<?php echo $model->getImageLink();?>">
 					</a>
 				</dt>
