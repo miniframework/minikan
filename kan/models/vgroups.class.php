@@ -84,6 +84,14 @@ class vgroups extends mini_db_model
     	$condition->addSearchCondition('star',$keyword, true,'or');
     	return $this->record->findAll($condition);
     }
+    public function searchByWeidianying()
+    {
+    	$condition = new mini_db_condition();
+    	$condition->addSearchCondition('title','微电影', true);
+    	$condition->order = 'ctime desc';
+    	$condition->limit = 10;
+    	return $this->record->findAll($condition);
+    }
     public function search4SearchRow($searchrow)
     {
     	$condition = new mini_db_condition();
