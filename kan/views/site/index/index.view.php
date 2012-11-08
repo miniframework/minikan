@@ -39,6 +39,7 @@
 	         <h3  index="11" type="mv">爱情</h3>
 	         <h3  index="12" type="mv">喜剧</h3>
 	         <h3  index="13" type="mv">伦理</h3>
+	         <h3  index="14" type="mv">微电影</h3>
 	        <a href="<?php echo $this->createUrl("site","kan","movie");?>" class="more">更多&gt;&gt;</a> 
         </div>
       </div>
@@ -54,12 +55,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -76,12 +72,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -94,12 +85,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -112,12 +98,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -130,12 +111,21 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
+            </a>
+            <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
+            <p class="info"><?php echo $v->getShortcomment();?></p>
+          </li>
+          <?php }?>
+        </ul>
+        
+          <!-- wei -->
+        <ul id="mv14" class="gimglist" style="display:none;">
+        	<?php foreach($wei_movies as $k => $v){?>
+          <li> 
+          <a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
+	          	<img src="<?php echo $v->getImageLink();?>" >
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -168,6 +158,7 @@
 	          </h3>
 	        <?php } ?>
 	         <h3  index="10" type="tv">最新</h3>
+	         <h3  index="14" type="tv">美剧</h3>
 	         <h3  index="11" type="tv">爱情</h3>
 	         <h3  index="12" type="tv">喜剧</h3>
 	         <h3  index="13" type="tv">偶像</h3>
@@ -184,12 +175,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -205,12 +191,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -225,12 +206,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -245,12 +221,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -265,12 +236,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -278,7 +244,21 @@
           <?php }?>
         </ul>
         
-        
+        <!-- meiju -->
+        <ul id="tv14" class="gimglist" style="display:none;">
+        	<?php 
+        		foreach($usa_tvs as $k => $v){
+        	?>
+          <li> 
+          <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
+	          	<img src="<?php echo $v->getImageLink();?>" >
+	            <span class="tip"></span> 
+            </a>
+            <h4 class="name"><a title="<?php echo $v->getShowTitle();?>" href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
+            <p class="info"><?php echo $v->getShortcomment();?></p>
+          </li>
+          <?php }?>
+        </ul>
       </div>
       <?php } ?>
     </div>
@@ -310,12 +290,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
@@ -331,12 +306,7 @@
           <li> 
           <a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" class="avatar" > 
 	          	<img src="<?php echo $v->getImageLink();?>" >
-            					<!--[if lt IE 9]>
-								<span class="playmask"></span>
-								<span class="gico gico-play">点击播放</span>
-								<span class="infomask"></span>
-								<![endif]-->
-	            <span class="tip">24集全</span> 
+	            <span class="tip"></span> 
             </a>
             <h4 class="name"><a title="<?php echo $v->getShowTitle();?>"  href="<?php echo $this->createUrl("site","kan","player",array("id"=>$v->id)); ?>" ><?php echo $v->getShowTitle();?></a></h4>
             <p class="info"><?php echo $v->getShortcomment();?></p>
