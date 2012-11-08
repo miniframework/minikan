@@ -43,6 +43,11 @@ class indexController extends mini_web_controller
     	$lunli_movies = $vgroup->getByLove10(array(':vtype'=>1,':catesum'=>32768));
     	$this->view->lunli_movies = $lunli_movies;
     	
+    	//14微电影
+    	 
+    	$wei_movies = $vgroup->searchByWeidianying();
+    	$this->view->wei_movies = $wei_movies;
+    	
     	/***********电视剧自动****************/
     	$catalog_tvs = $catalogs->getByOgroup(2);
     	$this->view->catalog_tvs = $catalog_tvs;
@@ -50,6 +55,7 @@ class indexController extends mini_web_controller
     	//10最新
     	$new_tvs = $vgroup->getByCtime10(array(':vtype'=>2,':areashow'=>'大陆'));
     	$this->view->new_tvs = $new_tvs;
+    	
     	 
     	//11爱情
     	$love_tvs = $vgroup->getByLove10(array(':vtype'=>2,':catesum'=>2));
@@ -62,6 +68,10 @@ class indexController extends mini_web_controller
     	//13偶像
     	$ouxiang_tvs = $vgroup->getByLove10(array(':vtype'=>2,':catesum'=>1));
     	$this->view->ouxiang_tvs = $ouxiang_tvs;
+    	
+    	//14美剧
+    	$usa_tvs = $vgroup->getByCtime10(array(':vtype'=>2,':areashow'=>'美国'));
+    	$this->view->usa_tvs = $usa_tvs;
     	
     	
     	/***********动漫自动****************/
