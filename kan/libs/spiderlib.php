@@ -1801,7 +1801,9 @@ function coverTeleplaySohu($url)
 	if(empty($coverinfo)) return array();
 	$h2 = $coverinfo->find('h2',0);
 	if(empty($h2)) return array();
-	$vrow['title'] = $h2->find('span',0)->plaintext;
+	$span = $h2->find('span',0);
+	if(empty($span)) return array();
+	$vrow['title'] = $span->plaintext;
 	
 	
 	$allepisodes = $nowepisodes = 0;
