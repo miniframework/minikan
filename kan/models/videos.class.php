@@ -159,15 +159,16 @@ class videos extends mini_db_model
     		}
     		//增加新的剧集列表
     		if(!empty($episodes))
-    		{
+    		{	$i=1;
     			foreach($episodes->link as $k => $link)
     			{
     				$erow['playlink'] = (string)$link->playlink;
     				$erow['imagelink'] = (string)$link->imagelink;
     				$erow['vtype'] = (string)$video->vtype;
     				$erow['videoid'] = $video->id;
-    				$erow['epindex'] = $k;
+    				$erow['epindex'] = $i;
     				$erow['flv'] = (string)$link->flv;
+    				$i++;
     				$episode = self::model('episodes');
     				$episode->create($erow);
     			}
@@ -242,15 +243,16 @@ class videos extends mini_db_model
     		{
 	    		$this->create($row);
 	    		if(!empty($episodes))
-	    		{
+	    		{	$i=1;
 	    			foreach($episodes->link as $k => $link)
 	    			{
 	    				$erow['playlink'] = (string)$link->playlink;
 	    				$erow['imagelink'] = (string)$link->imagelink;
 	    				$erow['vtype'] = (string)$xml->vtype;
-	    				$erow['epindex'] = $k;
+	    				$erow['epindex'] = $i;
 	    				$erow['videoid'] = $this->id;
 	    				$erow['flv'] = (string)$link->flv;
+	    				$i++;
 	    				$episode = self::model('episodes');
 	    				$episode->create($erow);
 	    			}
