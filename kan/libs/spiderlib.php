@@ -879,6 +879,8 @@ function coverCartoonTudou($url)
 			}
 	}
 	//土豆动漫特殊
+	
+	if(!isset($vrow['episodes'])) return array();
 	if(($vrow['allepisodes'] == $vrow['nowepisodes']) &&
 			!empty($vrow['allepisodes']) &&
 			!empty($vrow['nowepisodes']))
@@ -3303,5 +3305,5 @@ function spiderApiMovieYouku($url)
 	}
 	return $vrow;
 }
-#include_once dirname(__FILE__).'/seedlib.php'; 
+include_once dirname(__FILE__).'/seedlib.php'; 
 #include_once dirname(__FILE__).'/videolib.php';
