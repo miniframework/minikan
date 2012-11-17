@@ -932,7 +932,8 @@ function coverCartoonTudou($url)
 					$summaryDoms = $coverTxtlist->children(3);
 					if(!empty($summaryDoms))
 					{
-						$albumIntr =$summaryDoms ->find("span#albumIntroStr", 0);
+						$albumIntr = $summaryDoms->find("span#albumIntroStr", 0);
+						if(!empty($albumIntr))
 						$summary = $albumIntr->plaintext;
 					}
 					$vrow['area'] = $area[0];
