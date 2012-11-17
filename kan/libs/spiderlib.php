@@ -1808,6 +1808,7 @@ function coverTeleplaySohu($url)
 	
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".blockLA", 0);
+	if(empty($eplisodeinfo)) return array();
 	$allist =  $eplisodeinfo->find("#allist",0);
 	if(empty($allist)) return array();
 	$tab1cont  = $allist->find(".d1",0)->children(0);
