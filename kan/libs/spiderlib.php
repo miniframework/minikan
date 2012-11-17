@@ -1799,7 +1799,9 @@ function coverTeleplaySohu($url)
 	//pic segment
 	$coverinfo = $coverRoot->find(".blockRA", 0);
 	if(empty($coverinfo)) return array();
-	$vrow['title'] = $coverinfo->find('h2',0)->find('span',0)->plaintext;
+	$h2 = $coverinfo->find('h2',0);
+	if(empty($h2)) return array();
+	$vrow['title'] = $h2->find('span',0)->plaintext;
 	
 	
 	$allepisodes = $nowepisodes = 0;
