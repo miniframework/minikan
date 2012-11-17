@@ -327,7 +327,7 @@ function coverTeleplayYouku($url)
 		}
 		$episodeShowDom->clear();
 	}
-	
+	if(!isset($vrow['episodes'])) return array();
 	if(($vrow['allepisodes'] == $vrow['nowepisodes']) && 
 			!empty($vrow['allepisodes']) && 
 			!empty($vrow['nowepisodes']))
@@ -3022,44 +3022,6 @@ function spiderMovie163($url)
 	return $vrow;
 }
 
-function coverVideoTudou($url)
-{
-	$vrow = array();
-	$vrow['infolink'] = $url;
-	//$coverRoot = domByCurl($url);
-	
-	
-	$data = curlByUrl($url);
-	if(empty($data))
-		return array();
-	$coverRoot = new simple_html_dom();
-	$coverRoot->load($data);
-	$titledom = $coverRoot->find("#vcate_title",0);
-	if(!empty($titledom))
-	{
-		$vrow['title'] = $titledom->plaintext;
-	}
-	$flv = array();
-	if(preg_match("/\<script\>.*?iid:\s*?(\d+)/ism", $data, $match))
-	{
-		$flv["iid"]=$match[1];
-	}
-	if(preg_match("/\<script\>.*?pic:\s*?'(.*?)'/ism", $data, $match))
-	{
-		$vrow["imagelink"]=$match[1];
-	}
-	if(preg_match('/http:\/\/.*?\/programs\/view\/(.*?)\//is', $url, $match))
-	{
-		$flv["sid"] = $match[1];
-	}
-	
-	if(!empty($flv))
-		$vrow['flv'] = json_encode($flv);
-	if(empty($vrow['flv']) || $vrow['title'] || $vrow["imagelink"] ) return array();
-	
-	return $vrow;
-}
-
 
 
 function loadStringToXml($xmlstring)
@@ -3335,4 +3297,5 @@ function spiderApiMovieYouku($url)
 	}
 	return $vrow;
 }
-include_once dirname(__FILE__).'/seedlib.php'; 
+#include_once dirname(__FILE__).'/seedlib.php'; 
+#include_once dirname(__FILE__).'/videolib.php';
