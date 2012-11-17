@@ -928,8 +928,13 @@ function coverCartoonTudou($url)
 					//year
 					$yearDom = $coverTxtlist->children(2)->find("a",0);
 					$year = $yearDom->plaintext;
-					$summaryDoms = $coverTxtlist->children(3)->find("span#albumIntroStr", 0);
-					$summary = $summaryDoms->plaintext;
+					$summary = '';
+					$summaryDoms = $coverTxtlist->children(3);
+					if(!empty($summaryDoms))
+					{
+						$albumIntr =$summaryDoms ->find("span#albumIntroStr", 0);
+						$summary = $albumIntr->plaintext;
+					}
 					$vrow['area'] = $area[0];
 					$vrow['cate'] = $cate;
 					$vrow['year'] = $year;
