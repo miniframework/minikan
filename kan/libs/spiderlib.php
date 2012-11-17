@@ -315,6 +315,7 @@ function coverTeleplayYouku($url)
 		$episodeShowDom = domByCurl($episode_url);
 		if(!empty($episodeShowDom))
 			$episodeDoms = $episodeShowDom->find("a");
+		if(!empty($episodeDoms))
 		foreach($episodeDoms as $k => $edom)
 		{
 			$eplisodehref = $edom->href;
