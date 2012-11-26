@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="baidu-site-verification" content="nAVWTnNgXqDuf989" />
 <link rel="stylesheet" type="text/css" href="/styles/kan/css/globe.css" />
 <link rel="stylesheet" type="text/css" href="/styles/kan/css/kan.css" />
 <script type="text/javascript"  src="/styles/kan/js/jquery.min.js" ></script>
