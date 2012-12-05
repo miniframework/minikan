@@ -1,0 +1,86 @@
+/* tang-ui mini reset, version: 0.9 */
+.tang-ui dl, .tang-ui dt, .tang-ui dd, .tang-ui ul, .tang-ui ol, .tang-ui li, .tang-ui input{
+	margin: 0;
+	padding: 0;
+}
+.tang-ui table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.tang-ui img{
+	border: 0;
+}
+.tang-ui li{
+	list-style: none;
+}
+.tang-ui th{
+	text-align: left;
+}
+.tang-ui input, .tang-ui textarea, .tang-ui select{
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	*font-size: 100%;
+}
+
+/* tang-ui commons */
+.tang-ui{
+	
+}
+
+.tang-ui .tang-background{
+	position: absolute; 
+	z-index: -1; 
+	top: 0; left: 0; 
+	width: 100%; height: 100%; 
+}
+
+.tang-ui .tang-foreground{
+	
+}
+
+
+
+.tangram-suggestion {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #959595;
+    cursor: default;
+}
+.tangram-suggestion table {
+    cursor: default;
+    font-size: 14px;
+    width: 100%;
+	line-height:24px;
+	color:#000;
+}
+.tangram-suggestion table td{
+	padding-left:6px;
+	font-family:arial
+}
+
+
+.tangram-suggestion-current {
+    background: none repeat scroll 0 0 #ebebeb;
+    color: #000000;
+}
+.tangram-suggestion-current b{
+	font-weight:700;
+}
+
+.tangram-suggestion-prepend {
+    color: #C0C0C0;
+    font: 12px verdana;
+    padding: 2px;
+	display:none;
+}
+.tangram-suggestion-append {
+    color: #C0C0C0;
+    font: 12px verdana;
+    padding: 2px;
+    text-align: right;
+	display:none;
+}
+
+.tangram-suggestion-main{
+	z-index:1000;
+}
