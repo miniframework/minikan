@@ -28,7 +28,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </script>
 </div>
 <script type="text/javascript">
-
+/*
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21332676-1']);
   _gaq.push(['_trackPageview']);
@@ -38,7 +38,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
+*/
 </script>
 </body>
 </html>
