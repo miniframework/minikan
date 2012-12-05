@@ -78,7 +78,7 @@ class vdownloads extends mini_db_model
     	{
     		$condition->compare("year","=", $row['year']);
     	}
-    	$condition->order = 'hot desc ,year desc';
+    	$condition->order = 'hot desc ,ctime desc';
     	return $this->record->findAll($condition);
     }
     public function getTitle()
