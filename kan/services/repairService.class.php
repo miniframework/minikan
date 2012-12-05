@@ -1,6 +1,32 @@
 <?php
 class repairService 
 {
+
+	public static function none2Episode($vtype)
+	{
+		$db  = mini_db_connection::getHandle();
+		$sql = "select id,videoids from vgroups where vtype=$vtype";
+		
+		$vrow = $db->findAll($sql);
+		foreach($vrow as $k => $v)
+		{
+			//echo "groupid:".$v['id']."\r\n";
+			$videoids = json_decode($v['videoids'], true);
+			foreach($videoids as $kk => $vv)
+			{
+				//echo "videoid:".$vv['videoid']."\r\n";
+				$epsql = "select id from episodes where videoid = {$vv['videoid']}";
+				$erow = $db->find($epsql);
+				if(empty($erow))
+				{
+					echo "groupid:".$v['id']."\r\n";
+					echo "videoid:".$vv['videoid']."\r\n";
+					self::removeVideoFromGroup($vv['videoid']);
+				}
+			}
+			
+		}
+	}
 	public static function delVideo($videoid)
 	{
 		if(empty($videoid)) { echo "videoid is empty.\r\n";return ; }
