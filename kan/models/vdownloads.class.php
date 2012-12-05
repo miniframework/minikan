@@ -114,7 +114,7 @@ class vdownloads extends mini_db_model
 		if(!empty($this->doubanimage))
 		{
 			
-			return $this->doubanimage;
+    		return "http://img.store.sogou.com/net/a/04/link?url=".$this->doubanimage."&appid=501";
 		}
 		else if(!empty($this->imagelink))
     	{
