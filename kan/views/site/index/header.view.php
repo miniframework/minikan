@@ -26,3 +26,81 @@
     </div>
   </div>
 </div>
+<link rel="stylesheet" type="text/css" href="/styles/kan/css/suggest.css" />
+<script type="text/javascript"  src="/styles/kan/js/suggest.js" ></script>
+<script>
+$(function(){	
+	var	id="kw", 
+		url="http://vs.sugg.sogou.com/sugg/ajaj_json.jsp",
+		script=null, //script标签引用
+		doc=document,			 
+		cache={}, //缓存
+		suggObj=null	//百度suggest 实例
+		;  		
+		
+	function suggest(key){
+		//console.log(key)
+		if(cache[key]){ //缓存
+			show(cache[key][0],cache[key][1])
+		}else{
+			try {
+				doc.body.removeChild(script);
+			} catch (d) {}
+	
+			script = doc.createElement("script");
+			script.charset = "gb2312";
+			script.src = url + "?key=" + encodeURIComponent(key) + "&type=vc";
+			
+			doc.body.appendChild(script);            
+		}                
+	}
+	
+	//初始化
+	function init(){
+		//console.log("init suggObj");
+		suggObj = new baidu.ui.Suggestion({
+			getData: function(word) {
+				//console.log("getData "+word);
+				suggest(word)
+			},
+			onconfirm: function(evt) {
+				console.log("onconfirm")
+				//var c = evt.data.item.content;
+				//console.log(evt)
+				$("#"+id).parents("form").submit();
+			},
+			onbeforepick: function(evt) { //去掉加粗
+				var c = evt.data.item.content;
+				evt.data.item.content=evt.data.item.value=c.replace("<b>", "").replace("</b>", "")
+			}
+		});
+
+		suggObj.render(id)
+
+	}
+	
+	function show(key,data){
+		var data2=[];
+		for(var i=0,len=data.length;i<len;i++){
+			var str = data[i];
+			if (data[i].indexOf(key) == 0) {
+				str = key + "<b>" + data[i].substr(key.length) + "</b>"
+			}			
+			data2.push(str)
+		}
+		suggObj.show(key,data2)
+	}
+
+	//------回调---
+	if (typeof window.sogou != "object" || window.sogou == null) {
+		window.sogou = {}
+	}
+	window.sogou.sug=function(data){	 
+		cache[data[0]]=data;
+		show(data[0],data[1]);
+	}		
+	init();
+
+});
+
+</script>
