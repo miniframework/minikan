@@ -315,7 +315,7 @@ class vgroups extends mini_db_model
     	}
     	else if(!empty($this->doubanimage))
     	{
-    		return $this->doubanimage;
+    		return "http://img.store.sogou.com/net/a/04/link?url=".$this->doubanimage."&appid=501";
     	}
     	else if(!empty($this->webimage))
     	{
@@ -335,7 +335,7 @@ class vgroups extends mini_db_model
     	}
     	else if(!empty($this->doubanimage))
     	{
-    		return str_replace('mpic', 'lpic', $this->doubanimage);
+    		return "http://img.store.sogou.com/net/a/04/link?url=".str_replace('mpic', 'lpic', $this->doubanimage)."&appid=501";
     	}
     	else if(!empty($this->webimage))
     	{
