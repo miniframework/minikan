@@ -709,7 +709,12 @@ function coverTeleplayTudou($url)
 	//eplisode 
 	$allepisodes = $nowepisodes = 0;
 	$eplisodeinfo = $coverRoot->find(".album-msg", 0);
-	$eplisodetxt = $eplisodeinfo->plaintext;
+	$eplisodetxt = '';
+	if(!empty($eplisodeinfo))
+	{
+		$eplisodetxt = $eplisodeinfo->plaintext;
+	}
+	
 	if(preg_match('/共.*?(\d+)集/', $eplisodetxt,$match))
 	{
 		$allepisodes = $match[1];
@@ -3312,4 +3317,4 @@ function spiderApiMovieYouku($url)
 	return $vrow;
 }
 include_once dirname(__FILE__).'/seedlib.php'; 
-#include_once dirname(__FILE__).'/videolib.php';
+include_once dirname(__FILE__).'/videolib.php';
